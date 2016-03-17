@@ -21,17 +21,21 @@ window.onload = function() {
 
 function checkInput(content)
 {
-	
-	if(content.userName.value.length==0)
+	if(content.username.value.length==0)
 	{
-	alert('用户名不能为空');
-	contet.userName.focus();
-	return false;
+		alert('用户名不能为空');
+		contet.username.focus();
+		return false;
 	}
-	if(content.passWord.value.length==0)
+	if(content.password.value.length==0)
 	{
-	alert('密码不能为空');
-	contet.passWord.focus();
-	return false;
+		alert('密码不能为空');
+		contet.password.focus();
+		return false;
 	}
+	//else{//todo ask
+		document.loginForm.action="servlet/loginServlet";
+		document.loginForm.submit();
+	//}
+		
 }

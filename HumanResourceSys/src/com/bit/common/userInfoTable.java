@@ -1,10 +1,10 @@
-package com.human.model;
+package com.bit.common;
 
-public class UserInfo {
+public class userInfoTable {
 	private String user_id;
 	private String password;
-	private String user_type ;
-	private String user_role  ;
+	private String user_type;
+	private String user_row;
 	public String getUser_id() {
 		return user_id;
 	}
@@ -23,11 +23,13 @@ public class UserInfo {
 	public void setUser_type(String user_type) {
 		this.user_type = user_type;
 	}
-	public String getUser_role() {
-		return user_role;
+	public String getUser_row() {
+		return user_row;
 	}
-	public void setUser_role(String user_role) {
-		this.user_role = user_role;
+	public void setUser_row(String user_row) {
+		this.user_row = user_row;
 	}
+	
+	
 	
 }
