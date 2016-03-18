@@ -21,6 +21,7 @@ window.onload = function() {
 
 function checkInput(content)
 {
+	
 	if(content.username.value.length==0)
 	{
 		alert('用户名不能为空');
@@ -37,5 +38,5 @@ function checkInput(content)
 		document.loginForm.action="servlet/loginServlet";
 		document.loginForm.submit();
 	//}
-		
+	
 }

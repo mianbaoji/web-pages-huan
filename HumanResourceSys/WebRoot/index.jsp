@@ -16,15 +16,18 @@
 </head>
 
 <body id="back">
+
 	<div>
 		<div id="login">
 			<div id="login_title">
 				<ul>
-					<li class="select"><a href="#">省用户登录</a></li>
-					<li><a href="#">企业用户登录</a></li>
+					<li class="select"><a href="#">省用户登录</a>
+					</li>
+					<li><a href="#">企业用户登录</a>
+					</li>
 				</ul>
 			</div>
-			<form  onsubmit="return checkInput(this)" name="loginForm">
+			<form onsubmit="return checkInput(this)" name="loginForm">
 				<div id="login_body">
 					<div id="login_content">
 						<div name="login_box" style="display:block">
@@ -86,6 +89,16 @@
 	</div>
 	</div>
 	</div>
-
+	<%
+		if (session.getAttribute("loginFailed") == "true") {
+			
+	%>
+	<script type="text/javascript">
+		alert('用户名或密码错误！');
+	</script>
+	<%
+	session.removeAttribute("loginFailed");
+		}
+	%>
 </body>
 </html>
