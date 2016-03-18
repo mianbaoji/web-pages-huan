@@ -72,6 +72,7 @@ public class loginServlet extends HttpServlet {
 				response.sendRedirect("../loginSuccessed.jsp");
 			}
 			else{
+				request.getSession().setAttribute("loginFailed", "true");
 				response.sendRedirect("../index.jsp");
 			}
 		} catch (Exception e) {
