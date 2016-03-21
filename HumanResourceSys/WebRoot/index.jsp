@@ -12,10 +12,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>登录</title>
 <link rel="stylesheet" type="text/css" href="CSS/Login.css" />
+<link rel="stylesheet" type="text/css" href="CSS/All.css" />
 <script src="JS/Login.js"></script>
 </head>
 
-<body id="back">
+<body class="background">
 
 	<div>
 		<div id="login">
@@ -58,7 +59,7 @@
 							</div>
 						</div>
 			</form>
-			<form action="servlet/loginServlet">
+			<form onsubmit="return checkInput(this)" name="loginForm">
 				<div name="login_box" style="display:none">
 					<div>
 						<div>

@@ -1,0 +1,60 @@
+.box {
+	position: relative;
+	float: left;
+	left: 10%;
+	width: 80%;
+	height: auto;
+	min-height:60%;
+	box-shadow: 0 0 3px #000;
+	top: 170px;
+}
+
+.button {
+	width: 150px;
+	height: 40px;
+	color: white;
+	margin: auto;
+	top: 430px;
+	right:50px;
+	font-size: 20px;
+	float:right;
+	background-color: #06c;
+	border: 1px solid #09F;	
+	position: relative;
+
+}
+#inquire_box{
+	top:230px;
+
+}
+#inquire
+{
+	width:60%;
+	top:200px;
+	left:20%;
+	position:relative;
+}
+
+#inquire input{
+	border: 1px solid #000;	
+	box-shadow: 0 0 3px #000;
+	width:70%;
+	height:40px;
+	font-size:26px;
+}
+
+#inquire_button{
+	position:relative;
+	float:right;
+	right:5%;
+}
+#inquire_button input
+{
+	
+	width: 150px;
+	height: 40px;
+	color: white;	
+	font-size: 20px;
+	background-color: #06c;
+	border: 1px solid #09F;	
+}
