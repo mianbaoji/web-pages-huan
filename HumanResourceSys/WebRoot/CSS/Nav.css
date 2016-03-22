@@ -5,9 +5,9 @@
 	float:left;
 	position:relative;
 	height:30px;
-	width:100%;
+	width:70%;
 	top:150px;
-	left:20%;
+	left:15%;
 }
 
 #nav ul{
@@ -20,11 +20,27 @@
 	color: #000;
 	font-size:24px;
 	float:left;
-	width:15%;
+	width:21%;
 	height:30px;
 	
 }
 #nav li a:hover
 {
 		color: #f90;
+}
+#exit a
+{
+	 text-align:right; 
+	font-size:18px;
+	text-decoration: none;
+	color: #000;
+}
+#exit
+{
+	height:30px;
+	width:8%;
+	top:8px;
+	float:right;
+	position:relative;
+	/* vertical-align:bottom; */
 }

@@ -34,7 +34,8 @@
 			<li><a href="enterprise/EnterpriseInfo.jsp">企业信息</a></li>
 			<li><a href="enterprise/Report.jsp">数据填报</a></li>
 			<li><a href="enterprise/Inquire.jsp">数据查询</a></li>
-			<li><a href="enterprise/exit.jsp">注销</a></li>
+			<div id="exit"><a href="exit.jsp">注销</a>
+			</div>
 		</ul>
 	</div>
 	</nav>

@@ -38,8 +38,8 @@
 			</li>
 			<li><a href="enterprise/Inquire.jsp">数据查询</a>
 			</li>
-			<li><a href="exit.jsp"></a>
-			</li>
+			<div id="exit"><a href="exit.jsp">注销</a>
+			</div>
 		</ul>
 	</div>
 	<div class="box">
