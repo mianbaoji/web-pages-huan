@@ -42,7 +42,7 @@
 			</div>
 		</ul>
 	</div>
-	<div class="box">
+	<div class="box" id="home_page">
 	</div>
 	
 </body>
