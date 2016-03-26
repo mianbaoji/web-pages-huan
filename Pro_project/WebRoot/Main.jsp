@@ -11,7 +11,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>My JSP 'index.jsp' starting page</title>
+<title>Main</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -22,7 +22,7 @@
 
 </head>
 
-<frameset rows="20%,*">
+<frameset rows="30%,*" noresize="noresize">
 	<frame src="Main_Top.jsp">
 	<frameset cols="20%,*">
 		<frame src="Main_Left.jsp">
