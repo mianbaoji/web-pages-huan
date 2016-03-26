@@ -2,9 +2,9 @@ package com.bit.common;
 
 public class EnterpriseDataTable {
 	private String com_id;
-	private String table_id;
-	private String people_ago;
-	private String people_now;
+	private Integer table_id;
+	private Integer people_ago;
+	private Integer people_now;
 	private String other_reason;
 	private String type;
 	private String reason_1;
@@ -14,29 +14,29 @@ public class EnterpriseDataTable {
 	private String reason_3;
 	private String explain_3;
 	private String status;
-	private String time_id;
+	private Integer time_id;
 	public String getCom_id() {
 		return com_id;
 	}
 	public void setCom_id(String com_id) {
 		this.com_id = com_id;
 	}
-	public String getTable_id() {
+	public Integer getTable_id() {
 		return table_id;
 	}
-	public void setTable_id(String table_id) {
+	public void setTable_id(Integer table_id) {
 		this.table_id = table_id;
 	}
-	public String getPeople_ago() {
+	public Integer getPeople_ago() {
 		return people_ago;
 	}
-	public void setPeople_ago(String people_ago) {
+	public void setPeople_ago(Integer people_ago) {
 		this.people_ago = people_ago;
 	}
-	public String getPeople_now() {
+	public Integer getPeople_now() {
 		return people_now;
 	}
-	public void setPeople_now(String people_now) {
+	public void setPeople_now(Integer people_now) {
 		this.people_now = people_now;
 	}
 	public String getOther_reason() {
@@ -93,10 +93,10 @@ public class EnterpriseDataTable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getTime_id() {
+	public Integer getTime_id() {
 		return time_id;
 	}
-	public void setTime_id(String time_id) {
+	public void setTime_id(Integer time_id) {
 		this.time_id = time_id;
 	}
 	
