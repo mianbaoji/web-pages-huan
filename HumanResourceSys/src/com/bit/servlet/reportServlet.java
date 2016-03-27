@@ -2,6 +2,7 @@ package com.bit.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.bit.common.EnterpriseDataTable;
+import com.bit.common.userInfoTable;
 import com.bit.service.serviceOfAll;
+import com.bit.service.serviceOfEnterprise;
+import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
 
 public class reportServlet extends HttpServlet {
 
@@ -94,11 +98,21 @@ public class reportServlet extends HttpServlet {
 		enterpriseDataTable.setExplain_3(explain_3);
 		enterpriseDataTable.setStatus(status);
 		enterpriseDataTable.setTime_id(time_id);
-		
-		
-		//service里写“数据填报的部分”，注意注释
 
-			
+		//service
+		try {
+			HttpSession session = request.getSession();
+			if(new serviceOfEnterprise().addEnterpriseData(enterpriseDataTable, ((userInfoTable) request.getAttribute("user")).getUser_id())){
+				session.setAttribute("message", "success");//如果新增数据成功，则封装一个成功的Session信号
+			}
+			else{
+				session.setAttribute("message", "failed");//如果新增数据失败，则封装一个失败的Session信号
+			}
+			response.sendRedirect("../Report.jsp");//跳转回原界面
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

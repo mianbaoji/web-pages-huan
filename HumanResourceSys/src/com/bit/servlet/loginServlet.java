@@ -85,7 +85,6 @@ public class loginServlet extends HttpServlet {
 				else
 				{
 					response.sendRedirect("../loginSuccessed.jsp");
-					
 				}
 			}
 
