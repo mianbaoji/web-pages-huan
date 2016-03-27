@@ -1,0 +1,31 @@
+#back {
+	background-image: url(../image/navBackground.jpg);
+	background-size: 100% 300%;
+	background-repeat: no-repeat;
+}
+
+#first_navigation {
+	left: 3%;
+	top: 30%;
+	width: 200px;
+	height: auto;
+	position: fixed;
+	font-family: '隶书';
+	font-size: 30px;
+	text-align: center;
+	border: 0.5px dashed;
+}
+
+#ultype {
+	list-style-type: none;
+	padding: 0px 2px 0px 2px;
+}
+
+.indextype {
+	text-decoration: none;
+	color: #455515;
+}
+
+.liheight {
+	height: 45px;
+}
