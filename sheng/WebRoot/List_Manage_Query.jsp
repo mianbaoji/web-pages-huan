@@ -11,20 +11,22 @@
 <head>
 <base href="<%=basePath%>">
 
-<title></title>
+<title>报表管理</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
+<link rel="stylesheet" type="text/css" href="CSS/enterprise_sheng.css">
 <link rel="stylesheet" type="text/css" href="CSS/home_sheng.css" />
-<link rel="stylesheet" type="text/css" href="CSS/enterprise_sheng.css" />
+<link rel="stylesheet" type="text/css" href="CSS/list_sheng.css" />
 <script src="JS/home_sheng.js"></script>
 
 </head>
 
 <body id="back">
+
 	<div id="first_navigation">
 		<ul id="ultype">
 			<li class="liheight" onmouseover="addBorder(this)"
@@ -53,28 +55,38 @@
 				class="indextype">系统管理</a></li>
 		</ul>
 	</div>
-	<div id="enter_query">
-		<br></br> 地区: <select>
-			<option selected="selected">请选择</option>
-			<option>济南</option>
-			<option>青岛</option>
-			<option>淄博</option>
-			<option>德州</option>
-			<option>烟台</option>
-			<option>潍坊</option>
-			<option>济宁</option>
-			<option>泰安</option>
-			<option>临沂</option>
-			<option>菏泽</option>
-			<option>滨州</option>
-			<option>东营</option>
-			<option>威海</option>
-			<option>枣庄</option>
-			<option>日照</option>
-			<option>莱芜</option>
-			<option>聊城</option>
-		</select> <br></br> 调查期: <select name="Begin_Year">
-			<option selected="selected">请选择年份</option>
+	<div id="second_navigation1">
+		<ul id="ultype0">
+			<li class="liheight0" onmouseover="addBorder(this)"
+				onmouseout="removeBorder(this)"><a href="List_Manage_Query.jsp"
+				class="indextype0">信息查询</a></li>
+		</ul>
+	</div>
+	<div id="forth_navigation1">
+		<ul id="ultype0">
+			<li class="liheight0" onmouseover="addBorder(this)"
+				onmouseout="removeBorder(this)"><a href="List_Manage_Change.jsp"
+				class="indextype0">数据修改</a></li>
+		</ul>
+	</div>
+	<div id="third_navigation1">
+		<ul id="ultype0">
+			<li class="liheight0" onmouseover="addBorder(this)"
+				onmouseout="removeBorder(this)"><a href="List_Manage_Delete.jsp"
+				class="indextype0">数据删除</a></li>
+		</ul>
+	</div>
+	<div id="fifth_navigation1">
+		<ul id="ultype0">
+			<li class="liheight0" onmouseover="addBorder(this)"
+				onmouseout="removeBorder(this)"><a href="List_Manage_Back.jsp"
+				class="indextype0">数据返回</a></li>
+		</ul>
+	</div>
+	<div id="list_query">
+		企业名称：<input type="text" name="enterP_name"></input> 企业ID：<input
+			type="text" name="enterP_id"></input> 申报时间：<select name="Begin_Year"
+			class="checkbox">
 			<option>1975</option>
 			<option>1976</option>
 			<option>1977</option>
@@ -115,10 +127,9 @@
 			<option>2012</option>
 			<option>2013</option>
 			<option>2014</option>
-			<option>2015</option>
-		</select>年 <select name="Begin_Month">
-			<option selected>请选择月份</option>
-			<option>1</option>
+			<option selected="selected">2015</option>
+		</select>年 <select name="Begin_Month" class="checkbox">
+			<option selected="selected">1</option>
 			<option>2</option>
 			<option>3</option>
 			<option>4</option>
@@ -130,7 +141,7 @@
 			<option>10</option>
 			<option>11</option>
 			<option>12</option>
-		</select>月 <input type="submit" name="submit" value="检索"> <br></br>
+		</select>月 <input type="submit" name="search" value="检索"> <br></br>
 		<table border>
 			<tr class="table_size">
 				<th width="150">企业名</th>

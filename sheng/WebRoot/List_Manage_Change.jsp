@@ -1,33 +1,29 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head>
-<base href="<%=basePath%>">
-
-<title>报表管理</title>
-
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="This is my page">
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'List_Manage_Change.jsp' starting page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
 <link rel="stylesheet" type="text/css" href="CSS/enterprise_sheng.css">
 <link rel="stylesheet" type="text/css" href="CSS/home_sheng.css" />
 <link rel="stylesheet" type="text/css" href="CSS/list_sheng.css" />
 <script src="JS/home_sheng.js"></script>
-
-</head>
-
-<body id="back">
-
-	<div id="first_navigation">
+  </head>
+  
+  <body id="back">
+    <div id="first_navigation">
 		<ul id="ultype">
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a href="home_sheng.jsp"
@@ -83,5 +79,5 @@
 				class="indextype0">数据返回</a></li>
 		</ul>
 	</div>
-</body>
+  </body>
 </html>

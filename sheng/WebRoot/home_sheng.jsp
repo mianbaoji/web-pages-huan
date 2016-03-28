@@ -23,13 +23,13 @@
 				onmouseout="removeBorder(this)"><a href="home_sheng.jsp"
 				class="indextype">首页</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="home_sheng.jsp"
+				onmouseout="removeBorder(this)"><a href="Enterprise_Record.jsp"
 				class="indextype">企业备案</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="home_sheng.jsp"
+				onmouseout="removeBorder(this)"><a href="Enterprise_Query.jsp"
 				class="indextype">企业查询</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="home_sheng.jsp"
+				onmouseout="removeBorder(this)"><a href="List_Manage.jsp"
 				class="indextype">报表管理</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a href="home_sheng.jsp"

@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+#enter_query{
+	left: 40%;
+	top: 20%;
+	position: fixed;
+	font-family: '隶书';
+	font-size: 20px;
+	text-align: center;
+	border: 0.5px dashed;
+}
+
+#second_navigation0{
+	left: 40%;
+	top: 20%;
+	width: auto;
+	height: 30px;
+	position: fixed;
+	font-family: '隶书';
+	font-size: 30px;
+	text-align: center;
+	border: 0.5px dashed;
+}
+
+.table_size{
+	font-size: 20px;
+}
+
