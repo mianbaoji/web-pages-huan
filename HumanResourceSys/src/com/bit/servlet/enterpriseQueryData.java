@@ -59,20 +59,38 @@ public class enterpriseQueryData extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("GBK"); 
-		response.setCharacterEncoding("GBK");
-		Integer id = Integer.parseInt(request.getParameter("id"));
-		String com_id = ((userInfoTable) request.getAttribute("user")).getUser_id();//获取企业id,作为组织机构的com_id
-		String time_year = null;//此处应该 request.getParameter("time_year"); 但是前面没有
+		request.setCharacterEncoding("UTF-8"); 
+		response.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
+		String com_id = (String) session.getAttribute("user");//获取企业id,作为组织机构的com_id
+		String time_year = request.getParameter("selYear");//此处应该 request.getParameter("time_year"); 但是前面没有
 		String time_month = null;//同上
-		
-		
+		int month= Integer.valueOf( request.getParameter("selMonth"));
+		if(month <10)
+		{
+			time_month="0";
+		}
+		time_month=time_month+request.getParameter("selMonth");
+		session.setAttribute("year", Integer.valueOf(time_year));
+		session.setAttribute("month", Integer.valueOf(time_month));
+		System.out.println(time_year+"年"+time_month);
 		//service
 		try {
-			EnterpriseDataTable enterpriseInfoTable = new serviceOfEnterprise().queryEnterpriseData(com_id, time_year, time_month);
-			HttpSession session = request.getSession();
-			session.setAttribute("enterpriseInfoTable", enterpriseInfoTable);
-			response.sendRedirect("../Inquire.jsp");//跳转回原界面
+			EnterpriseDataTable enterpriseDataTable = new serviceOfEnterprise().queryEnterpriseData(com_id, time_year, time_month);
+
+			if(enterpriseDataTable==null)
+			{
+				session.setAttribute("message", "failed");
+				System.out.println("failed");
+			}
+			else if(enterpriseDataTable!=null)
+			{
+				System.out.println("success");
+				session.setAttribute("message", "success");
+			session.setAttribute("enterpriseDataTable", enterpriseDataTable);
+			}
+			
+			response.sendRedirect("../enterprise/Inquire.jsp");//跳转回原界面
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
