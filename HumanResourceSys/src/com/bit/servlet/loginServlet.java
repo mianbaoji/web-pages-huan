@@ -70,7 +70,6 @@ public class loginServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String userType = request.getParameter("userType");
-		System.out.println("dd " + request.getParameter("userType") + username);
 		userInfoTable userInfo = new userInfoTable();
 		userInfo.setUser_id(username);
 		userInfo.setPassword(password);
@@ -78,7 +77,7 @@ public class loginServlet extends HttpServlet {
 		try {
 			if (new serviceOfAll().valiUser(userInfo)) {
 				HttpSession session = request.getSession();
-				session.setAttribute("user", userInfo);
+				session.setAttribute("user", username);
 				if (userType.equalsIgnoreCase("enterprise")) {
 					response.sendRedirect("../enterprise/HomePage.jsp");
 				}
