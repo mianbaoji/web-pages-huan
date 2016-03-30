@@ -60,9 +60,7 @@ public class modifyEnterpriseInfoServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		
-		HttpSession se = request.getSession();
-		String com_id = (String) se.getAttribute("user");//获取企业id,作为组织机构的com_id
-		System.out.print("企业"+com_id);
+		String com_id = ((userInfoTable) request.getAttribute("user")).getUser_id();//获取企业id,作为组织机构的com_id
 		String com_area = request.getParameter("com_area");
 		String com_name = request.getParameter("com_name");
 		String com_property = request.getParameter("com_property");
@@ -98,7 +96,7 @@ public class modifyEnterpriseInfoServlet extends HttpServlet {
 			else{
 				session.setAttribute("message", "failed");//如果新增数据失败，则封装一个失败的Session信号
 			}
-			response.sendRedirect("../enterprise/EnterpriseInfo.jsp");//跳转回原界面
+			response.sendRedirect("../EnterpriseInfo.jsp");//跳转回原界面
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

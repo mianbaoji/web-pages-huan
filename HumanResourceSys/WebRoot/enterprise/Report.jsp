@@ -14,8 +14,7 @@
 <link rel="stylesheet" type="text/css" href="CSS/All.css" />
 <link rel="stylesheet" type="text/css" href="CSS/Enterprise.css" />
 <title>数据填报</title>
-<jsp:include page="../isLogin.jsp"></jsp:include>
-<script type="text/javascript" src="JS/Report.js"></script>
+
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -36,12 +35,12 @@
 			<li><a href="enterprise/Report.jsp">数据填报</a></li>
 			<li><a href="enterprise/Inquire.jsp">数据查询</a></li>
 			<div id="exit">
-				<a href="enterExit.jsp">注销</a>
+				<a href="exit.jsp">注销</a>
 			</div>
 		</ul>
 	</div>
 	</nav>
-	<form  onsubmit="return checkInput(this)" name="enterpriseData" >
+	<form>
 		<div class="box">
 			<table class="form" id="report">
 				<tr>
@@ -53,29 +52,29 @@
 
 					<td>建档期就业人数</td>
 					<td>是</td>
-					<td class="cell"><input name="people_ago" />
+					<td class="cell"><input id="people_ago" />
 					</td>
 				</tr>
 				<tr>
 
 					<td>调查期就业人数</td>
 					<td>是</td>
-					<td class="cell"><input name="people_now" />
+					<td class="cell"><input id="people_now" />
 					</td>
 				</tr>
 				<tr>
 
 					<td>其他原因</td>
 					<td>是</td>
-					<td class="cell"><input name="other_reason" />
+					<td class="cell"><input id="other_reason" />
 					</td>
 				</tr>
 				<tr>
 
 					<td>就业人数减少类型</td>
 					<td>否</td>
-					<td class="cell"><select name="type">
-							<option value=" "></option>
+					<td class="cell"><select id="type">
+							<option></option>
 							<option value="关闭破产">关闭破产</option>
 							<option value="停业整顿">停业整顿</option>
 							<option value="经济性裁员">经济性裁员</option>
@@ -93,8 +92,8 @@
 
 					<td>主要原因</td>
 					<td>否</td>
-					<td class="cell"><select name="reason_1">
-							<option value=" "></option>
+					<td class="cell"><select id="1_reason">
+							<option value=""></option>
 							<option value="产业结构调整">产业结构调整</option>
 							<option value="重大技术改革">重大技术改革</option>
 							<option value="节能减排">节能减排</option>
@@ -117,15 +116,15 @@
 
 					<td>主要原因说明</td>
 					<td>否</td>
-					<td class="cell"><input name="explain_1" />
+					<td class="cell"><input id="1_explain" />
 					</td>
 				</tr>
 				<tr>
 
 					<td>次要原因</td>
 					<td>否</td>
-					<td class="cell"><select name="reason_2">
-							<option value=" "></option>
+					<td class="cell"><select id="2_reason">
+							<option value=""></option>
 							<option value="产业结构调整">产业结构调整</option>
 							<option value="重大技术改革">重大技术改革</option>
 							<option value="节能减排">节能减排</option>
@@ -148,15 +147,15 @@
 
 					<td>次要原因说明</td>
 					<td>否</td>
-					<td class="cell"><input name="explain_2" />
+					<td class="cell"><input id="" />
 					</td>
 				</tr>
 				<tr>
 
 					<td>第三原因</td>
 					<td>否</td>
-					<td class="cell"><select name="reason_3">
-							<option value=" "></option>
+					<td class="cell"><select>
+							<option value=""></option>
 							<option value="产业结构调整">产业结构调整</option>
 							<option value="重大技术改革">重大技术改革</option>
 							<option value="节能减排">节能减排</option>
@@ -179,7 +178,7 @@
 
 					<td>第三原因说明</td>
 					<td>否</td>
-					<td class="cell"><input name="explain_3" />
+					<td class="cell"><input id="3_explain" />
 					</td>
 				</tr>
 
@@ -189,17 +188,5 @@
 				<input class="button" type="submit" value="保存" />
 			</div>
 		</div>
-		<%
-		if (session.getAttribute("message") == "success") {
-	%> <script type="text/javascript">
-		alert('上传成功！');
-	</script> <%
- 	} else if (session.getAttribute("message") == "failed") {
- %> <script type="text/javascript">
-		alert('上传失败！');
-	</script> <%
- 	}
- 	session.removeAttribute("message");
- %>
 </body>
 </html>

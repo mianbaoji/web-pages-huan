@@ -8,8 +8,6 @@
 	/* box-shadow: 0 0 3px #000;  */
 	top: 170px;
 }
-
-
 #home_page
 {
 	box-shadow: 0 0 3px #000;  
@@ -28,13 +26,10 @@
 	position: relative;
 
 }
-#inquire_form{
+#inquire_box{
 	top:230px;
 
 }
-
-
-
 #inquire
 {
 	width:60%;
