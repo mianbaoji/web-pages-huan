@@ -99,7 +99,5 @@ public class EnterpriseDataTable {
 	public void setTime_id(Integer time_id) {
 		this.time_id = time_id;
 	}
-	
-	
 
 }
