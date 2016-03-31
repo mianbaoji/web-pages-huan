@@ -109,6 +109,17 @@ CREATE TABLE IF NOT EXISTS `user_table` (
   KEY `fk_role` (`user_role`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+CREATE TABLE IF NOT EXISTS `news_table` (
+  `news_head` varchar(40) NOT NULL,
+  `news_time` varchar(20) NOT NULL,
+  `news_content` varchar(1000) NOT NULL,
+  `news_pub` varchar(40) NOT NULL,
+  `news_sub` varchar(40) NOT NULL,
+  `news_status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+select * from news_table
 --
 -- 限制导出的表
 --
