@@ -20,15 +20,12 @@ public class serviceOfAll {
 	public serviceOfAll(){
 		conn = new com.bit.conn.conn().getCon();
 	}
-	
 	public boolean valiUser(userInfoTable user) {
 		try {
 			pstmt = conn
-					.prepareStatement("select * from user_table where (user_id =? and password = ? )and user_type =?");
+					.prepareStatement("select * from user_table where user_id =? and password = ?");
 			pstmt.setString(1, user.getUser_id());
 			pstmt.setString(2, user.getPassword());
-			pstmt.setString(3, user.getUser_type());
-			System.out.print(user.getUser_type());
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next())
 				return true;
