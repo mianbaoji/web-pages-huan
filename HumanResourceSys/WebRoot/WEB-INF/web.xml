@@ -38,6 +38,11 @@
     <servlet-name>ProPutRecordServlet</servlet-name>
     <servlet-class>com.bit.proservlet.ProPutRecordServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ProQueryDataByMultiple</servlet-name>
+    <servlet-class>com.bit.proservlet.ProQueryDataByMultiple</servlet-class>
+  </servlet>
+
 
 
 
@@ -85,6 +90,10 @@
   <servlet-mapping>
     <servlet-name>ProPutRecordServlet</servlet-name>
     <url-pattern>/servlet/ProPutRecordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProQueryDataByMultiple</servlet-name>
+    <url-pattern>/servlet/ProQueryDataByMultiple</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
