@@ -22,14 +22,19 @@ public class serviceOfEnterprise {
 		conn = new com.bit.conn.conn().getCon();
 	}
 	
-	public static EnterpriseInfoTable queryEnterpriseInfo(String com_id) { //æŸ¥è¯¢ä¼ä¸šä¿¡æ¯
+	public static EnterpriseInfoTable queryEnterpriseInfo(String com_id) { //²éÑ¯ÆóÒµĞÅÏ¢
 		EnterpriseInfoTable ent = new EnterpriseInfoTable();
 		try {
 			pstmt = conn
 					.prepareStatement("select * from com_info where com_id=?");
 			pstmt.setString(1, com_id);
 			ResultSet rs = pstmt.executeQuery();
-			while (rs.next()) {
+			while (true) {
+				if(!rs.next())
+				{
+					
+					return null;
+				}
 				ent.setCom_id(rs.getString(1));
 				ent.setCom_area(rs.getString(2));
 				ent.setCom_name(rs.getString(3));
@@ -42,15 +47,16 @@ public class serviceOfEnterprise {
 				ent.setCom_fax(rs.getString(10));
 				ent.setCom_tel(rs.getString(11));
 				ent.setCom_email(rs.getString(12));
+				return ent;
 			}
-			return ent;
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
 	
-	public boolean modifyEnterpriseInfo(EnterpriseInfoTable ent) { //ä¿®æ”¹ä¼ä¸šä¿¡æ¯
+	public boolean modifyEnterpriseInfo(EnterpriseInfoTable ent) { //ĞŞ¸ÄÆóÒµĞÅÏ¢
 
 		try {
 			pstmt = conn
@@ -78,7 +84,35 @@ public class serviceOfEnterprise {
 		}
 	}
 	
-	public boolean addEnterpriseData(EnterpriseDataTable ent,String com_id) { //å¡«æŠ¥ä¼ä¸šæ•°æ®
+	public boolean insertEnterpriseInfo(EnterpriseInfoTable ent) { //²åÈëÆóÒµĞÅÏ¢
+
+		try {
+			pstmt = conn
+					.prepareStatement("insert into  com_info (com_area, com_name ,com_property,"
+							+ " com_industry ,com_business , com_people,com_address , com_postalcode ,"
+							+ "com_fax ,com_tel ,com_email , com_id) value(?,?,?,?,?,?,?,?,?,?,?,?)");
+			pstmt.setString(1, ent.getCom_area());
+			pstmt.setString(2, ent.getCom_name());
+			pstmt.setString(3, ent.getCom_property());
+			pstmt.setString(4, ent.getCom_industry());
+			pstmt.setString(5, ent.getCom_business());
+			pstmt.setString(6, ent.getCom_people());
+			pstmt.setString(7, ent.getCom_address());
+			pstmt.setString(8, ent.getCom_postalcode());
+			pstmt.setString(9, ent.getCom_fax());
+			pstmt.setString(10, ent.getCom_tel());
+			pstmt.setString(11, ent.getCom_email());
+			pstmt.setString(12, ent.getCom_id());
+			pstmt.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public boolean addEnterpriseData(EnterpriseDataTable ent,String com_id) { //Ìî±¨ÆóÒµÊı¾İ
 		try {
 			
 			pstmt = conn.prepareStatement("select time_id from time_table where time_year =? and time_month=?");
@@ -93,7 +127,7 @@ public class serviceOfEnterprise {
 				Month="0";
 			}
 			Month=Month+String.valueOf(month);
-			System.out.println("æ—¥æœŸ"+year);
+			System.out.println("ÈÕÆÚ"+year);
 			System.out.println(Month);
 			pstmt.setString(1, String.valueOf(year));	
 			pstmt.setString(2, Month);	
@@ -106,7 +140,7 @@ public class serviceOfEnterprise {
 					+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			
 			pstmt.setString(1, com_id);		
-			pstmt.setInt(2, ent.getPeople_ago());//å°†setStringæ”¹ä¸ºäº†setInt   å‘¨æ¨ä¸œ			
+			pstmt.setInt(2, ent.getPeople_ago());//½«setString¸ÄÎªÁËsetInt   ÖÜÑî¶«			
 			pstmt.setInt(3, ent.getPeople_now());//
 			pstmt.setString(4, ent.getOther_reason());
 			pstmt.setInt(5, time_id);
@@ -128,7 +162,7 @@ public class serviceOfEnterprise {
 		}
 	}
 	
-	public EnterpriseDataTable queryEnterpriseData(String com_id,String time_year,String time_month) { //æŸ¥è¯¢ä¼ä¸šæ•°æ®å¡«æŠ¥
+	public EnterpriseDataTable queryEnterpriseData(String com_id,String time_year,String time_month) { //²éÑ¯ÆóÒµÊı¾İÌî±¨
 		EnterpriseDataTable ent = new EnterpriseDataTable();
 		try {
 		
