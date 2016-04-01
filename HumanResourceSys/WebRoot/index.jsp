@@ -26,7 +26,11 @@
 					<li><a href="#">企业用户登录</a></li>
 				</ul>
 			</div>
+<<<<<<< HEAD
 			<form action="servlet/loginServlet" onsubmit="return checkInput(this)">
+=======
+			<form onsubmit="return checkInput(this)" name="s_loginForm">
+>>>>>>> refs/remotes/origin/省用户端
 				<div id="login_body">
 					<div id="login_content">
 						<div name="login_box" style="display:block">
@@ -52,14 +56,24 @@
 								<input type="checkbox" name="密码" value="记住密码" checked="checked" />记住密码
 							</div>
 							<div>
+<<<<<<< HEAD
 								<br /> <a ><input
 									id="login_button" type="submit" value="登录" /> </a>
 									<input name="userType" value="province" style="display:none"/>
+=======
+								<br /> <a><input id="login_button" type="submit"
+									value="登录" /> </a> <input name="userType" value="province"
+									style="display:none" />
+>>>>>>> refs/remotes/origin/省用户端
 							</div>
 						</div>
 						
 			</form>
+<<<<<<< HEAD
 			<form action="servlet/loginServlet"   onsubmit="return checkInput(this)" >
+=======
+			<form onsubmit="return checkInput(this)" name="q_loginForm">
+>>>>>>> refs/remotes/origin/省用户端
 				<div name="login_box" style="display:none">
 					<div>
 						<div>
@@ -82,11 +96,18 @@
 						<input type="checkbox" name="密码" value="记住密码" checked="checked" />记住密码
 					</div>
 					<div>
+<<<<<<< HEAD
 						<br /> <input
 							id="login_button" type="submit" value="登录" />
 					</div>
 					
 					<input name="userType" value="enterprise" style="display:none"/>
+=======
+						<br /> <input id="login_button" type="submit" value="登录" />
+					</div>
+
+					<input name="userType" value="enterprise" style="display:none" />
+>>>>>>> refs/remotes/origin/省用户端
 			</form>
 		</div>
 	</div>

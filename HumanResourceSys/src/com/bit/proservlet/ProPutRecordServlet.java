@@ -59,6 +59,7 @@ public class ProPutRecordServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 
+<<<<<<< HEAD
 		String com_area = request.getParameter("com_area");//åœ°åŒº
 		String com_year = request.getParameter("com_year");//å¹´
 		String com_month = request.getParameter("com_month");//æœˆ
@@ -68,6 +69,17 @@ public class ProPutRecordServlet extends HttpServlet {
 //		ä¼ ç»™Service: åœ°åŒºã€è°ƒæŸ¥æœŸ(å¹´ã€æœˆ)
 //		Serviceè¿”å›ï¼šä¼ä¸šåã€åœ°åŒºã€ç»„ç»‡æœºæ„ä»£ç  ï¼ˆEnterpriseInfoTableå°è£…ï¼‰
 //		è¿”å›ç»™å‰ç«¯ï¼šList<EnterpriseInfoTable>
+=======
+		String com_area = request.getParameter("com_area");//µØÇø
+		String com_year = request.getParameter("com_year");//Äê
+		String com_month = request.getParameter("com_month");//ÔÂ
+		
+		//service
+//		´ÓÇ°¶Ë½ÓÊÕ£ºµØÇø¡¢µ÷²éÆÚ(Äê¡¢ÔÂ)
+//		´«¸øService: µØÇø¡¢µ÷²éÆÚ(Äê¡¢ÔÂ)
+//		Service·µ»Ø£ºÆóÒµÃû¡¢µØÇø¡¢×éÖ¯»ú¹¹´úÂë £¨EnterpriseInfoTable·â×°£©
+//		·µ»Ø¸øÇ°¶Ë£ºList<EnterpriseInfoTable>
+>>>>>>> refs/remotes/origin/çœç”¨æˆ·ç«¯
 
 		List<EnterpriseInfoTable> enterpriseInfoList = null;
 		HttpSession session = request.getSession();
