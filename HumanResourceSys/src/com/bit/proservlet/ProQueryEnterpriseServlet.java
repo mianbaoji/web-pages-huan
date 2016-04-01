@@ -59,7 +59,6 @@ public class ProQueryEnterpriseServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		
-<<<<<<< HEAD
 		String com_area = request.getParameter("com_area");//åœ°åŒº
 		
 		//service
@@ -67,15 +66,6 @@ public class ProQueryEnterpriseServlet extends HttpServlet {
 //		ä¼ ç»™Service: åœ°åŒº
 //		Serviceè¿”å›ï¼šä¼ä¸šåã€åœ°åŒºã€ç»„ç»‡æœºæ„ä»£ç  ï¼ˆEnterpriseInfoTableå°è£…ï¼‰
 //		è¿”å›ç»™å‰ç«¯ï¼šEnterpriseInfoTable
-=======
-		String com_area = request.getParameter("com_area");//µØÇø
-		
-		//service
-//		´ÓÇ°¶Ë½ÓÊÕ£ºµØÇø
-//		´«¸øService: µØÇø
-//		Service·µ»Ø£ºÆóÒµÃû¡¢µØÇø¡¢×éÖ¯»ú¹¹´úÂë £¨EnterpriseInfoTable·â×°£©
-//		·µ»Ø¸øÇ°¶Ë£ºEnterpriseInfoTable
->>>>>>> refs/remotes/origin/çœç”¨æˆ·ç«¯
 		List<EnterpriseInfoTable> enterpriseInfoList = null;
 		HttpSession session = request.getSession();
 		session.setAttribute("enterpriseInfoList", enterpriseInfoList);

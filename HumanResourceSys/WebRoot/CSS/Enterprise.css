@@ -8,11 +8,6 @@
 	/* box-shadow: 0 0 3px #000;  */
 	top: 170px;
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> refs/remotes/origin/省用户端
 #home_page
 {
 	box-shadow: 0 0 3px #000;  
@@ -31,20 +26,10 @@
 	position: relative;
 
 }
-<<<<<<< HEAD
 #inquire_box{
 	top:230px;
 
 }
-=======
-#inquire_form{
-	top:230px;
-
-}
-
-
-
->>>>>>> refs/remotes/origin/省用户端
 #inquire
 {
 	width:60%;

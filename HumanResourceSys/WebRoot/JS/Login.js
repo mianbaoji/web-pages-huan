@@ -38,13 +38,8 @@ function checkInput(content)
 		document.s_loginForm.action="servlet/loginServlet?userType='province'";
 		document.s_loginForm.submit();
 		
-<<<<<<< HEAD
 //		document.q_loginForm.action="servlet/loginServlet?userType=enterprise";
 //		document.q_loginForm.submit();
-=======
-		document.q_loginForm.action="servlet/loginServlet?userType=enterprise";
-		document.q_loginForm.submit();
->>>>>>> refs/remotes/origin/省用户端
 	//}
 	
 }
