@@ -57,6 +57,17 @@ public class ProQueryDataByMultiple extends HttpServlet {
 		request.setCharacterEncoding("utf-8"); 
 		response.setCharacterEncoding("utf-8");
 		
+<<<<<<< HEAD
+		String com_id = null;//ç™»é™†è´¦å·
+		String com_area = null;//æ‰€å±åœ°å¸‚
+		String com_name = null;//å•ä½åç§°
+		String com_property = null;//ä¼ä¸šæ€§è´¨(å•ä½æ€§è´¨)
+		String com_industry = null;//æ‰€å±è¡Œä¸š
+		//ç”¨æˆ·ç±»å‹ï¼Ÿâ€¦â€¦
+		Integer com_year = null;//ç»Ÿè®¡å¹´
+		Integer com_month_begin = null;//ç»Ÿè®¡æœˆå¼€å§‹
+		Integer com_month_end = null;//ç»Ÿè®¡æœˆæˆªæ­¢
+=======
 		String com_id = null;//µÇÂ½ÕËºÅ
 		String com_area = null;//ËùÊôµØÊĞ
 		String com_name = null;//µ¥Î»Ãû³Æ
@@ -66,6 +77,7 @@ public class ProQueryDataByMultiple extends HttpServlet {
 		Integer com_year = null;//Í³¼ÆÄê
 		Integer com_month_begin = null;//Í³¼ÆÔÂ¿ªÊ¼
 		Integer com_month_end = null;//Í³¼ÆÔÂ½ØÖ¹
+>>>>>>> refs/remotes/origin/çœç”¨æˆ·ç«¯
 		
 		if(request.getParameter("com_id") != ""){
 			com_id = request.getParameter("com_id");

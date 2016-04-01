@@ -70,6 +70,10 @@ public class loginServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String userType = request.getParameter("userType");
+<<<<<<< HEAD
+		System.out.println("dd " + request.getParameter("userType") + username);
+=======
+>>>>>>> refs/remotes/origin/省用户端
 		userInfoTable userInfo = new userInfoTable();
 		userInfo.setUser_id(username);
 		userInfo.setPassword(password);
@@ -77,11 +81,21 @@ public class loginServlet extends HttpServlet {
 		try {
 			if (new serviceOfAll().valiUser(userInfo)) {
 				HttpSession session = request.getSession();
+<<<<<<< HEAD
+				session.setAttribute("user", userInfo);
+				if (userType.equalsIgnoreCase("enterprise")) {
+					response.sendRedirect("../enterprise/HomePage.jsp");
+				}
+				else
+				{
+					response.sendRedirect("../loginSuccessed.jsp");
+=======
 				session.setAttribute("user", username);
 				if (userType.equalsIgnoreCase("enterprise")) {
 					response.sendRedirect("../enterprise/HomePage.jsp");
 				} else {
 					response.sendRedirect("../province/home_sheng.jsp");
+>>>>>>> refs/remotes/origin/省用户端
 				}
 			}
 

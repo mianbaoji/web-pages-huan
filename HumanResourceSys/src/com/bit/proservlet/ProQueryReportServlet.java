@@ -57,6 +57,19 @@ public class ProQueryReportServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		
+<<<<<<< HEAD
+		String com_id = request.getParameter("com_id");//ä¼ä¸šID
+		String com_name = request.getParameter("com_name");//ä¼ä¸šåç§°
+		String com_year = request.getParameter("com_year");//å¹´
+		String com_month = request.getParameter("com_month");//æœˆ
+		
+		//service
+//		Javabean: EnterpriseDataTable
+//			ä»å‰ç«¯æ¥æ”¶ï¼šä¼ä¸šåç§°ã€ä¼ä¸šIDã€ç”³æŠ¥æ—¶é—´ï¼ˆå¹´ã€æœˆï¼‰
+//			ä¼ ç»™Service: ä¼ä¸šåç§°ã€ä¼ä¸šIDã€ç”³æŠ¥æ—¶é—´ï¼ˆå¹´ã€æœˆï¼‰
+//			Serviceè¿”å›ï¼šEnterpriseDataTable
+//			è¿”å›ç»™å‰ç«¯ï¼šEnterpriseDataTable
+=======
 		String com_id = request.getParameter("com_id");//ÆóÒµID
 		String com_name = request.getParameter("com_name");//ÆóÒµÃû³Æ
 		String com_year = request.getParameter("com_year");//Äê
@@ -68,6 +81,7 @@ public class ProQueryReportServlet extends HttpServlet {
 //			´«¸øService: ÆóÒµÃû³Æ¡¢ÆóÒµID¡¢Éê±¨Ê±¼ä£¨Äê¡¢ÔÂ£©
 //			Service·µ»Ø£ºEnterpriseDataTable
 //			·µ»Ø¸øÇ°¶Ë£ºEnterpriseDataTable
+>>>>>>> refs/remotes/origin/çœç”¨æˆ·ç«¯
 		
 		
 	}

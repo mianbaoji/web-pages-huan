@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 <%@ page import="com.bit.common.EnterpriseDataTable"%>
+>>>>>>> refs/remotes/origin/省用户端
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -15,7 +18,10 @@
 <link rel="stylesheet" type="text/css" href="CSS/All.css" />
 <link rel="stylesheet" type="text/css" href="CSS/Enterprise.css" />
 <title>数据查询</title>
+<<<<<<< HEAD
+=======
 <jsp:include page="../isLogin.jsp"></jsp:include>
+>>>>>>> refs/remotes/origin/省用户端
 <script type="text/javascript" src="JS/enterprise_inquire.js"></script>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -32,26 +38,53 @@
 	<nav>
 	<div id="nav">
 		<ul>
+<<<<<<< HEAD
+			<li><a href="enterprise/HomePage.jsp">首页</a>
+			</li>
+			<li><a href="enterprise/EnterpriseInfo.jsp">企业信息</a>
+			</li>
+			<li><a href="enterprise/Report.jsp">数据填报</a>
+			</li>
+			<li><a href="enterprise/Inquire.jsp">数据查询</a>
+			</li>
+			<div id="exit">
+				<a href="exit.jsp">注销</a>
+=======
 			<li><a href="enterprise/HomePage.jsp">首页</a></li>
 			<li><a href="enterprise/EnterpriseInfo.jsp">企业信息</a></li>
 			<li><a href="enterprise/Report.jsp">数据填报</a></li>
 			<li><a href="enterprise/Inquire.jsp">数据查询</a></li>
 			<div id="exit">
 				<a href="enterExit.jsp">注销</a>
+>>>>>>> refs/remotes/origin/省用户端
 			</div>
 		</ul>
 	</div>
 	</nav>
+<<<<<<< HEAD
+	<form>
+		<div id="inquire">
+			<!-- <input type="text" /> -->
+			<select id="selYear"></select>年 <select id="selMonth"></select>月 <select
+				id="selDay"></select>日
+=======
 	<form action="servlet/enterpriseQueryData">
 		<div id="inquire">
 			<!-- <input type="text" /> -->
 			调查期日期 &nbsp &nbsp<select id="selYear" name="selYear"></select>年 <select
 				id="selMonth" name="selMonth"></select>月 <select id="selDay"
 				name="selDay" style="display:none"></select>
+>>>>>>> refs/remotes/origin/省用户端
 			<script type="text/javascript">
 				var selYear = window.document.getElementById("selYear");
 				var selMonth = window.document.getElementById("selMonth");
 				var selDay = window.document.getElementById("selDay");
+<<<<<<< HEAD
+
+				// 新建一个DateSelector类的实例，将三个select对象传进去
+				new DateSelector(selYear, selMonth, selDay, 2016, 3, 25);
+				// 也可以试试下边的代码
+=======
 				// 新建一个DateSelector类的实例，将三个select对象传进去
 				var month =
 			<%=session.getAttribute("month")%>
@@ -61,6 +94,7 @@
 				;
 				new DateSelector(selYear, selMonth, selDay, year, month, 1);
 
+>>>>>>> refs/remotes/origin/省用户端
 				// var dt = new Date(2004, 1, 29);
 				// new DateSelector(selYear, selMonth ,selDay, dt);
 			</script>
@@ -69,6 +103,9 @@
 			</div>
 		</div>
 	</form>
+<<<<<<< HEAD
+	<div class="box" id="inquire_box"></div>
+=======
 
 	<%
 		if (session.getAttribute("message") != null) {
@@ -201,5 +238,6 @@
 		session.removeAttribute("enterpriseDataTable");
 		session.removeAttribute("message");
 	%>
+>>>>>>> refs/remotes/origin/省用户端
 </body>
 </html>

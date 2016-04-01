@@ -59,6 +59,22 @@ public class enterpriseQueryData extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+<<<<<<< HEAD
+		request.setCharacterEncoding("GBK"); 
+		response.setCharacterEncoding("GBK");
+		Integer id = Integer.parseInt(request.getParameter("id"));
+		String com_id = ((userInfoTable) request.getAttribute("user")).getUser_id();//获取企业id,作为组织机构的com_id
+		String time_year = null;//此处应该 request.getParameter("time_year"); 但是前面没有
+		String time_month = null;//同上
+		
+		
+		//service
+		try {
+			EnterpriseDataTable enterpriseInfoTable = new serviceOfEnterprise().queryEnterpriseData(com_id, time_year, time_month);
+			HttpSession session = request.getSession();
+			session.setAttribute("enterpriseInfoTable", enterpriseInfoTable);
+			response.sendRedirect("../Inquire.jsp");//跳转回原界面
+=======
 		request.setCharacterEncoding("UTF-8"); 
 		response.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
@@ -91,6 +107,7 @@ public class enterpriseQueryData extends HttpServlet {
 			}
 			
 			response.sendRedirect("../enterprise/Inquire.jsp");//璺宠浆鍥炲師鐣岄潰
+>>>>>>> refs/remotes/origin/省用户端
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
