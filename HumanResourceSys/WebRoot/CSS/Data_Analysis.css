@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+#info
+{
+	position:absolute;
+	top:28%;
+	left:30%;
+	font-size:30px;
+	color:#455155;
+	overflow-y:auto;
+}
+
+.formcss
+{
+	width:200px;
+	height:30px;
+	font-size:25px;
+}
+
+.selectcss
+{
+	width:200px;
+	height:30px;
+	font-size:25px;
+}
+
+#submitcss
+{
+	font-size:20px;
+	position:fixed;
+	bottom:10%;
+	right:10%;
+	width: 365px;
+	height: 40px;
+	color: white;
+	background-color: #06c;
+	border: 1px solid #09F;
+	margin: auto;
+}

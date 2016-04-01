@@ -1,4 +1,6 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.bit.service.serviceOfProvince"%>
+<%@page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -10,20 +12,22 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-
-<title>省用户首页</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>省用户发布通知</title>
 <jsp:include page="../isLogin.jsp"></jsp:include>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<link rel="stylesheet" type="text/css" href="CSS/home_sheng.css" />
+<link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
+<link rel="stylesheet" type="text/css" href="CSS/Publish_Inform.css" />
+<script src="JS/Publish_Inform.js"></script>
 <script src="JS/home_sheng.js"></script>
-
 </head>
 
 <body id="back">
+
 	<div id="first_navigation">
 		<ul id="ultype">
 			<li class="liheight" onmouseover="addBorder(this)"
@@ -52,6 +56,34 @@
 				href="province/System_Manage.jsp" class="indextype">系统管理</a></li>
 		</ul>
 	</div>
+
+	<div>
+		<button name="button_addmessage" id="button_addmessage" onclick="addmessage()">添加</button>
+	</div>
+
+	<div id="addedmessage">
+		<%
+			//String com_id = (String)session.getAttribute("user");
+			serviceOfProvince s = new serviceOfProvince();
+			ResultSet rs = s.selectnewspub("1120132142");
+			
+		%>
+		<!--<p>fdsafdassf</p>
+		<p>fdsafdassf</p>
+		<p>fdsafdassf</p>
+		<p>fdsafdassf</p>
+		<p>fdsafdassf</p>
+		<p>fdsafdassf</p>
+		<p>fdsafdassf</p>
+		<p>fdsafdassf</p>
+		<p>fdsafdassf</p>
+		<p>fdsafdassf</p>
+		<p>fdsafdassf</p>
+		<p>fdsafdassf</p>
+		<p>fdsafdassf</p>-->
+	</div>
+
+	<div id="div_add"></div>
 
 </body>
 
