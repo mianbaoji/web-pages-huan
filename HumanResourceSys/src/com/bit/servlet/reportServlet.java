@@ -2,6 +2,7 @@ package com.bit.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -67,28 +68,35 @@ public class reportServlet extends HttpServlet {
 		//前端代码也没有
 		//String com_id = request.getParameter("com_id");
 		//Integer table_id = Integer.valueOf(request.getParameter("table_id"));
-		//request
+		
 		Integer people_ago = Integer.valueOf(request.getParameter("people_ago"));
 		Integer people_now = Integer.valueOf(request.getParameter("people_now"));
 		String other_reason = request.getParameter("other_reason");
+		other_reason= new String(other_reason.getBytes("ISO8859-1"), "utf-8");
 		String type = request.getParameter("type");
+		type= new String(type.getBytes("ISO8859-1"), "utf-8");
 		String reason_1 = request.getParameter("reason_1");
+		reason_1= new String(reason_1.getBytes("ISO8859-1"), "utf-8");
 		String reason_2 = request.getParameter("reason_2");
+		reason_1= new String(reason_1.getBytes("ISO8859-1"), "utf-8");
 		String reason_3 = request.getParameter("reason_3");
+		reason_1= new String(reason_1.getBytes("ISO8859-1"), "utf-8");
 		String explain_1 = request.getParameter("explain_1");
+		explain_1= new String(explain_1.getBytes("ISO8859-1"), "utf-8");
 		String explain_2 = request.getParameter("explain_2");
+		explain_2= new String(explain_2.getBytes("ISO8859-1"), "utf-8");
 		String explain_3 = request.getParameter("explain_3");
-		String status = request.getParameter("status");
-		Integer time_id = Integer.valueOf(request.getParameter("time_id"));
+		explain_2= new String(explain_2.getBytes("ISO8859-1"), "utf-8");
+		String status ="checking";
 		
 		EnterpriseDataTable enterpriseDataTable = new EnterpriseDataTable();
 		
 		//enterpriseDataTable.setCom_id(com_id);
-		//enterpriseDataTable.setTable_id(table_id);
+
 		enterpriseDataTable.setPeople_ago(people_ago);
 		enterpriseDataTable.setPeople_now(people_now);
 		enterpriseDataTable.setOther_reason(other_reason);
-		enterpriseDataTable.setOther_reason(other_reason);
+	
 		enterpriseDataTable.setType(type);
 		enterpriseDataTable.setReason_1(reason_1);
 		enterpriseDataTable.setReason_2(reason_2);
@@ -97,20 +105,24 @@ public class reportServlet extends HttpServlet {
 		enterpriseDataTable.setExplain_2(explain_2);
 		enterpriseDataTable.setExplain_3(explain_3);
 		enterpriseDataTable.setStatus(status);
-		enterpriseDataTable.setTime_id(time_id);
 
 		//service
 		try {
+			System.out.println("0");
 			HttpSession session = request.getSession();
-			if(new serviceOfEnterprise().addEnterpriseData(enterpriseDataTable, ((userInfoTable) request.getAttribute("user")).getUser_id())){
+			String com_id=(String) session.getAttribute("user");
+			System.out.println("1");
+			if(new serviceOfEnterprise().addEnterpriseData(enterpriseDataTable, com_id)){
+				
 				session.setAttribute("message", "success");//如果新增数据成功，则封装一个成功的Session信号
 			}
 			else{
 				session.setAttribute("message", "failed");//如果新增数据失败，则封装一个失败的Session信号
 			}
-			response.sendRedirect("../Report.jsp");//跳转回原界面
+			response.sendRedirect("../enterprise/Report.jsp");//跳转回原界面
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			System.out.println("error");
 			e.printStackTrace();
 		}
 		
