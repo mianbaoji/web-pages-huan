@@ -6,6 +6,7 @@
 	font-family: '隶书';
 	font-size: 20px;
 	text-align: center;
+	color:#455155;
 	border: 0.5px dashed;
 }
 
@@ -23,5 +24,6 @@
 
 .table_size{
 	font-size: 20px;
+	color:#455155;
 }
 

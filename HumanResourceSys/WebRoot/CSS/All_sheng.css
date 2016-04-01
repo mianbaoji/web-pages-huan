@@ -2,6 +2,7 @@
 	background-image: url(../image/navBackground.jpg);
 	background-size: 100% 150%;
 	background-repeat: no-repeat;
+	font-family: '隶书';
 }
 
 #first_navigation {
@@ -9,8 +10,7 @@
 	top: 30%;
 	width: 200px;
 	height: auto;
-	position: fixed;
-	font-family: '隶书';
+	position: absolute;
 	font-size: 27px;
 	text-align: center;
 }
@@ -28,4 +28,3 @@
 .liheight {
 	height: 45px;
 }
-
