@@ -2,10 +2,7 @@ package com.bit.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-<<<<<<< HEAD
-=======
 import java.util.Calendar;
->>>>>>> refs/remotes/origin/çœç”¨æˆ·ç«¯
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -67,27 +64,8 @@ public class reportServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		
-<<<<<<< HEAD
 		//todo ç»„ç»‡æœºæ„ä»£ç ï¼Œåœ¨å“ªé¢„ç½®ï¼Ÿ
 		//å‰ç«¯ä»£ç ä¹Ÿæ²¡æœ‰
-		//String com_id = request.getParameter("com_id");
-		//Integer table_id = Integer.valueOf(request.getParameter("table_id"));
-		//request
-		Integer people_ago = Integer.valueOf(request.getParameter("people_ago"));
-		Integer people_now = Integer.valueOf(request.getParameter("people_now"));
-		String other_reason = request.getParameter("other_reason");
-		String type = request.getParameter("type");
-		String reason_1 = request.getParameter("reason_1");
-		String reason_2 = request.getParameter("reason_2");
-		String reason_3 = request.getParameter("reason_3");
-		String explain_1 = request.getParameter("explain_1");
-		String explain_2 = request.getParameter("explain_2");
-		String explain_3 = request.getParameter("explain_3");
-		String status = request.getParameter("status");
-		Integer time_id = Integer.valueOf(request.getParameter("time_id"));
-=======
-		//todo ×éÖ¯»ú¹¹´úÂë£¬ÔÚÄÄÔ¤ÖÃ£¿
-		//Ç°¶Ë´úÂëÒ²Ã»ÓĞ
 		//String com_id = request.getParameter("com_id");
 		//Integer table_id = Integer.valueOf(request.getParameter("table_id"));
 		
@@ -110,24 +88,15 @@ public class reportServlet extends HttpServlet {
 		String explain_3 = request.getParameter("explain_3");
 		explain_2= new String(explain_2.getBytes("ISO8859-1"), "utf-8");
 		String status ="checking";
->>>>>>> refs/remotes/origin/çœç”¨æˆ·ç«¯
 		
 		EnterpriseDataTable enterpriseDataTable = new EnterpriseDataTable();
 		
 		//enterpriseDataTable.setCom_id(com_id);
-<<<<<<< HEAD
-		//enterpriseDataTable.setTable_id(table_id);
-		enterpriseDataTable.setPeople_ago(people_ago);
-		enterpriseDataTable.setPeople_now(people_now);
-		enterpriseDataTable.setOther_reason(other_reason);
-		enterpriseDataTable.setOther_reason(other_reason);
-=======
 
 		enterpriseDataTable.setPeople_ago(people_ago);
 		enterpriseDataTable.setPeople_now(people_now);
 		enterpriseDataTable.setOther_reason(other_reason);
 	
->>>>>>> refs/remotes/origin/çœç”¨æˆ·ç«¯
 		enterpriseDataTable.setType(type);
 		enterpriseDataTable.setReason_1(reason_1);
 		enterpriseDataTable.setReason_2(reason_2);
@@ -136,22 +105,6 @@ public class reportServlet extends HttpServlet {
 		enterpriseDataTable.setExplain_2(explain_2);
 		enterpriseDataTable.setExplain_3(explain_3);
 		enterpriseDataTable.setStatus(status);
-<<<<<<< HEAD
-		enterpriseDataTable.setTime_id(time_id);
-
-		//service
-		try {
-			HttpSession session = request.getSession();
-			if(new serviceOfEnterprise().addEnterpriseData(enterpriseDataTable, ((userInfoTable) request.getAttribute("user")).getUser_id())){
-				session.setAttribute("message", "success");//å¦‚æœæ–°å¢æ•°æ®æˆåŠŸï¼Œåˆ™å°è£…ä¸€ä¸ªæˆåŠŸçš„Sessionä¿¡å·
-			}
-			else{
-				session.setAttribute("message", "failed");//å¦‚æœæ–°å¢æ•°æ®å¤±è´¥ï¼Œåˆ™å°è£…ä¸€ä¸ªå¤±è´¥çš„Sessionä¿¡å·
-			}
-			response.sendRedirect("../Report.jsp");//è·³è½¬å›åŸç•Œé¢
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-=======
 
 		//service
 		try {
@@ -161,16 +114,15 @@ public class reportServlet extends HttpServlet {
 			System.out.println("1");
 			if(new serviceOfEnterprise().addEnterpriseData(enterpriseDataTable, com_id)){
 				
-				session.setAttribute("message", "success");//Èç¹ûĞÂÔöÊı¾İ³É¹¦£¬Ôò·â×°Ò»¸ö³É¹¦µÄSessionĞÅºÅ
+				session.setAttribute("message", "success");//å¦‚æœæ–°å¢æ•°æ®æˆåŠŸï¼Œåˆ™å°è£…ä¸€ä¸ªæˆåŠŸçš„Sessionä¿¡å·
 			}
 			else{
-				session.setAttribute("message", "failed");//Èç¹ûĞÂÔöÊı¾İÊ§°Ü£¬Ôò·â×°Ò»¸öÊ§°ÜµÄSessionĞÅºÅ
+				session.setAttribute("message", "failed");//å¦‚æœæ–°å¢æ•°æ®å¤±è´¥ï¼Œåˆ™å°è£…ä¸€ä¸ªå¤±è´¥çš„Sessionä¿¡å·
 			}
-			response.sendRedirect("../enterprise/Report.jsp");//Ìø×ª»ØÔ­½çÃæ
+			response.sendRedirect("../enterprise/Report.jsp");//è·³è½¬å›åŸç•Œé¢
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("error");
->>>>>>> refs/remotes/origin/çœç”¨æˆ·ç«¯
 			e.printStackTrace();
 		}
 		

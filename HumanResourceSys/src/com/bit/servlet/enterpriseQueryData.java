@@ -59,28 +59,12 @@ public class enterpriseQueryData extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-<<<<<<< HEAD
-		request.setCharacterEncoding("GBK"); 
-		response.setCharacterEncoding("GBK");
-		Integer id = Integer.parseInt(request.getParameter("id"));
-		String com_id = ((userInfoTable) request.getAttribute("user")).getUser_id();//获取企业id,作为组织机构的com_id
-		String time_year = null;//此处应该 request.getParameter("time_year"); 但是前面没有
-		String time_month = null;//同上
-		
-		
-		//service
-		try {
-			EnterpriseDataTable enterpriseInfoTable = new serviceOfEnterprise().queryEnterpriseData(com_id, time_year, time_month);
-			HttpSession session = request.getSession();
-			session.setAttribute("enterpriseInfoTable", enterpriseInfoTable);
-			response.sendRedirect("../Inquire.jsp");//跳转回原界面
-=======
 		request.setCharacterEncoding("UTF-8"); 
 		response.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		String com_id = (String) session.getAttribute("user");//鑾峰彇浼佷笟id,浣滀负缁勭粐鏈烘瀯鐨刢om_id
-		String time_year = request.getParameter("selYear");//姝ゅ搴旇 request.getParameter("time_year"); 浣嗘槸鍓嶉潰娌℃湁
-		String time_month = null;//鍚屼笂
+		String com_id = (String) session.getAttribute("user");//获取企业id,作为组织机构的com_id
+		String time_year = request.getParameter("selYear");//此处应该 request.getParameter("time_year"); 但是前面没有
+		String time_month = null;//同上
 		int month= Integer.valueOf( request.getParameter("selMonth"));
 		if(month <10)
 		{
@@ -89,7 +73,7 @@ public class enterpriseQueryData extends HttpServlet {
 		time_month=time_month+request.getParameter("selMonth");
 		session.setAttribute("year", Integer.valueOf(time_year));
 		session.setAttribute("month", Integer.valueOf(time_month));
-		System.out.println(time_year+"骞�+time_month");
+		System.out.println(time_year+"年"+time_month);
 		//service
 		try {
 			EnterpriseDataTable enterpriseDataTable = new serviceOfEnterprise().queryEnterpriseData(com_id, time_year, time_month);
@@ -106,8 +90,7 @@ public class enterpriseQueryData extends HttpServlet {
 			session.setAttribute("enterpriseDataTable", enterpriseDataTable);
 			}
 			
-			response.sendRedirect("../enterprise/Inquire.jsp");//璺宠浆鍥炲師鐣岄潰
->>>>>>> refs/remotes/origin/省用户端
+			response.sendRedirect("../enterprise/Inquire.jsp");//跳转回原界面
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
