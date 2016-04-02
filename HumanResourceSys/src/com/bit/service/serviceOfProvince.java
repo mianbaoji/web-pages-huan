@@ -136,6 +136,9 @@ public class serviceOfProvince {
 		if (pdq.getCom_property() != "") {
 			sql += "and com_property like '%" + pdq.getCom_property() + "%'";
 		}
+		if (pdq.getCom_industry() != "") {
+			sql += "and com_industry like '%" + pdq.getCom_industry() + "%'";
+		}
 		if (pdq.getArea() != "") {
 			sql += "and com_area=" + pdq.getArea();
 		}

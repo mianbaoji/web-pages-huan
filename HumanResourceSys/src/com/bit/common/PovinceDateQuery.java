@@ -2,6 +2,7 @@ package com.bit.common;
 
 public class PovinceDateQuery {
 	private String com_name;
+	private String com_industry;
 	private String ID;
 	private String user_type;
 	private String area;
@@ -10,6 +11,12 @@ public class PovinceDateQuery {
 	private String start_y;
 	private String end_m;
 	private String end_y;
+	public String getCom_industry() {
+		return com_industry;
+	}
+	public void setCom_industry(String com_industry) {
+		this.com_industry = com_industry;
+	}
 	public String getCom_name() {
 		return com_name;
 	}
