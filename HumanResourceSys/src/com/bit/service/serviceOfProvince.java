@@ -91,22 +91,14 @@ public class serviceOfProvince {
 		}
 	}
 
-	public List selectEnterpriseDate(String place)// 根据地点查询企业信息
+	public ResultSet selectEnterpriseDate(String place)// 根据地点查询企业信息
 	{
-		List list_ent = new ArrayList();
 		try {
 			pstmt = conn
 					.prepareStatement("select com_name,com_area,com_id from com_info where com_area=?");
 			pstmt.setString(1, place);
 			ResultSet rs = pstmt.executeQuery();
-			while (rs.next()) {
-				EnterpriseInfoTable enterpriseInfoTable = new EnterpriseInfoTable();
-				enterpriseInfoTable.setCom_name(rs.getString(1));
-				enterpriseInfoTable.setCom_area(rs.getString(2));
-				enterpriseInfoTable.setCom_id(rs.getString(3));
-				list_ent.add(enterpriseInfoTable);
-			}
-			return list_ent;
+			return rs;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -148,7 +140,11 @@ public class serviceOfProvince {
 			sql += "and com_area=" + pdq.getArea();
 		}
 		if (pdq.getID() != "") {
-			sql += "and com_id=" + pdq.getID();
+			sql += "and com_info.com_id=" + pdq.getID();
+		}
+		if (pdq.getUser_type() != "") {
+			sql += "and com_info.com_id in(select user_id from user_table where user_type="
+					+ pdq.getUser_type() + ")";
 		}
 		try {
 			System.out.println(sql);
@@ -166,5 +162,98 @@ public class serviceOfProvince {
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	public ResultSet tableviewenterprise(String year, String month) {
+		try {
+			pstmt = conn
+					.prepareStatement("select com_area,count(com_info.com_id),sum(people_now-people_ago) from com_data,com_info where com_data.com_id=com_info.com_id and time_id in(select time_id from time_table where time_year=? and time_month=?)group by com_area");
+			pstmt.setString(1, year);
+			pstmt.setString(2, month);
+			ResultSet rs = pstmt.executeQuery();
+			return rs;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public boolean datastatuschang(String table_id, String n_status) {
+		try {
+			pstmt = conn
+					.prepareStatement("update com_data set status=? where table_id=?");
+			pstmt.setString(1, n_status);
+			pstmt.setString(2, table_id);
+			pstmt.executeUpdate();
+			pstmt = conn
+					.prepareStatement("select com_id from com_data where table_id=?");
+			pstmt.setString(1, table_id);
+			ResultSet rs = pstmt.executeQuery();
+			rs.next();
+			String idString = rs.getString(1);
+			pstmt = conn
+					.prepareStatement("insert into news_table(news_head,news_time,news_content,news_pub,news_sub,news_status) values('申请状态变更',now(),'您的申请状态已变更，请注意查看','0',?,'未查看')");
+			pstmt.setString(1, idString);
+			pstmt.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+	public int allpeople_nowselect(String year,String month,String property,String industry,String area){
+		String sql="select sum(com_data.people_now) from com_data,com_info where com_data.time_id in(select time_id from time_table where time_year=? and time_month=?) and com_data.com_id=com_info.com_id";
+		if(property!=""){
+			sql+="and com_property="+property;
+		}
+		if(industry!=""){
+			sql+="and com_industry="+industry;
+		}
+		if(area!=""){
+			sql+="and com_area="+area;
+		}
+		int number=0;
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, year);
+			pstmt.setString(2, month);
+			ResultSet rs=pstmt.executeQuery();
+			rs.next();
+			number=Integer.valueOf(rs.getString(1));
+			return number;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return 0;
+		}
+	}
+	public ResultSet onepeople_nowselect(String s_y,String s_m,String e_y,String e_m,String com_name){
+		try {
+			pstmt=conn.prepareStatement("select sun(people_now) from com_data ,com_info where com_name=? and com_data.com_id=com_info.com_id and time_id in(select time_id from time_table where (time_year>=? or (time_year=? and time_month>=?))and(time_year<=? or (time_year=? and time_month<=?)))");
+			String year="";
+			int yearint=0;
+			pstmt.setString(1, com_name);
+			yearint=Integer.valueOf(s_y);
+			yearint++;
+			year=String.valueOf(yearint);
+			pstmt.setString(2, year);
+			pstmt.setString(3, s_y);
+			pstmt.setString(4, s_m);
+			
+			yearint=Integer.valueOf(e_y);
+			yearint--;
+			year=String.valueOf(yearint);
+			pstmt.setString(5, year);
+			pstmt.setString(6, e_y);
+			pstmt.setString(7, e_m);
+			ResultSet rsResultSet=pstmt.executeQuery();
+			return rsResultSet;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}	
 	}
 }
