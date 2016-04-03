@@ -35,8 +35,11 @@ function checkInput(content)
 		return false;
 	}
 	//else{//todo ask
-		document.loginForm.action="servlet/loginServlet";
-		document.loginForm.submit();
+		document.s_loginForm.action="servlet/loginServlet?userType=province";
+		document.s_loginForm.submit();
+		
+		document.q_loginForm.action="servlet/loginServlet?userType=enterprise";
+		document.q_loginForm.submit();
 	//}
 	
 }
