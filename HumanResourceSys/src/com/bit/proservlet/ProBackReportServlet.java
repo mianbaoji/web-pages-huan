@@ -1,7 +1,8 @@
-package com.bit.servlet;
+package com.bit.proservlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,15 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.bit.common.userInfoTable;
-import com.bit.service.serviceOfAll;
+import com.bit.common.EnterpriseInfoTable;
+import com.bit.service.serviceOfPrince2;
 
-public class loginServlet extends HttpServlet {
+public class ProBackReportServlet extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public loginServlet() {
+	public ProBackReportServlet() {
 		super();
 	}
 
@@ -31,7 +32,7 @@ public class loginServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
-	 * 
+	 *
 	 * This method is called when a form has its tag value method equals to get.
 	 * 
 	 * @param request
@@ -50,7 +51,7 @@ public class loginServlet extends HttpServlet {
 
 	/**
 	 * The doPost method of the servlet. <br>
-	 * 
+	 *
 	 * This method is called when a form has its tag value method equals to
 	 * post.
 	 * 
@@ -67,39 +68,24 @@ public class loginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		String userType = request.getParameter("userType");
-		userInfoTable userInfo = new userInfoTable();
-		userInfo.setUser_id(username);
-		userInfo.setPassword(password);
-		userInfo.setUser_type(userType);
-		try {
-			if (new serviceOfAll().valiUser(userInfo)) {
-				HttpSession session = request.getSession();
-				session.setAttribute("user", username);
-				if (userType.equalsIgnoreCase("enterprise")) {
-					response.sendRedirect("../enterprise/HomePage.jsp");
-				}
-				else if(userType.equalsIgnoreCase("province"))
-				{
-					response.sendRedirect("../province/home_sheng.jsp");
-				}
-			}
 
-			else {
-				request.getSession().setAttribute("loginFailed", "true");
-				response.sendRedirect("../index.jsp");
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String table_id = request.getParameter("table_id");// 企业ID
+		
+		// service
+		// 从前端接收：企业ID（企业名称）、时间（年、月）
+		// 传给Service: 企业ID（企业名称）、时间（年、月）
+		// Service返回：ture || false (boolean)
+		// 返回前端：ture || false (boolean)
+
+		Boolean flag = new serviceOfPrince2().datastatuschang(table_id, "已退回");
+		HttpSession session = request.getSession();
+		session.setAttribute("flag_ProQueryEnt", "0");
+		response.sendRedirect("../province/List_Manage.jsp");
 	}
 
 	/**
 	 * Initialization of the servlet. <br>
-	 * 
+	 *
 	 * @throws ServletException
 	 *             if an error occurs
 	 */

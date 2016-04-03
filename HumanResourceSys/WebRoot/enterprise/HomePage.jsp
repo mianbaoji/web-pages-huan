@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="CSS/All.css" />
 <link rel="stylesheet" type="text/css" href="CSS/Enterprise.css" />
 <title>首页</title>
-
+<jsp:include page="../isLogin.jsp"></jsp:include>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -38,11 +38,11 @@
 			</li>
 			<li><a href="enterprise/Inquire.jsp">数据查询</a>
 			</li>
-			<div id="exit"><a href="exit.jsp">注销</a>
+			<div id="exit"><a href="enterExit.jsp">注销</a>
 			</div>
 		</ul>
 	</div>
-	<div class="box">
+	<div class="box" id="home_page">
 	</div>
 	
 </body>

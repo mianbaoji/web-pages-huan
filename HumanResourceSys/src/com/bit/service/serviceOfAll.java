@@ -20,6 +20,7 @@ public class serviceOfAll {
 	public serviceOfAll(){
 		conn = new com.bit.conn.conn().getCon();
 	}
+	
 	public boolean valiUser(userInfoTable user) {
 		try {
 			pstmt = conn

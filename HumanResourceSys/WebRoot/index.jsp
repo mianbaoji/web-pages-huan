@@ -26,7 +26,7 @@
 					<li><a href="#">企业用户登录</a></li>
 				</ul>
 			</div>
-			<form action="servlet/loginServlet" onsubmit="return checkInput(this)">
+			<form onsubmit="return checkInput(this)" name="s_loginForm">
 				<div id="login_body">
 					<div id="login_content">
 						<div name="login_box" style="display:block">
@@ -59,7 +59,7 @@
 						</div>
 						
 			</form>
-			<form action="servlet/loginServlet"   onsubmit="return checkInput(this)" >
+			<form   onsubmit="return checkInput(this)" name="q_loginForm" >
 				<div name="login_box" style="display:none">
 					<div>
 						<div>
