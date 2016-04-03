@@ -1,4 +1,3 @@
-<%@page import="com.bit.common.userInfoTable"%>
 <%@page import="java.sql.ResultSet"%>
 <%@ page import="com.bit.service.serviceOfProvince"%>>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
@@ -22,10 +21,6 @@
 
 <body id="back">
 
-	<%
-		String user = (String)session.getAttribute("user");
-	%>
-
 	<div class="add" style="top:15%">
 		<form action="Publish_Inform_Add_Result.jsp">
 			<p>
@@ -41,7 +36,8 @@
 					style='font-size:20px;width:370px;height:100px;'>
 			</p>
 			<p>
-				发布人:<%=user %><input type='hidden' name="news_pub" value=<%=user %>>
+				发布人:<input type='text' name="news_pub"
+					style='font-size:20px;width:230px;height:30px'>
 			</p>
 			<p>
 				接收人:<input type="text" name="news_sub" placeholder="所有人"

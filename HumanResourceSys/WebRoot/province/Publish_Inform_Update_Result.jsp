@@ -27,42 +27,42 @@
 		if (old_news_head == null) {
 			old_news_head = "";
 		}
-		byte b[] = old_news_head.getBytes("utf-8");
+		byte b[] = old_news_head.getBytes("ISO-8859-1");
 		old_news_head = new String(b);
 
 		String news_head = request.getParameter("news_head");
 		if (news_head == null) {
 			news_head = "";
 		}
-		b = news_head.getBytes("utf-8");
+		b = news_head.getBytes("ISO-8859-1");
 		news_head = new String(b);
 
 		String news_time = request.getParameter("news_time");
 		if (news_time == null) {
 			news_time = "";
 		}
-		b = news_time.getBytes("utf-8");
+		b = news_time.getBytes("ISO-8859-1");
 		news_time = new String(b);
 
 		String news_content = request.getParameter("news_content");
 		if (news_content == null) {
 			news_content = "";
 		}
-		b = news_content.getBytes("utf-8");
+		b = news_content.getBytes("ISO-8859-1");
 		news_content = new String(b);
 
 		String news_pub = request.getParameter("news_pub");
 		if (news_pub == null) {
 			news_pub = "";
 		}
-		b = news_pub.getBytes("utf-8");
+		b = news_pub.getBytes("ISO-8859-1");
 		news_pub = new String(b);
 
 		String news_sub = request.getParameter("news_sub");
 		if (news_sub == null) {
 			news_sub = "";
 		}
-		b = news_sub.getBytes("utf-8");
+		b = news_sub.getBytes("ISO-8859-1");
 		news_sub = new String(b);
 
 		serviceOfProvince s = new serviceOfProvince();

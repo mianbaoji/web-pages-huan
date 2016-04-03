@@ -47,17 +47,33 @@
 		</ul>
 	</div>
 
-	<div id="info2">
-		<ul id="ultype_analysis">
-			<li style="display:inline-block;width:320px;text-align:center"
-				class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="Sys_usermanage.jsp"
-				class="indextype">用户管理</a></li>
-			<li style="display:inline-block;width:320px;text-align:center"
-				class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="Sys_smanage.jsp"
-				class="indextype">系统管理</a></li>
-		</ul>
+	<div id="info">
+		<table border="1" id="tablecss">
+			<tr>
+				<th class="twh">名称</th>
+				<th class="twh">CPU</th>
+				<th class="twh">内存</th>
+				<th class="twh">硬盘</th>
+			</tr>
+			<tr>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+			</tr>
+			<tr>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+			</tr>
+			<tr>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+			</tr>
+		</table>
 	</div>
 
 </body>

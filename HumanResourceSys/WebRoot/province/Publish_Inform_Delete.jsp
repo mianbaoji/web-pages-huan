@@ -26,14 +26,14 @@
 		if (news_head == null) {
 			news_head = "";
 		}
-		byte b[] = news_head.getBytes("utf-8");
+		byte b[] = news_head.getBytes("ISO-8859-1");
 		news_head = new String(b);
 
 		String news_time = request.getParameter("news_time");
 		if (news_time == null) {
 			news_time = "";
 		}
-		b = news_time.getBytes("utf-8");
+		b = news_time.getBytes("ISO-8859-1");
 		news_time = new String(b);
 
 		serviceOfProvince s = new serviceOfProvince();
