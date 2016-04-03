@@ -12,7 +12,7 @@
 <base href="<%=basePath%>">
 
 <title>报表管理</title>
-<jsp:include page="../isLogin.jsp"></jsp:include>
+
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -21,7 +21,6 @@
 <link rel="stylesheet" type="text/css" href="CSS/enterprise_sheng.css">
 <link rel="stylesheet" type="text/css" href="CSS/home_sheng.css" />
 <link rel="stylesheet" type="text/css" href="CSS/list_sheng.css" />
-<link rel="stylesheet" type="text/css" href="CSS/All.css" />
 <script src="JS/home_sheng.js"></script>
 
 </head>
@@ -36,24 +35,24 @@
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
 				href="province/Enterprise_Record.jsp" class="indextype">企业备案</a></li>
-			<!-- <li class="liheight" onmouseover="addBorder(this)"
+			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Enterprise_Query.jsp" class="indextype">企业查询</a></li> -->
+				href="province/Enterprise_Query.jsp" class="indextype">企业查询</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
 				href="province/List_Manage.jsp" class="indextype">报表管理</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Data_Query.jsp" class="indextype">数据查询</a></li>
+				href="province/home_sheng.jsp" class="indextype">数据查询</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Data_Analysis.jsp" class="indextype">数据分析</a></li>
+				href="province/home_sheng.jsp" class="indextype">数据分析</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Publish_Inform.jsp" class="indextype">发布通知</a></li>
+				href="province/home_sheng.jsp" class="indextype">发布通知</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/System_Manage.jsp" class="indextype">系统管理</a></li>
+				href="province/home_sheng.jsp" class="indextype">系统管理</a></li>
 		</ul>
 	</div>
 	<!-- 
@@ -87,9 +86,9 @@
 	</div>
 	 -->
 	<div id="list_query">
-		<!-- 企业名称：<input type="text" name="enterP_name"></input>  -->
-		企业ID：<input type="text" name="enterP_id"></input> 申报时间：<select
-			name="Begin_Year" class="checkbox">
+		企业名称：<input type="text" name="enterP_name"></input> 企业ID：<input
+			type="text" name="enterP_id"></input> 申报时间：<select name="Begin_Year"
+			class="checkbox">
 			<option>1975</option>
 			<option>1976</option>
 			<option>1977</option>
@@ -148,9 +147,10 @@
 		</select>月 <input type="submit" name="search" value="检索"> <br></br>
 		<table border>
 			<tr class="table_size">
-				<th width="250">地区</th>
-				<th width="250">调查期</th>
-				<th width="250">操作</th>
+				<th width="150">企业名</th>
+				<th width="150">地区</th>
+				<th width="200">调查区</th>
+				<th width="200">操作</th>
 			</tr>
 			<tr>
 

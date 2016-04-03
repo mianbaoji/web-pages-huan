@@ -12,7 +12,7 @@
 <base href="<%=basePath%>">
 
 <title>企业查询界面</title>
-<jsp:include page="../isLogin.jsp"></jsp:include>
+
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -28,29 +28,29 @@
 	<div id="first_navigation">
 		<ul id="ultype">
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="province/home_sheng.jsp" class="indextype">首页</a></li>
+				onmouseout="removeBorder(this)"><a href="province/home_sheng.jsp"
+				class="indextype">首页</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="province/Enterprise_Record.jsp" class="indextype">企业备案</a></li>
+				onmouseout="removeBorder(this)"><a href="province/Enterprise_Record.jsp"
+				class="indextype">企业备案</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="province/Enterprise_Query.jsp" class="indextype">企业查询</a></li>
+				onmouseout="removeBorder(this)"><a href="province/Enterprise_Query.jsp"
+				class="indextype">企业查询</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="province/List_Manage.jsp" class="indextype">报表管理</a></li>
+				onmouseout="removeBorder(this)"><a href="province/List_Manage.jsp"
+				class="indextype">报表管理</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="province/Data_Query.jsp" class="indextype">数据查询</a></li>
+				onmouseout="removeBorder(this)"><a href="province/home_sheng.jsp"
+				class="indextype">数据查询</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="province/Data_Analysis.jsp" class="indextype">数据分析</a></li>
+				onmouseout="removeBorder(this)"><a href="province/home_sheng.jsp"
+				class="indextype">数据分析</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="province/Publish_Inform.jsp" class="indextype">发布通知</a></li>
+				onmouseout="removeBorder(this)"><a href="province/home_sheng.jsp"
+				class="indextype">发布通知</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="province/System_Manage.jsp" class="indextype">系统管理</a></li>
+				onmouseout="removeBorder(this)"><a href="province/home_sheng.jsp"
+				class="indextype">系统管理</a></li>
 		</ul>
 	</div>
 	<div id="enter_query">
