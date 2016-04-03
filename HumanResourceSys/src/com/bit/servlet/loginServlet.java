@@ -80,8 +80,10 @@ public class loginServlet extends HttpServlet {
 				session.setAttribute("user", username);
 				if (userType.equalsIgnoreCase("enterprise")) {
 					response.sendRedirect("../enterprise/HomePage.jsp");
-				} else {
-					response.sendRedirect("../province/home_sheng.jsp");
+				}
+				else
+				{
+					response.sendRedirect("../loginSuccessed.jsp");
 				}
 			}
 
