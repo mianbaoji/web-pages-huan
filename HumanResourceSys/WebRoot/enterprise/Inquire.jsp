@@ -46,21 +46,17 @@
 		<div id="inquire">
 			<!-- <input type="text" /> -->
 			调查期日期 &nbsp &nbsp<select id="selYear" name="selYear"></select>年 <select
-				id="selMonth" name="selMonth"></select>月 <select id="selDay"
-				name="selDay" style="display:none"></select>
+				id="selMonth" name="selMonth" ></select>月 <select id="selDay"
+				name="selDay"  style="display:none"></select>
 			<script type="text/javascript">
 				var selYear = window.document.getElementById("selYear");
 				var selMonth = window.document.getElementById("selMonth");
 				var selDay = window.document.getElementById("selDay");
 				// 新建一个DateSelector类的实例，将三个select对象传进去
-				var month =
-			<%=session.getAttribute("month")%>
-				;
-				var year =
-			<%=session.getAttribute("year")%>
-				;
-				new DateSelector(selYear, selMonth, selDay, year, month, 1);
-
+				var month =<%=session.getAttribute("month")%>;
+				var year  =<%=session.getAttribute("year")%>;
+				new DateSelector(selYear, selMonth, selDay,year,month,1);
+				
 				// var dt = new Date(2004, 1, 29);
 				// new DateSelector(selYear, selMonth ,selDay, dt);
 			</script>
@@ -72,14 +68,16 @@
 
 	<%
 		if (session.getAttribute("message") != null) {
-
+		
 			if (session.getAttribute("message") == "failed") {
 	%>
 	<script type="text/javascript">
 		alert('无查询结果');
 	</script>
 	<%
-		} else if (session.getAttribute("message") == "success") {
+			} 
+		else if (session.getAttribute("message") == "success") 
+		{
 				EnterpriseDataTable enterDataTable = (EnterpriseDataTable) session
 						.getAttribute("enterpriseDataTable");
 	%>

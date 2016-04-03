@@ -1,13 +1,13 @@
 #back {
 	background-image: url(../image/navBackground.jpg);
-	background-size: 100% 150%;
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	font-family: '隶书';
 }
 
 #first_navigation {
 	left: 3%;
-	top: 30%;
+	top: 27%;
 	width: 200px;
 	height: auto;
 	position: absolute;
@@ -22,7 +22,7 @@
 
 .indextype {
 	text-decoration: none;
-	color: #455515;
+	color: #4eabc2;
 }
 
 .liheight {

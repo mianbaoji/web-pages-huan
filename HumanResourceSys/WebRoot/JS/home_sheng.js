@@ -3,7 +3,7 @@
  */
 
 function addBorder(obj) {
-	obj.style.border = "1px solid";
+	obj.style.border = "1px solid #4eabc2";
 }
 
 function removeBorder(obj) {

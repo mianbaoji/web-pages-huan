@@ -1,5 +1,3 @@
-<%@page import="java.sql.ResultSet"%>
-<%@ page import="com.bit.service.serviceOfProvince"%>>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -14,8 +12,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>省用户首页</title>
 <link rel="stylesheet" type="text/css" href="../CSS/All_sheng.css" />
-<link rel="stylesheet" type="text/css" href="../CSS/Publish_Inform.css" />
-<script src="../JS/Publish_Inform.js"></script>
+<link rel="stylesheet" type="text/css" href="../CSS/System_Manage.css" />
 <script src="../JS/home_sheng.js"></script>
 </head>
 
@@ -50,48 +47,46 @@
 		</ul>
 	</div>
 
-	<div>
-		<button name="button_addmessage" id="button_addmessage"
-			onclick="addmessage()">添加</button>
+	<div id="info2">
+		<ul id="ultype_analysis">
+			<li style="display:inline-block;width:320px;text-align:center"
+				class="liheight" onmouseover="addBorder(this)"
+				onmouseout="removeBorder(this)"><a href="Sys_usermanage.jsp"
+				class="indextype">用户管理</a></li>
+			<li style="display:inline-block;width:320px;text-align:center"
+				class="liheight" onmouseover="addBorder(this)"
+				onmouseout="removeBorder(this)"><a href="Sys_smanage.jsp"
+				class="indextype">系统管理</a></li>
+		</ul>
 	</div>
 
-	<div id="addedmessage">
-		<%
-			String com_id = (String) session.getAttribute("user");
-			serviceOfProvince s = new serviceOfProvince();
-			ResultSet rs = s.selectnewspub(com_id);
-			int i = 0;
-			out.print("<Table Border style='font-size:20px;color:#455155'>");
-			out.print("<TR>");
-			out.print("<TH width=220 height=30>" + "标题");
-			out.print("<TH width=220>" + "发布时间");
-			out.print("<TH width=270>" + "操作");
-			out.print("</TR>");
-			while (rs.next()) {
-		%>
-		<TR>
-			<form id=<%=i%> target="test">
-				<TH width=100><%=rs.getString("news_head")%><input
-					type="hidden" value=<%=rs.getString("news_head")%> name="news_head"></TH>
-				<TH width=100><%=rs.getString("news_time")%><input
-					type="hidden" value=<%=rs.getString("news_time")%> name="news_time"></TH>
-				<input type="hidden" value=<%=rs.getString("news_content")%>
-					name="news_content"> <input type="hidden"
-					value=<%=rs.getString("news_pub")%> name="news_pub"> <input
-					type="hidden" value=<%=rs.getString("news_sub")%> name="news_sub">
-				<TH width=270><button name="button_selectmessage"
-						class="button_dealwithmessage" onclick="select(<%=i%>)">详情</button>
-					<button name="button_updatemessage" class="button_dealwithmessage"
-						onclick="update(<%=i%>)">修改</button>
-					<button name="button_deletemessage" class="button_dealwithmessage"
-						onclick="deletem(<%=i%>)">删除</button></TH>
-			</form>
-		</TR>
-		<%
-			i++;
-			}
-			out.print("</Table>");
-		%>
+	<div id="info">
+		<table border="1" id="tablecss">
+			<tr>
+				<th class="twh">名称</th>
+				<th class="twh">CPU</th>
+				<th class="twh">内存</th>
+				<th class="twh">硬盘</th>
+			</tr>
+			<tr>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+			</tr>
+			<tr>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+			</tr>
+			<tr>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+			</tr>
+		</table>
 	</div>
 
 </body>

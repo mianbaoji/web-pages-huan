@@ -52,13 +52,14 @@
 								<input type="checkbox" name="密码" value="记住密码" checked="checked" />记住密码
 							</div>
 							<div>
-								<br /> <a><input id="login_button" type="submit"
-									value="登录" /> </a> <input name="userType" value="province"
-									style="display:none" />
+								<br /> <a ><input
+									id="login_button" type="submit" value="登录" /> </a>
+									<input name="userType" value="province" style="display:none"/>
 							</div>
 						</div>
+						
 			</form>
-			<form onsubmit="return checkInput(this)" name="q_loginForm">
+			<form   onsubmit="return checkInput(this)" name="q_loginForm" >
 				<div name="login_box" style="display:none">
 					<div>
 						<div>
@@ -81,10 +82,11 @@
 						<input type="checkbox" name="密码" value="记住密码" checked="checked" />记住密码
 					</div>
 					<div>
-						<br /> <input id="login_button" type="submit" value="登录" />
+						<br /> <input
+							id="login_button" type="submit" value="登录" />
 					</div>
-
-					<input name="userType" value="enterprise" style="display:none" />
+					
+					<input name="userType" value="enterprise" style="display:none"/>
 			</form>
 		</div>
 	</div>

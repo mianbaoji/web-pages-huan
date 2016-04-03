@@ -1,20 +1,26 @@
 @CHARSET "UTF-8";
 
-#info
-{
-	position:absolute;
-	top:40%;
-	left:27%;
+#info2 {
+	position: absolute;
+	top: 17%;
+	left: 30%;
+	font-size: 30px;
+	color: #455155;
+	overflow-y: auto;
 }
 
-#tablecss
-{
-	font-size:25px;
-	color:#455155;
+#info {
+	position: absolute;
+	top: 40%;
+	left: 27%;
 }
 
-.twh
-{
-	width:200px;
-	height:30px;
+#tablecss {
+	font-size: 25px;
+	color: #455155;
+}
+
+.twh {
+	width: 200px;
+	height: 30px;
 }

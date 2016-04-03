@@ -3,11 +3,10 @@
 {
 	position:absolute;
 	top:27%;
-	left:27%;
+	left:25%;
 	width:1000px;
 	font-size:25px;
 	color:#455155;
-	overflow-y:auto;
 }
 
 .formstyle
@@ -18,3 +17,19 @@
 	color:#455155;
 }
 
+.button
+{
+	font-size:20px;
+	width: 365px;
+	height: 40px;
+	color: white;
+	background-color: #06c;
+	border: 1px solid #09F;
+	margin: auto;
+}
+
+.result
+{
+	font-size:30px;
+	color:#455155;
+}

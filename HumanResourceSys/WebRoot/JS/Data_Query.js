@@ -12,4 +12,7 @@ function check(obj)
 	{
 		obj.end_y.value = 2000;
 	}
+	
+	obj.action="Data_Query_Result.jsp";
+	obj.submit();
 }

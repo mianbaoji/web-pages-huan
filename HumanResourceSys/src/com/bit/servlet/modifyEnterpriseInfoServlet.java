@@ -70,8 +70,8 @@ public class modifyEnterpriseInfoServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 
 		HttpSession se = request.getSession();
-		String com_id = (String) se.getAttribute("user");// ��ȡ��ҵid,��Ϊ��֯������com_id
-		System.out.print("��ҵ" + com_id);
+		String com_id = (String) se.getAttribute("user");// 获取企业id,作为组织机构的com_id
+		System.out.print("企业" + com_id);
 		String com_area = request.getParameter("com_area");
 		com_area= new String(com_area.getBytes("ISO8859-1"), "utf-8");
 		String com_name = request.getParameter("com_name");
@@ -114,22 +114,22 @@ public class modifyEnterpriseInfoServlet extends HttpServlet {
 			if (session.getAttribute("flag") == "true") {
 				if (new serviceOfEnterprise()
 						.modifyEnterpriseInfo(enterpriseInfoTable)) {
-					session.setAttribute("message", "success");// ����������ݳɹ������װһ���ɹ���Session�ź�
+					session.setAttribute("message", "success");// 如果新增数据成功，则封装一个成功的Session信号
 				} else {
-					session.setAttribute("message", "failed");// �����������ʧ�ܣ����װһ��ʧ�ܵ�Session�ź�
+					session.setAttribute("message", "failed");// 如果新增数据失败，则封装一个失败的Session信号
 				}
 			}
 			else if(session.getAttribute("flag") == "false") 
 			{
 				if (new serviceOfEnterprise()
 				.insertEnterpriseInfo(enterpriseInfoTable)) {
-			session.setAttribute("message", "success");// ����������ݳɹ������װһ���ɹ���Session�ź�
+			session.setAttribute("message", "success");// 如果新增数据成功，则封装一个成功的Session信号
 		} else {
-			session.setAttribute("message", "failed");// �����������ʧ�ܣ����װһ��ʧ�ܵ�Session�ź�
+			session.setAttribute("message", "failed");// 如果新增数据失败，则封装一个失败的Session信号
 		}
 				
 			}
-			response.sendRedirect("../enterprise/EnterpriseInfo.jsp");// ��ת��ԭ����
+			response.sendRedirect("../enterprise/EnterpriseInfo.jsp");// 跳转回原界面
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

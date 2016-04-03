@@ -3,8 +3,8 @@
 #info
 {
 	position:absolute;
-	top:28%;
-	left:30%;
+	top:17%;
+	left:33%;
 	font-size:30px;
 	color:#455155;
 	overflow-y:auto;
@@ -36,4 +36,19 @@
 	background-color: #06c;
 	border: 1px solid #09F;
 	margin: auto;
+}
+
+#ultype_analysis
+{
+	list-style-type: none;
+	padding: 0px 200px 0px 2px;
+}
+
+#analysis_son
+{
+	position:absolute;
+	top:30%;
+	left:33%;
+	font-size:30px;
+	color:#455155;
 }
