@@ -130,22 +130,22 @@ public class serviceOfProvince {
 		yearint2 = Integer.valueOf(pdq.getEnd_y());
 		yearint2 -= 1;
 		yearString2 = String.valueOf(yearint2);
-		if (pdq.getCom_name() != "") {
+		if (!pdq.getCom_name().equals("")) {
 			sql += "and com_name=" + pdq.getCom_name();
 		}
-		if (pdq.getCom_property() != "") {
+		if (!pdq.getCom_property().equals("")) {
 			sql += "and com_property like '%" + pdq.getCom_property() + "%'";
 		}
-		if (pdq.getCom_industry() != "") {
+		if (!pdq.getCom_industry().equals("")) {
 			sql += "and com_industry like '%" + pdq.getCom_industry() + "%'";
 		}
-		if (pdq.getArea() != "") {
+		if (!pdq.getArea().equals("")) {
 			sql += "and com_area=" + pdq.getArea();
 		}
-		if (pdq.getID() != "") {
+		if (!pdq.getID().equals("")) {
 			sql += "and com_info.com_id=" + pdq.getID();
 		}
-		if (pdq.getUser_type() != "") {
+		if (!pdq.getUser_type().equals("")) {
 			sql += "and com_info.com_id in(select user_id from user_table where user_type="
 					+ pdq.getUser_type() + ")";
 		}
@@ -206,25 +206,27 @@ public class serviceOfProvince {
 			return false;
 		}
 	}
-	public int allpeople_nowselect(String year,String month,String property,String industry,String area){
-		String sql="select sum(com_data.people_now) from com_data,com_info where com_data.time_id in(select time_id from time_table where time_year=? and time_month=?) and com_data.com_id=com_info.com_id";
-		if(property!=""){
-			sql+="and com_property="+property;
+
+	public int allpeople_nowselect(String year, String month, String property,
+			String industry, String area) {
+		String sql = "select sum(com_data.people_now) from com_data,com_info where com_data.time_id in(select time_id from time_table where time_year=? and time_month=?) and com_data.com_id=com_info.com_id";
+		if (property != "") {
+			sql += "and com_property=" + property;
 		}
-		if(industry!=""){
-			sql+="and com_industry="+industry;
+		if (industry != "") {
+			sql += "and com_industry=" + industry;
 		}
-		if(area!=""){
-			sql+="and com_area="+area;
+		if (area != "") {
+			sql += "and com_area=" + area;
 		}
-		int number=0;
+		int number = 0;
 		try {
-			pstmt=conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, year);
 			pstmt.setString(2, month);
-			ResultSet rs=pstmt.executeQuery();
+			ResultSet rs = pstmt.executeQuery();
 			rs.next();
-			number=Integer.valueOf(rs.getString(1));
+			number = Integer.valueOf(rs.getString(1));
 			return number;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -232,31 +234,34 @@ public class serviceOfProvince {
 			return 0;
 		}
 	}
-	public ResultSet onepeople_nowselect(String s_y,String s_m,String e_y,String e_m,String com_name){
+
+	public ResultSet onepeople_nowselect(String s_y, String s_m, String e_y,
+			String e_m, String com_name) {
 		try {
-			pstmt=conn.prepareStatement("select sun(people_now) from com_data ,com_info where com_name=? and com_data.com_id=com_info.com_id and time_id in(select time_id from time_table where (time_year>=? or (time_year=? and time_month>=?))and(time_year<=? or (time_year=? and time_month<=?)))");
-			String year="";
-			int yearint=0;
+			pstmt = conn
+					.prepareStatement("select sun(people_now) from com_data ,com_info where com_name=? and com_data.com_id=com_info.com_id and time_id in(select time_id from time_table where (time_year>=? or (time_year=? and time_month>=?))and(time_year<=? or (time_year=? and time_month<=?)))");
+			String year = "";
+			int yearint = 0;
 			pstmt.setString(1, com_name);
-			yearint=Integer.valueOf(s_y);
+			yearint = Integer.valueOf(s_y);
 			yearint++;
-			year=String.valueOf(yearint);
+			year = String.valueOf(yearint);
 			pstmt.setString(2, year);
 			pstmt.setString(3, s_y);
 			pstmt.setString(4, s_m);
-			
-			yearint=Integer.valueOf(e_y);
+
+			yearint = Integer.valueOf(e_y);
 			yearint--;
-			year=String.valueOf(yearint);
+			year = String.valueOf(yearint);
 			pstmt.setString(5, year);
 			pstmt.setString(6, e_y);
 			pstmt.setString(7, e_m);
-			ResultSet rsResultSet=pstmt.executeQuery();
+			ResultSet rsResultSet = pstmt.executeQuery();
 			return rsResultSet;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
-		}	
+		}
 	}
 }
