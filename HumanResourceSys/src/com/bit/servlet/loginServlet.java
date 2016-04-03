@@ -81,9 +81,9 @@ public class loginServlet extends HttpServlet {
 				if (userType.equalsIgnoreCase("enterprise")) {
 					response.sendRedirect("../enterprise/HomePage.jsp");
 				}
-				else
+				else if(userType.equalsIgnoreCase("province"))
 				{
-					response.sendRedirect("../loginSuccessed.jsp");
+					response.sendRedirect("../province/home_sheng.jsp");
 				}
 			}
 
