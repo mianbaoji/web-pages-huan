@@ -1,7 +1,8 @@
 <%@page import="com.bit.common.userInfoTable"%>
-<%@ page language="java" import="java.util.*" pageEncoding="gbk"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 
-<%userInfoTable user = (userInfoTable)session.getAttribute("user");
+<%
+String user = (String)session.getAttribute("user");
 if(user == null)
 {
 %>
