@@ -60,6 +60,35 @@
 		</ul>
 	</div>
 
+	<div id="info">
+		<table border="1" id="tablecss">
+			<tr>
+				<th class="twh">名称</th>
+				<th class="twh">CPU</th>
+				<th class="twh">内存</th>
+				<th class="twh">硬盘</th>
+			</tr>
+			<tr>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+			</tr>
+			<tr>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+			</tr>
+			<tr>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+				<td class="twh"></td>
+			</tr>
+		</table>
+	</div>
+
 </body>
 
 </html>

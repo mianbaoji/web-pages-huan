@@ -11,9 +11,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>省用户首页</title>
-<link rel="stylesheet" type="text/css" href="../CSS/All_sheng.css" />
-<link rel="stylesheet" type="text/css" href="../CSS/System_Manage.css" />
-<script src="../JS/home_sheng.js"></script>
+<link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
+<link rel="stylesheet" type="text/css" href="CSS/Data_Analysis.css" />
+<script src="JS/home_sheng.js"></script>
 </head>
 
 <body id="back">
@@ -47,17 +47,31 @@
 		</ul>
 	</div>
 
-	<div id="info2">
-		<ul id="ultype_analysis">
-			<li style="display:inline-block;width:320px;text-align:center"
-				class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="Sys_usermanage.jsp"
-				class="indextype">用户管理</a></li>
-			<li style="display:inline-block;width:320px;text-align:center"
-				class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="Sys_smanage.jsp"
-				class="indextype">系统管理</a></li>
-		</ul>
+	<div id="info">
+		<form action="" method="get">
+			<p>
+				调查期A:<input type="text" name="time_start" class="formcss">
+			</p>
+			<p>
+				调查期B:<input type="text" name="time_end" class="formcss">
+			</p>
+			<p>
+				地区: <select name="com_area" class="selectcss">
+					<option value="">hhhhh</option>
+				</select>
+			</p>
+			<p>
+				企业性质: <select name="com_property" class="selectcss">
+					<option value="">hhhhh</option>
+				</select>
+			</p>
+			<p>
+				行业: <select name="com_industry" class="selectcss">
+					<option value="">hhhhh</option>
+				</select>
+			</p>
+			<input type="submit" value="分析" id="submitcss">
+		</form>
 	</div>
 
 </body>

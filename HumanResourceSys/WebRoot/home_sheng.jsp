@@ -11,9 +11,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>省用户首页</title>
-<link rel="stylesheet" type="text/css" href="../CSS/All_sheng.css" />
-<link rel="stylesheet" type="text/css" href="../CSS/System_Manage.css" />
-<script src="../JS/home_sheng.js"></script>
+<link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
+<script src="JS/home_sheng.js"></script>
 </head>
 
 <body id="back">
@@ -43,19 +42,6 @@
 				class="indextype">发布通知</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a href="System_Manage.jsp"
-				class="indextype">系统管理</a></li>
-		</ul>
-	</div>
-
-	<div id="info2">
-		<ul id="ultype_analysis">
-			<li style="display:inline-block;width:320px;text-align:center"
-				class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="Sys_usermanage.jsp"
-				class="indextype">用户管理</a></li>
-			<li style="display:inline-block;width:320px;text-align:center"
-				class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="Sys_smanage.jsp"
 				class="indextype">系统管理</a></li>
 		</ul>
 	</div>

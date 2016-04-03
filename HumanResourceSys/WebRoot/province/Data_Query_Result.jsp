@@ -59,56 +59,56 @@
 			if (com_name == null) {
 				com_name = "";
 			}
-			byte b[] = com_name.getBytes("ISO-8859-1");
+			byte b[] = com_name.getBytes("utf-8");
 			com_name = new String(b);
 
 			String area = request.getParameter("area");
 			if (area == null) {
 				area = "";
 			}
-			b = area.getBytes("ISO-8859-1");
+			b = area.getBytes("utf-8");
 			area = new String(b);
 
 			String com_property = request.getParameter("com_property");
 			if (com_property == null) {
 				com_property = "";
 			}
-			b = com_property.getBytes("ISO-8859-1");
+			b = com_property.getBytes("utf-8");
 			com_property = new String(b);
 
 			String com_industry = request.getParameter("com_industry");
 			if (com_industry == null) {
 				com_industry = "";
 			}
-			b = com_industry.getBytes("ISO-8859-1");
+			b = com_industry.getBytes("utf-8");
 			com_industry = new String(b);
 
 			String start_m = request.getParameter("start_m");
 			if (start_m == null) {
 				start_m = "";
 			}
-			b = start_m.getBytes("ISO-8859-1");
+			b = start_m.getBytes("utf-8");
 			start_m = new String(b);
 
 			String end_m = request.getParameter("end_m");
 			if (end_m == null) {
 				end_m = "";
 			}
-			b = end_m.getBytes("ISO-8859-1");
+			b = end_m.getBytes("utf-8");
 			end_m = new String(b);
 
 			String start_y = request.getParameter("start_y");
 			if (start_y == null) {
 				start_y = "";
 			}
-			b = start_y.getBytes("ISO-8859-1");
+			b = start_y.getBytes("utf-8");
 			start_y = new String(b);
 
 			String end_y = request.getParameter("end_y");
 			if (end_y == null) {
 				end_y = "";
 			}
-			b = end_y.getBytes("ISO-8859-1");
+			b = end_y.getBytes("utf-8");
 			end_y = new String(b);
 
 			serviceOfProvince s = new serviceOfProvince();
