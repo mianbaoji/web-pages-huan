@@ -133,11 +133,12 @@
 				<option>10</option>
 				<option>11</option>
 				<option>12</option>
-			</select>月  -->
+			</select>月  -->   
 				<input type="submit" name="search" value="检索">
+				<input type="submit" name="output" value="导出">
+				<br></br>
 	</form>
-	<input type="submit" name="output" value="导出">
-	<br></br>
+
 	<table border>
 		<tr class="table_size">
 			<th width="250">企业名</th>

@@ -87,9 +87,9 @@
 	</div>
 	 -->
 	<div id="list_query">
-		企业名称：<input type="text" name="enterP_name"></input> 企业ID：<input
-			type="text" name="enterP_id"></input> 申报时间：<select name="Begin_Year"
-			class="checkbox">
+		<!-- 企业名称：<input type="text" name="enterP_name"></input>  -->
+		企业ID：<input type="text" name="enterP_id"></input> 申报时间：<select
+			name="Begin_Year" class="checkbox">
 			<option>1975</option>
 			<option>1976</option>
 			<option>1977</option>
@@ -148,10 +148,9 @@
 		</select>月 <input type="submit" name="search" value="检索"> <br></br>
 		<table border>
 			<tr class="table_size">
-				<th width="200">企业名</th>
-				<th width="200">地区</th>
-				<th width="200">调查期</th>
-				<th width="200">操作</th>
+				<th width="250">地区</th>
+				<th width="250">调查期</th>
+				<th width="250">操作</th>
 			</tr>
 			<tr>
 

@@ -64,29 +64,21 @@ public class reportServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		
-		//todo ×éÖ¯»ú¹¹´úÂë£¬ÔÚÄÄÔ¤ÖÃ£¿
-		//Ç°¶Ë´úÂëÒ²Ã»ÓĞ
+		//todo ç»„ç»‡æœºæ„ä»£ç ï¼Œåœ¨å“ªé¢„ç½®ï¼Ÿ
+		//å‰ç«¯ä»£ç ä¹Ÿæ²¡æœ‰
 		//String com_id = request.getParameter("com_id");
 		//Integer table_id = Integer.valueOf(request.getParameter("table_id"));
 		
 		Integer people_ago = Integer.valueOf(request.getParameter("people_ago"));
 		Integer people_now = Integer.valueOf(request.getParameter("people_now"));
 		String other_reason = request.getParameter("other_reason");
-		other_reason= new String(other_reason.getBytes("ISO8859-1"), "utf-8");
 		String type = request.getParameter("type");
-		type= new String(type.getBytes("ISO8859-1"), "utf-8");
 		String reason_1 = request.getParameter("reason_1");
-		reason_1= new String(reason_1.getBytes("ISO8859-1"), "utf-8");
 		String reason_2 = request.getParameter("reason_2");
-		reason_1= new String(reason_1.getBytes("ISO8859-1"), "utf-8");
 		String reason_3 = request.getParameter("reason_3");
-		reason_1= new String(reason_1.getBytes("ISO8859-1"), "utf-8");
 		String explain_1 = request.getParameter("explain_1");
-		explain_1= new String(explain_1.getBytes("ISO8859-1"), "utf-8");
 		String explain_2 = request.getParameter("explain_2");
-		explain_2= new String(explain_2.getBytes("ISO8859-1"), "utf-8");
 		String explain_3 = request.getParameter("explain_3");
-		explain_2= new String(explain_2.getBytes("ISO8859-1"), "utf-8");
 		String status ="checking";
 		
 		EnterpriseDataTable enterpriseDataTable = new EnterpriseDataTable();
@@ -114,12 +106,12 @@ public class reportServlet extends HttpServlet {
 			System.out.println("1");
 			if(new serviceOfEnterprise().addEnterpriseData(enterpriseDataTable, com_id)){
 				
-				session.setAttribute("message", "success");//Èç¹ûĞÂÔöÊı¾İ³É¹¦£¬Ôò·â×°Ò»¸ö³É¹¦µÄSessionĞÅºÅ
+				session.setAttribute("message", "success");//å¦‚æœæ–°å¢æ•°æ®æˆåŠŸï¼Œåˆ™å°è£…ä¸€ä¸ªæˆåŠŸçš„Sessionä¿¡å·
 			}
 			else{
-				session.setAttribute("message", "failed");//Èç¹ûĞÂÔöÊı¾İÊ§°Ü£¬Ôò·â×°Ò»¸öÊ§°ÜµÄSessionĞÅºÅ
+				session.setAttribute("message", "failed");//å¦‚æœæ–°å¢æ•°æ®å¤±è´¥ï¼Œåˆ™å°è£…ä¸€ä¸ªå¤±è´¥çš„Sessionä¿¡å·
 			}
-			response.sendRedirect("../enterprise/Report.jsp");//Ìø×ª»ØÔ­½çÃæ
+			response.sendRedirect("../enterprise/Report.jsp");//è·³è½¬å›åŸç•Œé¢
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("error");
