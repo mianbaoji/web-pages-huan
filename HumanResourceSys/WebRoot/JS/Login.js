@@ -35,7 +35,7 @@ function checkInput(content)
 		return false;
 	}
 	//else{//todo ask
-		document.s_loginForm.action="servlet/loginServlet?userType='province'";
+		document.s_loginForm.action="servlet/loginServlet?userType=province";
 		document.s_loginForm.submit();
 		
 		document.q_loginForm.action="servlet/loginServlet?userType=enterprise";
