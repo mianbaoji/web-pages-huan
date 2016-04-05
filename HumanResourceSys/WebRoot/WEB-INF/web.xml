@@ -69,6 +69,10 @@
     <servlet-name>cityPutRecordServlet</servlet-name>
     <servlet-class>com.bit.cityservlet.cityPutRecordServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>cityGoonListServlet</servlet-name>
+    <servlet-class>com.bit.cityservlet.cityGoonListServlet</servlet-class>
+  </servlet>
   
   
   
@@ -141,7 +145,10 @@
     <servlet-name>cityPutRecordServlet</servlet-name>
     <url-pattern>/servlet/cityPutRecordServlet</url-pattern>
   </servlet-mapping>
-  
+  <servlet-mapping>
+    <servlet-name>cityGoonListServlet</servlet-name>
+    <url-pattern>/servlet/cityGoonListServlet</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>

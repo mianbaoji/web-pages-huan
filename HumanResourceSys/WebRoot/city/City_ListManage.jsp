@@ -1,7 +1,8 @@
 <%@page import="com.bit.common.listManageTable"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@page import="com.bit.common.EnterpriseInfoTable"%>
-<%@page import="com.bit.service.serviceOfPrince2"%>
+<%@page import="com.bit.service.serviceOfCity"%>
+<%@page import="com.bit.servlet.loginServlet"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -15,7 +16,6 @@
 <base href="<%=basePath%>">
 
 <title>市用户报表管理</title>
-<jsp:include page="../isLogin.jsp"></jsp:include>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -36,8 +36,9 @@
 					.getAttribute("listManageInfoList");
 			iter = enter_List.iterator();
 		} else {
-			List<listManageTable> enter_List = new serviceOfPrince2()
-					.queryAllEnterpriseListManage();
+			String user_id = (String) session.getAttribute("user");
+			List<listManageTable> enter_List = new serviceOfCity()
+					.queryAllEnterpriseListManageForCity(user_id);
 			iter = enter_List.iterator();
 		}
 	%>
@@ -69,7 +70,7 @@
 				href="city/City_SystemManage.jsp" class="indextype">系统管理</a></li>
 		</ul>
 	</div>
-	<form action="servlet/ProQueryReportServlet">
+	<form action="servlet/cityQueryReportServlet">
 		<div id="list_query">
 			企业名称：<input type="text" name="com_name"></input> 企业ID：<input
 				type="text" name="com_id"></input> 申报时间：<select name="com_year"
@@ -147,9 +148,12 @@
 					<td width="200"><%=ent.getCom_name()%></td>
 					<td width="200"><%=ent.getCom_area()%></td>
 					<td width="200"><%=ent.getTime_year()%>年<%=ent.getTime_month()%>月</td>
-					<td width="200"><a href="#">查看详情</a><a> </a><a
-						href="servlet/ProBackReportServlet?table_id=<%=ent.getTable_id()%>">退回</a><a>
-					</a><a href="#">上传</a></td>
+					<td width="200"><a
+						href="servlet/cityQueryEnterpriseServlet?table_id=<%=ent.getTable_id()%>">查看详情</a><a>
+					</a><a
+						href="servlet/cityBackReportServlet?table_id=<%=ent.getTable_id()%>">退回</a><a>
+					</a><a
+						href="servlet/cityGoonListServlet?table_id=<%=ent.getTable_id()%>">上报</a></td>
 				</tr>
 				<%
 					i++;

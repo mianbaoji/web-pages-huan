@@ -28,11 +28,11 @@
 	<div id="first_navigation">
 		<ul id="ultype">
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="city/home_city.jsp" class="indextype">首页</a></li>
+				onmouseout="removeBorder(this)"><a href="city/home_city.jsp"
+				class="indextype">首页</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="city/City_Record.jsp" class="indextype">企业备案</a></li>
+				onmouseout="removeBorder(this)"><a href="city/City_Record.jsp"
+				class="indextype">企业备案</a></li>
 			<!-- <li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
 				href="city/#" class="indextype">企业查询</a></li> -->

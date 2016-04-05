@@ -1,5 +1,6 @@
 <%@page import="com.bit.common.listManageTable"%>
 <%@page import="com.bit.service.serviceOfPrince2"%>
+<%@page import="com.bit.service.serviceOfCity"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -14,7 +15,7 @@
 <base href="<%=basePath%>">
 
 <title>省用户报表管理</title>
-
+<jsp:include page="../isLogin.jsp"></jsp:include>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">

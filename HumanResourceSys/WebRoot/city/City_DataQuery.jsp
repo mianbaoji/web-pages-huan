@@ -1,4 +1,5 @@
 <%@page import="com.bit.common.PovinceDateQuery"%>
+<%@page import="com.bit.service.*"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -24,11 +25,11 @@
 	<div id="first_navigation">
 		<ul id="ultype">
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="city/home_city.jsp" class="indextype">首页</a></li>
+				onmouseout="removeBorder(this)"><a href="city/home_city.jsp"
+				class="indextype">首页</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="city/City_Record.jsp" class="indextype">企业备案</a></li>
+				onmouseout="removeBorder(this)"><a href="city/City_Record.jsp"
+				class="indextype">企业备案</a></li>
 			<!-- <li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
 				href="city/#" class="indextype">企业查询</a></li> -->
@@ -49,7 +50,10 @@
 				href="city/City_SystemManage.jsp" class="indextype">系统管理</a></li>
 		</ul>
 	</div>
-
+	<%
+		String user_id = (String) session.getAttribute("user");
+		String cityString = new serviceOfCity().queryCityString(user_id);
+	%>
 	<div id="info">
 		<form onsubmit="check(this)">
 			<p>
@@ -57,8 +61,7 @@
 					class="formstyle">
 			</p>
 			<p>
-				所属地区: <input type="text" name="area" class="formstyle"
-					placeholder="所属地区">
+				所属地区: <input type="text" name="area" readonly="readonly" class="formstyle" value="<%=cityString%>">
 			</p>
 			<p>
 				企业性质:<select name="com_property" class="formstyle">

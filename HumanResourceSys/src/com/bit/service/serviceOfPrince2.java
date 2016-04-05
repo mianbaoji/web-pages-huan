@@ -76,7 +76,7 @@ public class serviceOfPrince2 {
 		}
 	}
 
-	public void deleteCityUser(String user_id){
+	public void deleteCityUser(String user_id) {
 		try {
 			String senString = "delete from user_table where user_id = ?";
 			pstmt = conn.prepareStatement(senString);
@@ -86,13 +86,12 @@ public class serviceOfPrince2 {
 			// TODO: handle exception
 		}
 	}
-	
-	
+
 	public List queryAllEnterpriseListManage() { // 所有企业报表管理
 		List list = new ArrayList();
 		try {
 			pstmt = conn
-					.prepareStatement("select c.com_name,c.com_area,a.*,b.* from com_data a,time_table b,com_info c where a.status = 'checking' and a.time_id = b.time_id and a.com_id = c.com_id");
+					.prepareStatement("select c.com_name,c.com_area,a.*,b.* from com_data a,time_table b,com_info c where a.status = '已上报' and a.time_id = b.time_id and a.com_id = c.com_id");
 			// pstmt.setString(1, com_area);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -170,13 +169,14 @@ public class serviceOfPrince2 {
 		// System.out.println("%%%%" + com_name + "####" + com_id + "####"
 		// + time_year + "####" + time_month);
 		try {
-			String sens = "select a.com_name,a.com_area,b.*,c.time_year,c.time_month from com_info a,com_data b,time_table c where b.status = 'checking' and a.com_id = b.com_id and c.time_year=? and c.time_month=? and c.time_id = b.time_id";
+			String sens = "select a.com_name,a.com_area,b.*,c.time_year,c.time_month from com_info a,com_data b,time_table c where b.status = '已上报' and a.com_id = b.com_id and c.time_year=? and c.time_month=? and c.time_id = b.time_id";
 
 			int cc1 = 0, cc2 = 0;
 			if (com_name != "") {
 				sens = sens + " and a.com_name=?";
 				cc1 = 1;
-			} else if (com_id != "") {
+			}
+			if (com_id != "") {
 				sens = sens + " and b.com_id=?";
 				cc2 = 1;
 			}
@@ -214,14 +214,14 @@ public class serviceOfPrince2 {
 			return null;
 		}
 	}
-	
-	public List queryAllCityUser(){
+
+	public List queryAllCityUser() {
 		List list_entList = new ArrayList();
 		try {
 			String sensString = "select * from user_table where user_type <> 'province' and user_type <> 'enterprise'";
 			pstmt = conn.prepareStatement(sensString);
 			ResultSet rs = pstmt.executeQuery();
-			while(rs.next()){
+			while (rs.next()) {
 				userInfoTable userInfoTable = new userInfoTable();
 				userInfoTable.setUser_id(rs.getString(1));
 				list_entList.add(userInfoTable);

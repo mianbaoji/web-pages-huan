@@ -23,12 +23,14 @@
 			<div id="login_title">
 				<ul>
 					<li class="select"><a href="#">省用户登录</a></li>
+					<li><a href="#">市用户登录</a></li>
 					<li><a href="#">企业用户登录</a></li>
 				</ul>
 			</div>
-			<form onsubmit="return checkInput(this)" name="s_loginForm">
-				<div id="login_body">
-					<div id="login_content">
+			<div id="login_body">
+				<div id="login_content">
+				
+					<form onsubmit="return checkInput(this)" name="s_loginForm">
 						<div name="login_box" style="display:block">
 							<div>
 								<div>
@@ -52,43 +54,75 @@
 								<input type="checkbox" name="密码" value="记住密码" checked="checked" />记住密码
 							</div>
 							<div>
-								<br /> <a><input id="login_button" type="submit"
-									value="登录" /> </a> <input name="userType" value="province"
-									style="display:none" />
+								<br /> <input id="login_button" type="submit" value="登录" />
 							</div>
-						</div>
-			</form>
-			<form onsubmit="return checkInput(this)" name="q_loginForm">
-				<div name="login_box" style="display:none">
-					<div>
-						<div>
-							<lable for="用户名">用户名</lable>
-						</div>
-						<div>
-							<input id="input_box" type="text" name="username"
-								placeholder="用户名"
-								onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
-						</div>
-					</div>
-					<div>
-						<div>密码</div>
-						<div>
-							<input id="input_box" type="password" name="password"
-								placeholder="密码" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
-						</div>
-					</div>
-					<div>
-						<input type="checkbox" name="密码" value="记住密码" checked="checked" />记住密码
-					</div>
-					<div>
-						<br /> <input id="login_button" type="submit" value="登录" />
-					</div>
 
-					<input name="userType" value="enterprise" style="display:none" />
-			</form>
+							<input name="userType" value="province" style="display:none" />
+						</div>
+					</form>
+					<form onsubmit="return checkInput(this)" name="shi_loginForm">
+						<div name="login_box" style="display:none">
+							<div>
+								<div>
+									<lable for="用户名">用户名</lable>
+								</div>
+								<div>
+									<input id="input_box" type="text" name="username"
+										placeholder="用户名"
+										onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+								</div>
+							</div>
+							<div>
+								<div>密码</div>
+								<div>
+									<input id="input_box" type="password" name="password"
+										placeholder="密码"
+										onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+								</div>
+							</div>
+							<div>
+								<input type="checkbox" name="密码" value="记住密码" checked="checked" />记住密码
+							</div>
+							<div>
+								<br /> <input id="login_button" type="submit" value="登录" />
+							</div>
+
+							<input name="userType" value="city" style="display:none" />
+						</div>
+					</form>
+					<form onsubmit="return checkInput(this)" name="q_loginForm">
+						<div name="login_box" style="display:none">
+							<div>
+								<div>
+									<lable for="用户名">用户名</lable>
+								</div>
+								<div>
+									<input id="input_box" type="text" name="username"
+										placeholder="用户名"
+										onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+								</div>
+							</div>
+							<div>
+								<div>密码</div>
+								<div>
+									<input id="input_box" type="password" name="password"
+										placeholder="密码"
+										onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+								</div>
+							</div>
+							<div>
+								<input type="checkbox" name="密码" value="记住密码" checked="checked" />记住密码
+							</div>
+							<div>
+								<br /> <input id="login_button" type="submit" value="登录" />
+							</div>
+
+							<input name="userType" value="enterprise" style="display:none" />
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
-	</div>
-	</div>
 	</div>
 	<%
 		if (session.getAttribute("loginFailed") == "true") {

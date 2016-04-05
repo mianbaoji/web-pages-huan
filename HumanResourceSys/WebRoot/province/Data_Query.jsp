@@ -13,6 +13,7 @@
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>省用户数据查询</title>
+<jsp:include page="../isLogin.jsp"></jsp:include>
 <link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
 <link rel="stylesheet" type="text/css" href="CSS/Data_Query.css" />
 <script src="JS/Data_Query.js"></script>

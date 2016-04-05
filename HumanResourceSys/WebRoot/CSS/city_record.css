@@ -1,9 +1,9 @@
 @CHARSET "UTF-8";
 @CHARSET "UTF-8";
 #enter_query{
-	left: 35%;
-	top: 15%;
-	position: fixed;
+	left: 25%;
+	top: 25%;
+	position: absolute;
 	font-family: '隶书';
 	font-size: 20px;
 	text-align: center;

@@ -15,6 +15,7 @@
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>省用户用户管理</title>
+<jsp:include page="../isLogin.jsp"></jsp:include>
 <link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
 <link rel="stylesheet" type="text/css" href="CSS/System_Manage.css" />
 <script src="JS/home_sheng.js"></script>
@@ -70,7 +71,7 @@
 	</div>
 
 	<div id="info3">
-		<input type="submit" name="addNew" value="新建"> <br></br>
+		<input type="submit" name="addNewCity" value="新建"> <br></br>
 		<table border>
 			<tr>
 				<th width="250">市用户名</th>

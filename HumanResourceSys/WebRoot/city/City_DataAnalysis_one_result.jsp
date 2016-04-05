@@ -11,7 +11,7 @@
 <head>
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>市用户<title>
+<title>市用户</title>
 <link rel="stylesheet" type="text/css" href="CSS/All_city.css" />
 <link rel="stylesheet" type="text/css" href="CSS/city_dataanalysis.css" />
 <script src="JS/home_sheng.js"></script>
@@ -19,8 +19,6 @@
 </head>
 
 <body id="back">
-
-	
 
 </body>
 

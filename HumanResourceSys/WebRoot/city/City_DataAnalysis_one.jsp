@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="com.bit.service.*"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -48,7 +49,10 @@
 				href="city/City_SystemManage.jsp" class="indextype">系统管理</a></li>
 		</ul>
 	</div>
-
+<%
+		String user_id = (String) session.getAttribute("user");
+		String cityString = new serviceOfCity().queryCityString(user_id);
+	%>
 	<div id="info">
 		<ul id="ultype_analysis">
 			<li style="display:inline-block;width:320px;text-align:center"
@@ -83,10 +87,8 @@
 				</select>
 			</p>
 			<p>
-				企业所属地区: <select name="com_area" class="selectcss"
-					style="width:170px">
-					<option value=""></option>
-				</select>
+				企业所属地区: <input class="formcss" type="text" readonly="readonly"
+					name="com_area" value="<%=cityString%>">
 			</p>
 			<button id="submitcss" onclick="one_show()">显示</button>
 		</form>

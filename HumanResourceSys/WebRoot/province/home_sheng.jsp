@@ -12,6 +12,7 @@
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>省用户首页</title>
+<jsp:include page="../isLogin.jsp"></jsp:include>
 <link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
 <script src="JS/home_sheng.js"></script>
 </head>

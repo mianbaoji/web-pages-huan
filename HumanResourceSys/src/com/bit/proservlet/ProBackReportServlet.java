@@ -79,7 +79,7 @@ public class ProBackReportServlet extends HttpServlet {
 
 		Boolean flag = new serviceOfPrince2().datastatuschang(table_id, "已退回");
 		HttpSession session = request.getSession();
-		session.setAttribute("flag_ProQueryEnt", "0");
+		session.setAttribute("flag_ListProQueryEnt", "0");
 		response.sendRedirect("../province/List_Manage.jsp");
 	}
 

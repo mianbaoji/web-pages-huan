@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.bit.common.EnterpriseInfoTable;
+import com.bit.service.serviceOfCity;
 import com.bit.service.serviceOfPrince2;
 
 public class cityQueryEnterpriseServletById extends HttpServlet {
@@ -61,11 +62,10 @@ public class cityQueryEnterpriseServletById extends HttpServlet {
 		
 		String Com_id = request.getParameter("Com_id");
 		
-		//EnterpriseInfoTable entReturn = new serviceOfPrince2().queryEnterpriseRecordById(Com_id);
-		//上一句改路径
+		EnterpriseInfoTable entReturn = new serviceOfCity().queryEnterpriseRecordByIdForEnterpriseInfoTableCity(Com_id);
 		HttpSession session = request.getSession();
-		//session.setAttribute("entReturnProQuery", entReturn);
-		//response.sendRedirect("../city/Enterprise_Record_ById.jsp");
+		session.setAttribute("entReturnProQuery", entReturn);
+		response.sendRedirect("../city/City_Record_ById.jsp");
 	}
 
 	/**

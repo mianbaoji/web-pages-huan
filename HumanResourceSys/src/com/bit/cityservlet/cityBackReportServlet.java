@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.bit.service.serviceOfCity;
 import com.bit.service.serviceOfPrince2;
 
 public class cityBackReportServlet extends HttpServlet {
@@ -66,11 +67,11 @@ public class cityBackReportServlet extends HttpServlet {
 		// Service返回：ture || false (boolean)
 		// 返回前端：ture || false (boolean)
 
-		//Boolean flag = new serviceOfPrince2().datastatuschang(table_id, "已退回");
+		Boolean flag = new serviceOfCity().datastatuschangForCity(table_id, "已退回");
 		//上面一句，改路径，还有函数
 		HttpSession session = request.getSession();
-		session.setAttribute("flag_ProQueryEnt", "0");
-		response.sendRedirect("../city/List_Manage.jsp");
+		session.setAttribute("flag_ListProQueryEnt", "0");
+		response.sendRedirect("../city/City_ListManage.jsp");
 	}
 
 	/**

@@ -1,8 +1,7 @@
 <%@page import="java.sql.ResultSet"%>
-<%@page import="com.bit.servlet.enterpriseQueryData"%>
 <%@page import="com.bit.common.EnterpriseInfoTable"%>
-<%@page import="com.bit.service.serviceOfProvince"%>
-<%@page import="com.bit.service.serviceOfPrince2"%>
+<%@page import="com.bit.servlet.loginServlet"%>
+<%@page import="com.bit.service.serviceOfCity"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -17,7 +16,6 @@
 <base href="<%=basePath%>">
 
 <title>企业备案</title>
-<jsp:include page="../isLogin.jsp"></jsp:include>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -31,26 +29,27 @@
 
 <body id="back">
 	<%
+		String user_id = (String) session.getAttribute("user");
 		Iterator iter = null;
-		if (session.getAttribute("flag_ProQueryEnt") == "1") {
-			List<EnterpriseInfoTable> enter_List = (List) session
-					.getAttribute("enterpriseInfoList");
-			iter = enter_List.iterator();
-		} else {
-			List<EnterpriseInfoTable> enter_List = new serviceOfPrince2()
-					.queryAllEnterpriseRecord();
-			iter = enter_List.iterator();
-		}
+		//		  if (session.getAttribute("flag_ProQueryEnt") == "1") {
+		//			List<EnterpriseInfoTable> enter_List = (List) session
+		//					.getAttribute("enterpriseInfoList");
+		//			iter = enter_List.iterator();
+		//		} else {
+		List<EnterpriseInfoTable> enter_List = new serviceOfCity()
+				.queryRecordForCity(user_id);
+		iter = enter_List.iterator();
+		//		}
 		//Iterator iter = enter_List.iterator();
 	%>
 	<div id="first_navigation">
 		<ul id="ultype">
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="city/home_city.jsp" class="indextype">首页</a></li>
+				onmouseout="removeBorder(this)"><a href="city/home_city.jsp"
+				class="indextype">首页</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="city/City_Record.jsp" class="indextype">企业备案</a></li>
+				onmouseout="removeBorder(this)"><a href="city/City_Record.jsp"
+				class="indextype">企业备案</a></li>
 			<!-- <li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
 				href="city/#" class="indextype">企业查询</a></li> -->
@@ -71,6 +70,8 @@
 				href="city/City_SystemManage.jsp" class="indextype">系统管理</a></li>
 		</ul>
 	</div>
+	<div id="enter_query">
+	<!-- 
 	<form action="servlet/ProQueryEnterpriseServlet">
 		<div id="enter_query">
 			<br></br> 地区: <select name="area">
@@ -95,6 +96,7 @@
 				<input type="submit" name="search" value="检索">
 	</form>
 	<input type="button" name="output" value="导出">
+	 -->
 	<br></br>
 	<table border>
 		<tr class="table_size">
@@ -105,19 +107,18 @@
 		<%
 			int i = 0;
 			while (iter.hasNext()) {
-				EnterpriseInfoTable ent = (EnterpriseInfoTable)iter.next();
+				EnterpriseInfoTable ent = (EnterpriseInfoTable) iter.next();
 				//System.out.println("##########"+ent.getCom_area()+"-----------"+ent.getCom_id());
 		%>
 		<tr>
 			<td width="250"><%=ent.getCom_name()%></td>
 			<td width="250"><%=ent.getCom_area()%></td>
-			<td width="250"><a href="servlet/ProQueryEnterpriseServletById?Com_id=<%=ent.getCom_id()%>">查看详情</a></td>
+			<td width="250"><a
+				href="servlet/cityQueryEnterpriseServletById?Com_id=<%=ent.getCom_id()%>">查看详情</a></td>
 		</tr>
 		<%
 			i++;
 			}
-			session.removeAttribute("flag_ProQueryEnt");
-			session.removeAttribute("enterpriseInfoList");
 		%>
 	</table>
 	</div>
