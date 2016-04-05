@@ -12,7 +12,7 @@ import org.omg.CORBA.PUBLIC_MEMBER;
 import com.bit.common.EnterpriseDataTable;
 import com.bit.common.EnterpriseInfoTable;
 import com.bit.common.userInfoTable;
-import com.bit.common.news_table;
+
 public class serviceOfEnterprise {
 
 	private static Connection conn;

@@ -7,7 +7,7 @@
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
 			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/"; 
+			+ path + "/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -18,7 +18,7 @@
 <link rel="stylesheet" type="text/css" href="CSS/All.css" />
 <link rel="stylesheet" type="text/css" href="CSS/Enterprise.css" />
 <title>首页</title>
-<script type="text/javascript" src="JS/enterHomePage.js"></script>
+<!-- <script type="text/javascript" src="JS/information.js"></script> -->
 <jsp:include page="../isLogin.jsp"></jsp:include>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -31,60 +31,72 @@
 
 </head>
 
-<body class="background">
+<body  class="background">
 	<nav>
 	<div id="nav">
 		<ul>
-			<li><a href="enterprise/HomePage.jsp">首页</a>
-			</li>
-			<li><a href="enterprise/EnterpriseInfo.jsp">企业信息</a>
-			</li>
-			<li><a href="enterprise/Report.jsp">数据填报</a>
-			</li>
-			<li><a href="enterprise/Inquire.jsp">数据查询</a>
-			</li>
-			<div id="exit"><a href="enterExit.jsp">注销</a>
+			<li><a href="enterprise/HomePage.jsp">首页</a></li>
+			<li><a href="enterprise/EnterpriseInfo.jsp">企业信息</a></li>
+			<li><a href="enterprise/Report.jsp">数据填报</a></li>
+			<li><a href="enterprise/Inquire.jsp">数据查询</a></li>
+			<div id="exit">
+				<a href="enterExit.jsp">注销</a>
 			</div>
 		</ul>
 	</div>
 	<%
-	String com_id = (String) session.getAttribute("user");
-	ResultSet rs=new com.bit.service.serviceOfEnterprise().queryNotice(com_id);
-	news_table News[];
-	if(rs!=null)
-	{
-	while(true)
-	{
+		String com_id = (String) session.getAttribute("user");
+		ResultSet rs = new com.bit.service.serviceOfEnterprise()
+				.queryNotice(com_id);
+		news_table News[];
 		
-		%>
-		<script> var message_data={"con": "
-		
+				%>
+
+				<script>
+				var message_data="hello";
+			function info() {
+				/* if (document.getElementById("information")) {
+				 */
+						document.getElementById("information").innerHTML = information_data;
+
+					
+				
+			}
+
+			
+			function infoDisplay(content) {
+				document.getElementById("information").innerHTML = content.name+"124";
+			}
+			
+		</script> <%
+ 	
+ %>
+
+	<div class="box" id="home_page">
+		<a>通知公告:</a>
+		<div  id="information">
 		<%
-		String news_head=rs.getString("new_head");
-		String news_time=rs.getString("new_time");
-		String news_content=rs.getString("new_content");
-		String news_pub=rs.getString("new_pub");
-		String news_status=rs.getString("new_status");
-		out.print("<a value=\""+ news_content +"\" >"+news_time+"  "+news_head+"</a>");
-		%>
-	"	
-	}
-	
+		if (rs != null) {
+
+				while (true) {
+					String news_head = rs.getString("news_head");
+					String news_time = rs.getString("news_time");
+					String news_content = rs.getString("news_content");
+					String news_pub = rs.getString("news_pub");
+					String news_status = rs.getString("news_status");
+					out.print("<a  name=\""+news_content+"\" id=\"1\" onclick=\"infoDisplay(this)\"  >" + news_time
+							+ "  " + news_head + "</a>");
+					if (!rs.next()) {
+						break;
+					}
+				}
+				}
+				 %>
+		<script>
 		
 		</script>
-		<% 
-		if(!rs.next())
-		{
-			break;
-		}
-		}
-	}
-	 %>
-	
-	<div class="box" id="home_page">
-	<a>通知公告:</a>
-	<h1 onclick="change()" id="message">dfadfa</h1>
+		</div>
+		
 	</div>
-	
 </body>
 </html>
