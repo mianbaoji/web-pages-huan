@@ -22,6 +22,32 @@ public class serviceOfEnterprise {
 		conn = new com.bit.conn.conn().getCon();
 	}
 	
+	public static  ResultSet queryNotice(String com_id)
+	{
+		try {
+			pstmt = conn
+					.prepareStatement("select news_head,news_time,news_content,news_pub,news_sub,news_status from news_table where news_sub=?");
+			pstmt.setString(1, com_id);
+			ResultSet rs = pstmt.executeQuery();
+			
+				if(!rs.next())
+				{
+					return null;
+				}
+				else
+				{
+					return rs;
+					
+				}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+	
 	public static EnterpriseInfoTable queryEnterpriseInfo(String com_id) { //查询企业信息
 		EnterpriseInfoTable ent = new EnterpriseInfoTable();
 		try {
@@ -32,7 +58,7 @@ public class serviceOfEnterprise {
 			while (true) {
 				if(!rs.next())
 				{
-					
+					  
 					return null;
 				}
 				ent.setCom_id(rs.getString(1));
