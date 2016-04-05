@@ -12,7 +12,7 @@ import org.omg.CORBA.PUBLIC_MEMBER;
 import com.bit.common.EnterpriseDataTable;
 import com.bit.common.EnterpriseInfoTable;
 import com.bit.common.userInfoTable;
-
+import com.bit.common.news_table;
 public class serviceOfEnterprise {
 
 	private static Connection conn;
@@ -20,6 +20,32 @@ public class serviceOfEnterprise {
 	
 	public serviceOfEnterprise(){
 		conn = new com.bit.conn.conn().getCon();
+	}
+	
+	public static  ResultSet queryNotice(String com_id)
+	{
+		try {
+			pstmt = conn
+					.prepareStatement("select news_head,news_time,news_content,news_pub,news_sub,news_status from news_table where news_sub=?");
+			pstmt.setString(1, com_id);
+			ResultSet rs = pstmt.executeQuery();
+			
+				if(!rs.next())
+				{
+					return null;
+				}
+				else
+				{
+					return rs;
+					
+				}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+		
 	}
 	
 	public static EnterpriseInfoTable queryEnterpriseInfo(String com_id) { //查询企业信息
@@ -32,7 +58,7 @@ public class serviceOfEnterprise {
 			while (true) {
 				if(!rs.next())
 				{
-					
+					  
 					return null;
 				}
 				ent.setCom_id(rs.getString(1));

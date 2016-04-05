@@ -8,12 +8,24 @@
 	/* box-shadow: 0 0 3px #000;  */
 	top: 170px;
 }
-
+a{
+	font-size:24px; font-weight: normal; color:#515560;position: relative;
+	 
+}
 
 #home_page
 {
-	box-shadow: 0 0 3px #000;  
+	border:1px solid rgb(207, 226, 232);
+	border-radius:3px;
+	padding:1em 1.5em;
+	margin:0.5em auto 1.5em;
+	font-size:.875em;
+	line-height:2;
+	background: rgb(245, 249, 250);
+    background-image: linear-gradient(to bottom, rgb(221, 235, 239), rgb(254, 254, 255));
 }
+
+
 .button {
 	width: 150px;
 	height: 40px;
