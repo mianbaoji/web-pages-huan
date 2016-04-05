@@ -8,9 +8,33 @@
 	/* box-shadow: 0 0 3px #000;  */
 	top: 170px;
 }
-a{
-	font-size:24px; font-weight: normal; color:#515560;position: relative;
-	 
+.notice
+{
+	text-align:center;
+	font-size:20px; font-weight: normal; color:#515560;position: relative;	 
+	margin:0px; 
+	width:90%;
+	border:1px solid rgb(180, 200, 232);
+	min-height:40%;
+	height:auto;
+}
+#home_page h1{
+	font-size:24px; font-weight: normal; color:#515560;position: relative;	 
+	margin:0px; 
+}
+
+#home_page h2{
+	font-size:22px; font-weight: normal; color:#515560;position: relative;	
+	left:50px;
+	padding:0px;
+	margin:0px; 
+}
+
+#home_page p{
+	font-size:22px; font-weight: normal; color:#515560;position: relative;	
+	left:50px;
+	padding:0px;
+	margin:0px; 
 }
 
 #home_page

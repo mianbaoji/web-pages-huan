@@ -53,19 +53,18 @@
 				%>
 
 				<script>
-				var message_data="hello";
-			function info() {
-				/* if (document.getElementById("information")) {
-				 */
-						document.getElementById("information").innerHTML = information_data;
+				var content =new Array();
+				var n=0;
 
-					
 				
-			}
-
+			function infoDisplay(thiss,head,time) {
+				var m=parseInt(thiss.id);
+				var con="<h2  id=\""+m+"\" onclick=\"infoDisplay(this,'"+head+"','"+time+"')\">" + time
+							+ "&nbsp&nbsp&nbsp" + head + "</h2>";
+				
+				con=con+"<p class=\"notice\">"+content[m]+"</p><br/>"+"<button class=\"button\" onclick=\"location.href='enterprise/HomePage.jsp'\">返回</button>";
 			
-			function infoDisplay(content) {
-				document.getElementById("information").innerHTML = content.name+"124";
+				document.getElementById("information").innerHTML = con;
 			}
 			
 		</script> <%
@@ -73,20 +72,30 @@
  %>
 
 	<div class="box" id="home_page">
-		<a>通知公告:</a>
+		<h1>通知公告:</h1>
 		<div  id="information">
 		<%
 		if (rs != null) {
-
+				int n=0;
 				while (true) {
 					String news_head = rs.getString("news_head");
 					String news_time = rs.getString("news_time");
 					String news_content = rs.getString("news_content");
 					String news_pub = rs.getString("news_pub");
 					String news_status = rs.getString("news_status");
-					out.print("<a  name=\""+news_content+"\" id=\"1\" onclick=\"infoDisplay(this)\"  >" + news_time
-							+ "  " + news_head + "</a>");
+					%>
+					<script>
+					content[n]=<%out.print("\""+news_content+"\""); %>
+					n=n+1;
+					</script>
+					
+					
+					<% 
+					out.print("<h2  id=\""+n+"\" onclick=\"infoDisplay(this,'"+news_head+"','"+news_time+"')\"  >" + news_time
+							+ "&nbsp&nbsp&nbsp" + news_head + "</h2>");
+					n++;
 					if (!rs.next()) {
+					
 						break;
 					}
 				}
