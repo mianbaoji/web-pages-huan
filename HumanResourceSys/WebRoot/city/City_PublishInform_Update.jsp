@@ -13,10 +13,10 @@
 <head>
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>省用户首页</title>
-<link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
-<link rel="stylesheet" type="text/css" href="CSS/Publish_Inform.css" />
-<script src="JS/Publish_Inform.js"></script>
+<title>市用户</title>
+<link rel="stylesheet" type="text/css" href="CSS/All_city.css" />
+<link rel="stylesheet" type="text/css" href="CSS/city_publishinform.css" />
+<script src="JS/City_publishinform.js"></script>
 <script src="JS/home_sheng.js"></script>
 </head>
 
@@ -60,7 +60,7 @@
 	%>
 
 	<div class="add">
-		<form action="province/Publish_Inform_Update_Result.jsp">
+		<form action="city/City_PublishInform_Update_Result.jsp">
 			<p>
 				通知标题:<input type="text" placeholder=<%=old_news_head%>
 					class="input_css" input_css name="news_head">

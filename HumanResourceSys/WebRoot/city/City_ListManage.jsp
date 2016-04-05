@@ -14,17 +14,16 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>报表管理</title>
+<title>市用户报表管理</title>
 <jsp:include page="../isLogin.jsp"></jsp:include>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<link rel="stylesheet" type="text/css" href="CSS/enterprise_sheng.css">
-<link rel="stylesheet" type="text/css" href="CSS/home_sheng.css" />
-<link rel="stylesheet" type="text/css" href="CSS/list_sheng.css" />
-<link rel="stylesheet" type="text/css" href="CSS/All.css" />
+<link rel="stylesheet" type="text/css" href="CSS/city_record.css">
+<link rel="stylesheet" type="text/css" href="CSS/All_city.css" />
+<link rel="stylesheet" type="text/css" href="CSS/list_city.css" />
 <script src="JS/home_sheng.js"></script>
 
 </head>
@@ -45,29 +44,29 @@
 	<div id="first_navigation">
 		<ul id="ultype">
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="province/home_sheng.jsp" class="indextype">首页</a></li>
+				onmouseout="removeBorder(this)"><a href="city/home_city.jsp"
+				class="indextype">首页</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="province/Enterprise_Record.jsp" class="indextype">企业备案</a></li>
+				onmouseout="removeBorder(this)"><a href="city/City_Record.jsp"
+				class="indextype">企业备案</a></li>
 			<!-- <li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Enterprise_Query.jsp" class="indextype">企业查询</a></li> -->
+				href="city/#" class="indextype">企业查询</a></li> -->
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/List_Manage.jsp" class="indextype">报表管理</a></li>
+				href="city/City_ListManage.jsp" class="indextype">报表管理</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Data_Query.jsp" class="indextype">数据查询</a></li>
+				href="city/City_DataQuery.jsp" class="indextype">数据查询</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Data_Analysis.jsp" class="indextype">数据分析</a></li>
+				href="city/City_DataAnalysis.jsp" class="indextype">数据分析</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Publish_Inform.jsp" class="indextype">发布通知</a></li>
+				href="city/City_PublishInform.jsp" class="indextype">发布通知</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/System_Manage.jsp" class="indextype">系统管理</a></li>
+				href="city/City_SystemManage.jsp" class="indextype">系统管理</a></li>
 		</ul>
 	</div>
 	<form action="servlet/ProQueryReportServlet">
@@ -148,8 +147,9 @@
 					<td width="200"><%=ent.getCom_name()%></td>
 					<td width="200"><%=ent.getCom_area()%></td>
 					<td width="200"><%=ent.getTime_year()%>年<%=ent.getTime_month()%>月</td>
-					<td width="200"><a href="servlet/ProPutRecordServlet?table_id=<%=ent.getTable_id()%>">查看详情</a><a> </a><a
-						href="servlet/ProBackReportServlet?table_id=<%=ent.getTable_id()%>">退回</a></td>
+					<td width="200"><a href="#">查看详情</a><a> </a><a
+						href="servlet/ProBackReportServlet?table_id=<%=ent.getTable_id()%>">退回</a><a>
+					</a><a href="#">上传</a></td>
 				</tr>
 				<%
 					i++;

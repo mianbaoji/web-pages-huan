@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+#back {
+	background-image: url(../image/navBackground.jpg);
+	background-size: 100% 150%;
+	background-repeat: no-repeat;
+	font-family: '隶书';
+}
+
+#first_navigation {
+	left: 3%;
+	top: 27%;
+	width: 200px;
+	height: auto;
+	position: absolute;
+	font-size: 27px;
+	text-align: center;
+}
+
+#ultype {
+	list-style-type: none;
+	padding: 0px 2px 0px 2px;
+}
+
+.indextype {
+	text-decoration: none;
+	color: #4eabc2;
+}
+
+.liheight {
+	height: 45px;
+}

@@ -8,13 +8,7 @@
 	color: #455155;
 	overflow-y: auto;
 }
-#info3 {
-	top: 30%;
-	left: 35%;
-	position: absolute;
-	font-size: 30px;
-	color: #455155;
-}
+
 #info {
 	position: absolute;
 	top: 40%;

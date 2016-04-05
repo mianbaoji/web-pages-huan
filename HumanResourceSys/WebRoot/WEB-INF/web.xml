@@ -45,13 +45,34 @@
     <servlet-name>ProQueryDataByMultiple</servlet-name>
     <servlet-class>com.bit.proservlet.ProQueryDataByMultiple</servlet-class>
   </servlet>
-
-
-
-
-
-
-
+  <servlet>
+    <servlet-name>ProDeleteCityUser</servlet-name>
+    <servlet-class>com.bit.proservlet.ProDeleteCityUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>cityBackReportServlet</servlet-name>
+    <servlet-class>com.bit.cityservlet.cityBackReportServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>cityQueryEnterpriseServlet</servlet-name>
+    <servlet-class>com.bit.cityservlet.cityQueryEnterpriseServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>cityQueryEnterpriseServletById</servlet-name>
+    <servlet-class>com.bit.cityservlet.cityQueryEnterpriseServletById</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>cityQueryReportServlet</servlet-name>
+    <servlet-class>com.bit.cityservlet.cityQueryReportServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>cityPutRecordServlet</servlet-name>
+    <servlet-class>com.bit.cityservlet.cityPutRecordServlet</servlet-class>
+  </servlet>
+  
+  
+  
+  
   <servlet-mapping>
     <servlet-name>loginServlet</servlet-name>
     <url-pattern>/servlet/loginServlet</url-pattern>
@@ -96,6 +117,31 @@
     <servlet-name>ProQueryDataByMultiple</servlet-name>
     <url-pattern>/servlet/ProQueryDataByMultiple</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProDeleteCityUser</servlet-name>
+    <url-pattern>/servlet/ProDeleteCityUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>cityBackReportServlet</servlet-name>
+    <url-pattern>/servlet/cityBackReportServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>cityQueryEnterpriseServlet</servlet-name>
+    <url-pattern>/servlet/cityQueryEnterpriseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>cityQueryEnterpriseServletById</servlet-name>
+    <url-pattern>/servlet/cityQueryEnterpriseServletById</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>cityQueryReportServlet</servlet-name>
+    <url-pattern>/servlet/cityQueryReportServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>cityPutRecordServlet</servlet-name>
+    <url-pattern>/servlet/cityPutRecordServlet</url-pattern>
+  </servlet-mapping>
+  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>

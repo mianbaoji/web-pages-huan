@@ -23,8 +23,8 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<link rel="stylesheet" type="text/css" href="CSS/home_sheng.css" />
-<link rel="stylesheet" type="text/css" href="CSS/enterprise_sheng.css" />
+<link rel="stylesheet" type="text/css" href="CSS/All_city.css" />
+<link rel="stylesheet" type="text/css" href="CSS/city_record.css" />
 <script src="JS/home_sheng.js"></script>
 
 </head>
@@ -47,28 +47,28 @@
 		<ul id="ultype">
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/home_sheng.jsp" class="indextype">首页</a></li>
+				href="city/home_city.jsp" class="indextype">首页</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Enterprise_Record.jsp" class="indextype">企业备案</a></li>
+				href="city/City_Record.jsp" class="indextype">企业备案</a></li>
 			<!-- <li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Enterprise_Query.jsp" class="indextype">企业查询</a></li> -->
+				href="city/#" class="indextype">企业查询</a></li> -->
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/List_Manage.jsp" class="indextype">报表管理</a></li>
+				href="city/City_ListManage.jsp" class="indextype">报表管理</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Data_Query.jsp" class="indextype">数据查询</a></li>
+				href="city/City_DataQuery.jsp" class="indextype">数据查询</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Data_Analysis.jsp" class="indextype">数据分析</a></li>
+				href="city/City_DataAnalysis.jsp" class="indextype">数据分析</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/Publish_Inform.jsp" class="indextype">发布通知</a></li>
+				href="city/City_PublishInform.jsp" class="indextype">发布通知</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="province/System_Manage.jsp" class="indextype">系统管理</a></li>
+				href="city/City_SystemManage.jsp" class="indextype">系统管理</a></li>
 		</ul>
 	</div>
 	<form action="servlet/ProQueryEnterpriseServlet">
@@ -105,14 +105,13 @@
 		<%
 			int i = 0;
 			while (iter.hasNext()) {
-				EnterpriseInfoTable ent = (EnterpriseInfoTable) iter.next();
+				EnterpriseInfoTable ent = (EnterpriseInfoTable)iter.next();
 				//System.out.println("##########"+ent.getCom_area()+"-----------"+ent.getCom_id());
 		%>
 		<tr>
 			<td width="250"><%=ent.getCom_name()%></td>
 			<td width="250"><%=ent.getCom_area()%></td>
-			<td width="250"><a
-				href="servlet/ProQueryEnterpriseServletById?Com_id=<%=ent.getCom_id()%>">查看详情</a></td>
+			<td width="250"><a href="servlet/ProQueryEnterpriseServletById?Com_id=<%=ent.getCom_id()%>">查看详情</a></td>
 		</tr>
 		<%
 			i++;

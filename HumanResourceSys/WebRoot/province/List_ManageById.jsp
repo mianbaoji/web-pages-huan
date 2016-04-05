@@ -1,6 +1,4 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="com.bit.common.EnterpriseInfoTable"%>
-<%@page import="com.bit.service.serviceOfProvince"%>
+<%@page import="com.bit.common.listManageTable"%>
 <%@page import="com.bit.service.serviceOfPrince2"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
@@ -15,14 +13,16 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>企业备案</title>
-<jsp:include page="../isLogin.jsp"></jsp:include>
+<title>省用户报表管理</title>
+
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <link rel="stylesheet" type="text/css" href="CSS/home_sheng.css" />
+<link rel="stylesheet" type="text/css" href="CSS/list_sheng.css" />
+<link rel="stylesheet" type="text/css" href="CSS/All.css" />
 <link rel="stylesheet" type="text/css" href="CSS/enterprise_sheng.css" />
 <script src="JS/home_sheng.js"></script>
 
@@ -30,8 +30,8 @@
 
 <body id="back">
 	<%
-		EnterpriseInfoTable ent = (EnterpriseInfoTable) session
-				.getAttribute("entReturnProQuery");
+		listManageTable list_ent = (listManageTable) session
+				.getAttribute("oneQueryInfoList");
 	%>
 	<div id="first_navigation">
 		<ul id="ultype">
@@ -64,63 +64,63 @@
 	<div id="enter_query">
 		<br></br>
 		<table border>
-			<%
-				//EnterpriseInfoTable ent = (EnterpriseInfoTable) iter.next();
-			%>
 			<tr class="table_size">
 				<th width="250">企业ID</th>
-				<td width="250"><%=ent.getCom_id()%></td>
+				<td width="250"><%=list_ent.getCom_id()%></td>
 			</tr>
-
 			<tr class="table_size">
 				<th width="250">企业名</th>
-				<td width="250"><%=ent.getCom_name()%></td>
+				<td width="250"><%=list_ent.getCom_name()%></td>
 			</tr>
 			<tr class="table_size">
 				<th width="250">企业地区</th>
-				<td width="250"><%=ent.getCom_area()%></td>
+				<td width="250"><%=list_ent.getCom_area()%></td>
 			</tr>
 			<tr class="table_size">
-				<th width="250">企业性质</th>
-				<td width="250"><%=ent.getCom_property()%></td>
+				<th width="250">建档期就业人数</th>
+				<td width="250"><%=list_ent.getPeople_ago()%></td>
 			</tr>
 			<tr class="table_size">
-				<th width="250">所属行业</th>
-				<td width="250"><%=ent.getCom_industry()%></td>
+				<th width="250">调查期就业人数</th>
+				<td width="250"><%=list_ent.getPeople_now()%></td>
 			</tr>
 			<tr class="table_size">
-				<th width="250">主要经营业务</th>
-				<td width="250"><%=ent.getCom_business()%></td>
+				<th width="250">其他原因</th>
+				<td width="250"><%=list_ent.getOther_reason()%></td>
 			</tr>
 			<tr class="table_size">
-				<th width="250">联系人</th>
-				<td width="250"><%=ent.getCom_people()%></td>
+				<th width="250">就业人数减少类型</th>
+				<td width="250"><%=list_ent.getType()%></td>
 			</tr>
 			<tr class="table_size">
-				<th width="250">地址</th>
-				<td width="250"><%=ent.getCom_address()%></td>
+				<th width="250">主要原因</th>
+				<td width="250"><%=list_ent.getReason_1()%></td>
 			</tr>
 			<tr class="table_size">
-				<th width="250">邮政编码</th>
-				<td width="250"><%=ent.getCom_postalcode()%></td>
+				<th width="250">主要原因说明</th>
+				<td width="250"><%=list_ent.getExplain_1()%></td>
 			</tr>
 			<tr class="table_size">
-				<th width="250">电话</th>
-				<td width="250"><%=ent.getCom_tel()%></td>
+				<th width="250">次要原因</th>
+				<td width="250"><%=list_ent.getReason_2()%></td>
 			</tr>
 			<tr class="table_size">
-				<th width="250">传真</th>
-				<td width="250"><%=ent.getCom_fax()%></td>
+				<th width="250">次要原因说明</th>
+				<td width="250"><%=list_ent.getExplain_2()%></td>
 			</tr>
 			<tr class="table_size">
-				<th width="250">邮箱</th>
-				<td width="250"><%=ent.getCom_email()%></td>
+				<th width="250">第三原因</th>
+				<td width="250"><%=list_ent.getReason_3()%></td>
+			</tr>
+			<tr class="table_size">
+				<th width="250">第三原因说明</th>
+				<td width="250"><%=list_ent.getExplain_3()%></td>
 			</tr>
 
 		</table>
 	</div>
 	<%
-		session.removeAttribute("entReturnProQuery");
+		session.removeAttribute("oneQueryInfoList");
 	%>
 </body>
 </html>

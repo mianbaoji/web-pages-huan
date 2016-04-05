@@ -75,11 +75,24 @@ public class serviceOfPrince2 {
 			return null;
 		}
 	}
+
+	public void deleteCityUser(String user_id){
+		try {
+			String senString = "delete from user_table where user_id = ?";
+			pstmt = conn.prepareStatement(senString);
+			pstmt.setString(1, user_id);
+			pstmt.execute();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
 	
 	public List queryAllEnterpriseListManage() { // 所有企业报表管理
 		List list = new ArrayList();
 		try {
-			pstmt = conn.prepareStatement("select c.com_name,c.com_area,a.*,b.* from com_data a,time_table b,com_info c where a.status = 'checking' and a.time_id = b.time_id and a.com_id = c.com_id");
+			pstmt = conn
+					.prepareStatement("select c.com_name,c.com_area,a.*,b.* from com_data a,time_table b,com_info c where a.status = 'checking' and a.time_id = b.time_id and a.com_id = c.com_id");
 			// pstmt.setString(1, com_area);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -104,7 +117,7 @@ public class serviceOfPrince2 {
 			pstmt = conn
 					.prepareStatement("select * from com_info where com_id=?");
 			pstmt.setString(1, Com_id);
-			System.out.println("333222111");
+			// System.out.println("333222111");
 			ResultSet rs = pstmt.executeQuery();
 			EnterpriseInfoTable ent = new EnterpriseInfoTable();
 			while (rs.next()) {
@@ -154,11 +167,11 @@ public class serviceOfPrince2 {
 	public List queryForm(String com_name, String com_id, String time_year,
 			String time_month) { // 报表管理_查询
 		List list_ent = new ArrayList();
-		System.out.println("%%%%" + com_name + "####" + com_id + "####"
-				+ time_year + "####" + time_month);
+		// System.out.println("%%%%" + com_name + "####" + com_id + "####"
+		// + time_year + "####" + time_month);
 		try {
 			String sens = "select a.com_name,a.com_area,b.*,c.time_year,c.time_month from com_info a,com_data b,time_table c where b.status = 'checking' and a.com_id = b.com_id and c.time_year=? and c.time_month=? and c.time_id = b.time_id";
- 
+
 			int cc1 = 0, cc2 = 0;
 			if (com_name != "") {
 				sens = sens + " and a.com_name=?";
@@ -182,13 +195,11 @@ public class serviceOfPrince2 {
 					pstmt.setString(3, com_id);
 				}
 			}
-			System.out.println(sens);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
-				//EnterpriseInfoTable ent = new EnterpriseInfoTable();
 				listManageTable ent = new listManageTable();
-				System.out.println("@@@" + ent.getCom_name() + "####"
-						+ ent.getCom_id() + "####");
+				// System.out.println("@@@" + ent.getCom_name() + "####"
+				// + ent.getCom_id() + "####");
 				ent.setCom_name(rs.getString(1));
 				ent.setCom_id(rs.getString(3));
 				ent.setCom_area(rs.getString(2));
@@ -204,6 +215,53 @@ public class serviceOfPrince2 {
 		}
 	}
 	
+	public List queryAllCityUser(){
+		List list_entList = new ArrayList();
+		try {
+			String sensString = "select * from user_table where user_type <> 'province' and user_type <> 'enterprise'";
+			pstmt = conn.prepareStatement(sensString);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()){
+				userInfoTable userInfoTable = new userInfoTable();
+				userInfoTable.setUser_id(rs.getString(1));
+				list_entList.add(userInfoTable);
+			}
+			return list_entList;
+		} catch (Exception e) {
+			return null;
+			// TODO: handle exception
+		}
+	}
+
+	public listManageTable queryOneListManage(String table_id) {
+		try {
+			String sens = "select a.*,b.*,c.* from com_data a,time_table b,com_info c where a.table_id = ? and a.time_id = b.time_id and a.com_id = c.com_id";
+			pstmt = conn.prepareStatement(sens);
+			pstmt.setString(1, table_id);
+			ResultSet rs = pstmt.executeQuery();
+			listManageTable ent = new listManageTable();
+			while (rs.next()) {
+				ent.setCom_id(rs.getString(1));
+				ent.setCom_name(rs.getString(20));
+				ent.setCom_area(rs.getString(19));
+				ent.setPeople_ago(rs.getInt(3));
+				ent.setPeople_now(rs.getInt(4));
+				ent.setOther_reason(rs.getString(5));
+				ent.setType(rs.getString(7));
+				ent.setReason_1(rs.getString(8));
+				ent.setExplain_1(rs.getString(11));
+				ent.setReason_2(rs.getString(9));
+				ent.setExplain_2(rs.getString(12));
+				ent.setReason_3(rs.getString(10));
+				ent.setExplain_3(rs.getString(13));
+			}
+			return ent;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
 	public boolean datastatuschang(String table_id, String n_status) {
 		try {
 			pstmt = conn
@@ -228,6 +286,5 @@ public class serviceOfPrince2 {
 			return false;
 		}
 	}
-
 
 }

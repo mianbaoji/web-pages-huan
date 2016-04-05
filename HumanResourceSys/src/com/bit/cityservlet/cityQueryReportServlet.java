@@ -1,4 +1,4 @@
-package com.bit.proservlet;
+package com.bit.cityservlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,12 +13,12 @@ import javax.servlet.http.HttpSession;
 import com.bit.common.listManageTable;
 import com.bit.service.serviceOfPrince2;
 
-public class ProPutRecordServlet extends HttpServlet {
+public class cityQueryReportServlet extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public ProPutRecordServlet() {
+	public cityQueryReportServlet() {
 		super();
 	}
 
@@ -60,20 +60,24 @@ public class ProPutRecordServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 
-		String table_id = request.getParameter("table_id");//table_id企业tableID
+		String com_id = request.getParameter("com_id");// 企业ID
+		String com_name = request.getParameter("com_name");// 企业名称
+		String com_year = request.getParameter("com_year");// 年
+		String com_month = request.getParameter("com_month");// 月
+
+		// service
+		// Javabean: EnterpriseDataTable
+		// 从前端接收：企业名称、企业ID、申报时间（年、月）
+		// 传给Service: 企业名称、企业ID、申报时间（年、月）
+		// Service返回：EnterpriseDataTable
+		// 返回给前端：EnterpriseDataTable
 		
-		//service
-//		从前端接收：地区、调查期(年、月)
-//		传给Service: 地区、调查期(年、月)
-//		Service返回：企业名、地区、组织机构代码 （EnterpriseInfoTable封装）
-//		返回给前端：List<EnterpriseInfoTable>
-		
-		listManageTable enterpriseInfoList = (listManageTable) new serviceOfPrince2().queryOneListManage(table_id);
-		System.out.println("@432323423   @" + table_id);
+		//List<listManageTable> listManageInfoList = new serviceOfPrince2().queryForm(com_name, com_id, com_year, com_month);
+		//上面的注释打开
 		HttpSession session = request.getSession();
-		session.setAttribute("oneQueryInfoList", enterpriseInfoList);
-		response.sendRedirect("../province/List_ManageById.jsp");
-		System.out.println("@432323423   @" + table_id);
+		//session.setAttribute("listManageInfoList", listManageInfoList);
+		session.setAttribute("flag_ListProQueryEnt", "1");
+		//response.sendRedirect("../city/List_Manage.jsp");
 	}
 
 	/**

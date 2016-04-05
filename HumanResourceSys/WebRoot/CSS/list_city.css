@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+#list_query{
+	left: 27%;
+	top: 22%;
+	position: fixed;
+	font-family: '隶书';
+	font-size: 20px;
+	color:#4eabc2;
+}
+
+.checkbox{
+	width:60px;
+}
