@@ -1,7 +1,6 @@
-<%@page import="com.bit.common.userInfoTable"%>
+<%@page import="com.bit.common.PovinceDateQuery"%>
+<%@page import="com.bit.servlet.*"%>
 <%@page import="com.bit.service.serviceOfPrince2"%>
-<%@page import="com.bit.common.listManageTable"%>
-<%@page import="com.bit.servlet.newUserServlet"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -15,31 +14,14 @@
 <head>
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>省用户用户管理</title>
-<jsp:include page="../isLogin.jsp"></jsp:include>
+<title>省用户管理</title>
 <link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
-<link rel="stylesheet" type="text/css" href="CSS/System_Manage.css" />
+<link rel="stylesheet" type="text/css" href="CSS/Data_Query.css" />
 <script src="JS/home_sheng.js"></script>
 </head>
 
 <body id="back">
-	<%
-		String flag = null;
-		String aes = (String) session.getAttribute("flagOfNewUser");
-		if (aes == "1" || aes == "2") {
-			flag = aes;
-		}
-		if (flag == null) {
-		} else if (flag == "1") {
-			out.print("<script>alert('创建重名！');</script>");
-		} else {
-			out.print("<script>alert('创建成功！');</script>");
-		}
-		Iterator iter = null;
-		List<userInfoTable> list_ent = new serviceOfPrince2()
-				.queryAllCityUser();
-		iter = list_ent.iterator();
-	%>
+
 	<div id="first_navigation">
 		<ul id="ultype">
 			<li class="liheight" onmouseover="addBorder(this)"
@@ -68,45 +50,68 @@
 				href="province/System_Manage.jsp" class="indextype">系统管理</a></li>
 		</ul>
 	</div>
-
-	<div id="info2">
-		<ul id="ultype_analysis">
-			<li style="display:inline-block;width:320px;text-align:center"
-				class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="province/Sys_usermanage.jsp" class="indextype">用户管理</a></li>
-			<li style="display:inline-block;width:320px;text-align:center"
-				class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="province/Sys_smanage.jsp" class="indextype">系统管理</a></li>
-		</ul>
-	</div>
-
-	<div id="info3">
-		<form action="province/Sys_usermanage_adduser.jsp">
-			<input type="submit" name="addNewCity" value="新建"> <br></br>
-		</form>
-		<table border>
-			<tr>
-				<th width="250">市用户名</th>
-				<th width="250">操作</th>
-			</tr>
+	<%
+		String user_id = (String) session.getAttribute("user");
+		Boolean admin = new serviceOfPrince2().adminOrNot(user_id);
+	%>
+	<div id="info_other">
+		<form action="servlet/newUserServlet">
 			<%
-				int i = 0;
-				while (iter.hasNext()) {
-					userInfoTable user = (userInfoTable) iter.next();
+				if (admin == true) {
 			%>
-			<tr>
-				<td width="250"><%=user.getUser_id()%></td>
-				<td><a
-					href="servlet/ProDeleteCityUser?user_id=<%=user.getUser_id()%>">删除</a></td>
-			</tr>
+			<p>
+				用户类型:<select name="user_type" class="formstyle">
+					<option selected="selected" value="province">省用户</option>
+					<option value="city">市用户</option>
+					<option value="enterprise">企业用户</option>
+				</select>
+			</p>
 			<%
-				i++;
+				} else {
+			%>
+			<p>
+				用户类型:<select name="user_type" class="formstyle">
+					<option selected="selected" value="city">市用户</option>
+					<option value="enterprise">企业用户</option>
+				</select>
+			</p>
+			<%
 				}
-				session.removeAttribute("flagOfNewUser");
 			%>
-		</table>
+			<p>
+				用户名：<input type="text" name="user_id" class="formstyle"
+					placeholder="用户名">
+			</p>
+			<p>
+				密码：<input type="password" name="password" class="formstyle"
+					placeholder="用户名">
+			</p>
+			<p>
+				所属地区: <input type="text" name="user_city" class="formstyle"
+					placeholder="市用户必填">
+			</p>
+			<%
+				if (admin == true) {
+			%>
+			<p>
+				用户权限:<select name="administor" class="formstyle">
+					<option value="0" selected="selected">0</option>
+					<option value="1">1</option>
+				</select>
+			</p>
+			<%
+				} else {
+			%>
+			用户权限:<select name="power" class="formstyle" disabled="disabled">
+				<option value="0" selected="selected">0</option>
+				<option value="1">1</option>
+			</select>
+			<%
+				}
+			%>
+			<br>
+			<input type="submit" name="create" value="创建">
+		</form>
 	</div>
 
 </body>

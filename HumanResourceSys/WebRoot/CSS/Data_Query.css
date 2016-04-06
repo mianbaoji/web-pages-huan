@@ -9,6 +9,16 @@
 	color:#455155;
 }
 
+#info_other
+{
+	position:absolute;
+	top:27%;
+	left:30%;
+	width:1000px;
+	font-size:25px;
+	color:#455155;
+}
+
 .formstyle
 {
 	width:150px;
