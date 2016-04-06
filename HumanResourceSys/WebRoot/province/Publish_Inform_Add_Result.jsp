@@ -1,6 +1,6 @@
 <%@page import="com.bit.common.news_table"%>
 <%@page import="java.sql.ResultSet"%>
-<%@ page import="com.bit.service.serviceOfProvince"%>>
+<%@ page import="com.bit.service.serviceOfProvince"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -12,14 +12,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>省用户首页</title>
-<jsp:include page="../isLogin.jsp"></jsp:include>
-<link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
-<link rel="stylesheet" type="text/css" href="CSS/Publish_Inform.css" />
-<script src="JS/Publish_Inform.js"></script>
-<script src="JS/home_sheng.js"></script>
+<link rel="stylesheet" type="text/css" href="../CSS/All_sheng.css" />
+<link rel="stylesheet" type="text/css" href="../CSS/Publish_Inform.css" />
+<script src="../JS/Publish_Inform.js"></script>
+<script src="../JS/home_sheng.js"></script>
 </head>
 
 <body id="back">
