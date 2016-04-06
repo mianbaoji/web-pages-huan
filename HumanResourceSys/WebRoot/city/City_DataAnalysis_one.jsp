@@ -83,14 +83,11 @@
 			<p>
 				企业性质: <select name="com_property" class="selectcss"
 					style="width:200px">
-					<option value="国有企业" selected="selected">国有企业</option>
-					<option value="集体企业">集体企业</option>
-					<option value="联营企业">联营企业</option>
-					<option value="股份合作制企业">股份合作制企业</option>
-					<option value="私营企业">私营企业</option>
-					<option value="个体户">个体户</option>
-					<option value="合伙企业">合伙企业</option>
-					<option value="有限责任公司">有限责任公司</option>
+				<option value="1" selected="selected">国有企业</option>
+					<option value="2">集体企业</option>
+					<option value="3">联营企业</option>
+					<option value="4">私营企业</option>
+					<option value="5">个体户</option>
 				</select>
 			</p>
 			<p>
