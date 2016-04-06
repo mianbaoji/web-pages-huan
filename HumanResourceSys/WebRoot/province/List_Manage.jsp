@@ -148,7 +148,8 @@
 					<td width="200"><%=ent.getCom_name()%></td>
 					<td width="200"><%=ent.getCom_area()%></td>
 					<td width="200"><%=ent.getTime_year()%>年<%=ent.getTime_month()%>月</td>
-					<td width="200"><a href="servlet/ProBackReportServlet?table_id=<%=ent.getTable_id()%>">退回</a></td>
+					<td width="200"><a href="servlet/ProPutRecordServlet?table_id=<%=ent.getTable_id()%>">查看详情</a><a> </a><a
+						href="servlet/ProBackReportServlet?table_id=<%=ent.getTable_id()%>">退回</a></td>
 				</tr>
 				<%
 					i++;

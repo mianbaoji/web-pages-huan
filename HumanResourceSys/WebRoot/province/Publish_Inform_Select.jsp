@@ -11,12 +11,14 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
+<base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>省用户首页</title>
-<link rel="stylesheet" type="text/css" href="../CSS/All_sheng.css" />
-<link rel="stylesheet" type="text/css" href="../CSS/Publish_Inform.css" />
-<script src="../JS/Publish_Inform.js"></script>
-<script src="../JS/home_sheng.js"></script>
+<jsp:include page="../isLogin.jsp"></jsp:include>
+<link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
+<link rel="stylesheet" type="text/css" href="CSS/Publish_Inform.css" />
+<script src="JS/Publish_Inform.js"></script>
+<script src="JS/home_sheng.js"></script>
 </head>
 
 <body id="back">

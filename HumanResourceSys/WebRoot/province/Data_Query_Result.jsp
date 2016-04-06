@@ -14,12 +14,14 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
+<base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>省用户数据查询</title>
-<link rel="stylesheet" type="text/css" href="../CSS/All_sheng.css" />
-<link rel="stylesheet" type="text/css" href="../CSS/Data_Query.css" />
-<script src="../JS/Data_Query.js"></script>
-<script src="../JS/home_sheng.js"></script>
+<jsp:include page="../isLogin.jsp"></jsp:include>
+<link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
+<link rel="stylesheet" type="text/css" href="CSS/Data_Query.css" />
+<script src="JS/Data_Query.js"></script>
+<script src="JS/home_sheng.js"></script>
 </head>
 
 <body id="back">
@@ -27,29 +29,29 @@
 	<div id="first_navigation">
 		<ul id="ultype">
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="home_sheng.jsp"
-				class="indextype">首页</a></li>
+				onmouseout="removeBorder(this)"><a
+				href="province/home_sheng.jsp" class="indextype">首页</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="home_sheng.jsp"
-				class="indextype">企业备案</a></li>
+				onmouseout="removeBorder(this)"><a
+				href="province/Enterprise_Record.jsp" class="indextype">企业备案</a></li>
+			<!-- <li class="liheight" onmouseover="addBorder(this)"
+				onmouseout="removeBorder(this)"><a
+				href="province/Enterprise_Query.jsp" class="indextype">企业查询</a></li> -->
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="home_sheng.jsp"
-				class="indextype">企业查询</a></li>
+				onmouseout="removeBorder(this)"><a
+				href="province/List_Manage.jsp" class="indextype">报表管理</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="home_sheng.jsp"
-				class="indextype">报表管理</a></li>
+				onmouseout="removeBorder(this)"><a
+				href="province/Data_Query.jsp" class="indextype">数据查询</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="Data_Query.jsp"
-				class="indextype">数据查询</a></li>
+				onmouseout="removeBorder(this)"><a
+				href="province/Data_Analysis.jsp" class="indextype">数据分析</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="Data_Analysis.jsp"
-				class="indextype">数据分析</a></li>
+				onmouseout="removeBorder(this)"><a
+				href="province/Publish_Inform.jsp" class="indextype">发布通知</a></li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="Publish_Inform.jsp"
-				class="indextype">发布通知</a></li>
-			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="System_Manage.jsp"
-				class="indextype">系统管理</a></li>
+				onmouseout="removeBorder(this)"><a
+				href="province/System_Manage.jsp" class="indextype">系统管理</a></li>
 		</ul>
 	</div>
 
@@ -149,7 +151,7 @@
 
 	<button name="button_return" class="button"
 		style="position:absolute;bottom:10%;right:10%"
-		onclick="window.location.href='Data_Query.jsp'">返回</button>
+		onclick="window.location.href='province/Data_Query.jsp'">返回</button>
 
 </body>
 

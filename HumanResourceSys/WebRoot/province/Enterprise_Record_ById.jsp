@@ -1,5 +1,4 @@
 <%@page import="java.sql.ResultSet"%>
-<%@page import="com.bit.servlet.enterpriseQueryData"%>
 <%@page import="com.bit.common.EnterpriseInfoTable"%>
 <%@page import="com.bit.service.serviceOfProvince"%>
 <%@page import="com.bit.service.serviceOfPrince2"%>
@@ -30,9 +29,6 @@
 </head>
 
 <body id="back">
-	<%
-		System.out.println("123#########2131ewqeqweqwe#");
-	%>
 	<%
 		EnterpriseInfoTable ent = (EnterpriseInfoTable) session
 				.getAttribute("entReturnProQuery");

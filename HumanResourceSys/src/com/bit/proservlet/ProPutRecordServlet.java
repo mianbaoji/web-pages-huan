@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.bit.common.EnterpriseInfoTable;
+import com.bit.common.listManageTable;
+import com.bit.service.serviceOfPrince2;
 
 public class ProPutRecordServlet extends HttpServlet {
 
@@ -59,20 +60,20 @@ public class ProPutRecordServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 
-		String com_area = request.getParameter("com_area");//地区
-		String com_year = request.getParameter("com_year");//年
-		String com_month = request.getParameter("com_month");//月
+		String table_id = request.getParameter("table_id");//table_id企业tableID
 		
 		//service
 //		从前端接收：地区、调查期(年、月)
 //		传给Service: 地区、调查期(年、月)
 //		Service返回：企业名、地区、组织机构代码 （EnterpriseInfoTable封装）
 //		返回给前端：List<EnterpriseInfoTable>
-
-		List<EnterpriseInfoTable> enterpriseInfoList = null;
+		
+		listManageTable enterpriseInfoList = (listManageTable) new serviceOfPrince2().queryOneListManage(table_id);
+		System.out.println("@432323423   @" + table_id);
 		HttpSession session = request.getSession();
-		session.setAttribute("enterpriseInfoList", enterpriseInfoList);
-		response.sendRedirect("../-----.jsp");
+		session.setAttribute("oneQueryInfoList", enterpriseInfoList);
+		response.sendRedirect("../province/List_ManageById.jsp");
+		System.out.println("@432323423   @" + table_id);
 	}
 
 	/**

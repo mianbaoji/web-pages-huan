@@ -1,12 +1,12 @@
 package com.bit.common;
 
 public class news_table {
-	private String news_head;
-	private String news_time;
-	private String news_content;
-	private String news_pub;
-	private String news_sub;
-	private String news_status;
+	private String news_head;//消息标题
+	private String news_time;//发布时间
+	private String news_content;//消息内容
+	private String news_pub;//发布人ID
+	private String news_sub;//接收人ID
+	private String news_status;//消息状态（已查看/未查看）
 	public String getNews_head() {
 		return news_head;
 	}

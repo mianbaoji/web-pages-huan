@@ -105,13 +105,14 @@
 		<%
 			int i = 0;
 			while (iter.hasNext()) {
-				EnterpriseInfoTable ent = (EnterpriseInfoTable)iter.next();
-				System.out.println("##########"+ent.getCom_area()+"-----------"+ent.getCom_id());
+				EnterpriseInfoTable ent = (EnterpriseInfoTable) iter.next();
+				//System.out.println("##########"+ent.getCom_area()+"-----------"+ent.getCom_id());
 		%>
 		<tr>
 			<td width="250"><%=ent.getCom_name()%></td>
 			<td width="250"><%=ent.getCom_area()%></td>
-			<td width="250"><a href="servlet/ProQueryEnterpriseServletById?Com_id=<%=ent.getCom_id()%>">查看详情</a></td>
+			<td width="250"><a
+				href="servlet/ProQueryEnterpriseServletById?Com_id=<%=ent.getCom_id()%>">查看详情</a></td>
 		</tr>
 		<%
 			i++;

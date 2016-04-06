@@ -69,7 +69,7 @@ public class ProBackReportServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 
-		String table_id = request.getParameter("table_id");// 企业ID
+		String table_id = request.getParameter("table_id");//table_id企业tableID
 		
 		// service
 		// 从前端接收：企业ID（企业名称）、时间（年、月）
@@ -79,7 +79,7 @@ public class ProBackReportServlet extends HttpServlet {
 
 		Boolean flag = new serviceOfPrince2().datastatuschang(table_id, "已退回");
 		HttpSession session = request.getSession();
-		session.setAttribute("flag_ProQueryEnt", "0");
+		session.setAttribute("flag_ListProQueryEnt", "0");
 		response.sendRedirect("../province/List_Manage.jsp");
 	}
 
