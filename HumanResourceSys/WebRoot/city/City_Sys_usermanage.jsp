@@ -70,7 +70,6 @@
 		</ul>
 	</div>
 	<div id="info3">
-		<input type="submit" name="addNewEnt" value="新建"> <br></br>
 		<table border>
 			<tr>
 				<th width="250">企业用户名</th>

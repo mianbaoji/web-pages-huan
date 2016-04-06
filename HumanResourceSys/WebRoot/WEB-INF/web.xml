@@ -50,6 +50,10 @@
     <servlet-class>com.bit.proservlet.ProDeleteCityUser</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>ProAddNewCityUser</servlet-name>
+    <servlet-class>com.bit.proservlet.ProAddNewCityUser</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>cityBackReportServlet</servlet-name>
     <servlet-class>com.bit.cityservlet.cityBackReportServlet</servlet-class>
   </servlet>
@@ -73,10 +77,10 @@
     <servlet-name>cityGoonListServlet</servlet-name>
     <servlet-class>com.bit.cityservlet.cityGoonListServlet</servlet-class>
   </servlet>
-  
-  
-  
-  
+  <servlet>
+    <servlet-name>newUserServlet</servlet-name>
+    <servlet-class>com.bit.servlet.newUserServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>loginServlet</servlet-name>
     <url-pattern>/servlet/loginServlet</url-pattern>
@@ -126,6 +130,10 @@
     <url-pattern>/servlet/ProDeleteCityUser</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+    <servlet-name>ProAddNewCityUser</servlet-name>
+    <url-pattern>/servlet/ProAddNewCityUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>cityBackReportServlet</servlet-name>
     <url-pattern>/servlet/cityBackReportServlet</url-pattern>
   </servlet-mapping>
@@ -148,6 +156,10 @@
   <servlet-mapping>
     <servlet-name>cityGoonListServlet</servlet-name>
     <url-pattern>/servlet/cityGoonListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>newUserServlet</servlet-name>
+    <url-pattern>/servlet/newUserServlet</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
