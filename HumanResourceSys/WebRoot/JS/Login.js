@@ -40,9 +40,6 @@ function checkInput(content)
 		
 		document.q_loginForm.action="servlet/loginServlet?userType=enterprise";
 		document.q_loginForm.submit();
-		
-		document.shi_loginForm.action="servlet/loginServlet?userType=municipality";
-		document.shi_loginForm.submit();
 	//}
 	
 }

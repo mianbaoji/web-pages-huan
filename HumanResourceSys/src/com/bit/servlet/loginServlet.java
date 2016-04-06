@@ -78,17 +78,12 @@ public class loginServlet extends HttpServlet {
 			if (new serviceOfAll().valiUser(userInfo)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("user", username);
-				session.setAttribute("userType", userType);
-				if (userType.equals("enterprise")) {
+				if (userType.equalsIgnoreCase("enterprise")) {
 					response.sendRedirect("../enterprise/HomePage.jsp");
 				}
-				else if(userType.equals("province"))
+				else if(userType.equalsIgnoreCase("province"))
 				{
 					response.sendRedirect("../province/home_sheng.jsp");
-				}
-				else if(userType.equals("municipality"))
-				{
-					response.sendRedirect("../province/home_sheng.jsp");//路径需要更改
 				}
 			}
 
