@@ -5,22 +5,8 @@ public class userInfoTable {
 	private String password;
 	private String user_type;
 	private String user_row;
-	private String user_city;
-	private String administor;
 	public String getUser_id() {
 		return user_id;
-	}
-	public String getUser_city() {
-		return user_city;
-	}
-	public void setUser_city(String user_city) {
-		this.user_city = user_city;
-	}
-	public String getAdministor() {
-		return administor;
-	}
-	public void setAdministor(String administor) {
-		this.administor = administor;
 	}
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;

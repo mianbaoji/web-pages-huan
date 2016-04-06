@@ -1,7 +1,6 @@
 <%@page import="com.bit.common.userInfoTable"%>
 <%@page import="com.bit.service.serviceOfPrince2"%>
 <%@page import="com.bit.common.listManageTable"%>
-<%@page import="com.bit.servlet.newUserServlet"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -24,17 +23,6 @@
 
 <body id="back">
 	<%
-		String flag = null;
-		String aes = (String) session.getAttribute("flagOfNewUser");
-		if (aes == "1" || aes == "2") {
-			flag = aes;
-		}
-		if (flag == null) {
-		} else if (flag == "1") {
-			out.print("<script>alert('创建重名！');</script>");
-		} else {
-			out.print("<script>alert('创建成功！');</script>");
-		}
 		Iterator iter = null;
 		List<userInfoTable> list_ent = new serviceOfPrince2()
 				.queryAllCityUser();
@@ -83,9 +71,7 @@
 	</div>
 
 	<div id="info3">
-		<form action="province/Sys_usermanage_adduser.jsp">
-			<input type="submit" name="addNewCity" value="新建"> <br></br>
-		</form>
+		<input type="submit" name="addNewCity" value="新建"> <br></br>
 		<table border>
 			<tr>
 				<th width="250">市用户名</th>
@@ -94,7 +80,9 @@
 			<%
 				int i = 0;
 				while (iter.hasNext()) {
+				
 					userInfoTable user = (userInfoTable) iter.next();
+					System.out.println("12313123123");
 			%>
 			<tr>
 				<td width="250"><%=user.getUser_id()%></td>
@@ -104,7 +92,6 @@
 			<%
 				i++;
 				}
-				session.removeAttribute("flagOfNewUser");
 			%>
 		</table>
 	</div>
