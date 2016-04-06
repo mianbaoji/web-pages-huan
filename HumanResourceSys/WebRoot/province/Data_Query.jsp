@@ -60,17 +60,46 @@
 					placeholder="所属地区">
 			</p>
 			<p>
-				企业性质:<select name="com_property" class="formstyle">
-					<option value="1" selected="selected">1</option>
+				企业性质:<select name="com_property" class="formstyle"
+					style="width:200px">
+					<option value="国有企业" selected="selected">国有企业</option>
+					<option value="集体企业">集体企业</option>
+					<option value="联营企业">联营企业</option>
+					<option value="股份合作制企业">股份合作制企业</option>
+					<option value="私营企业">私营企业</option>
+					<option value="个体户">个体户</option>
+					<option value="合伙企业">合伙企业</option>
+					<option value="有限责任公司">有限责任公司</option>
 				</select>
 			</p>
 			<p>
-				所属行业:<select name="com_industry" class="formstyle">
-					<option value="1" selected="selected">1</option>
+				所属行业:<select name="com_industry" class="formstyle"
+					style="width:330px">
+					<option value="农、林、牧、渔业" selected="selected">农、林、牧、渔业</option>
+					<option value="采矿业">采矿业</option>
+					<option value="制造业">制造业</option>
+					<option value="电力、热力、燃气及水的生产和供应业">电力、热力、燃气及水的生产和供应业</option>
+					<option value="环境和公共设施管理业">环境和公共设施管理业</option>
+					<option value="建筑业">建筑业</option>
+					<option value="交通运输、仓储业和邮政业">交通运输、仓储业和邮政业</option>
+					<option value="信息传输、计算机服务和软件业">信息传输、计算机服务和软件业</option>
+					<option value="批发和零售业">批发和零售业</option>
+					<option value="住宿、餐饮业">住宿、餐饮业</option>
+					<option value="金融、保险业">金融、保险业</option>
+					<option value="房地产业">房地产业</option>
+					<option value="租赁和商务服务业">租赁和商务服务业</option>
+					<option value="科学研究、技术服务和地质勘查业">科学研究、技术服务和地质勘查业</option>
+					<option value="水利、环境和公共设施管理业">水利、环境和公共设施管理业</option>
+					<option value="居民服务和其他服务业">居民服务和其他服务业</option>
+					<option value="教育">教育</option>
+					<option value="卫生、社会保障和社会服务业">卫生、社会保障和社会服务业</option>
+					<option value="文化、体育、娱乐业">文化、体育、娱乐业</option>
+					<option value="综合（含投资类、主业不明显）">综合（含投资类、主业不明显）</option>
+					<option value="其它">其它</option>
 				</select>
 			</p>
 			<p>
-				统计月份:<select name="start_m" class="formstyle">
+				统计月份:<select name="start_m" class="formstyle" style="width:50px">
 					<option value="1" selected="selected">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -83,7 +112,7 @@
 					<option value="10">10</option>
 					<option value="11">11</option>
 					<option value="12">12</option>
-				</select>到<select name="end_m" class="formstyle">
+				</select>到<select name="end_m" class="formstyle" style="width:50px">
 					<option value="1" selected="selected">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -100,9 +129,10 @@
 			</p>
 			<p>
 				统计年份:<input type="text" name="start_y" placeholder="2000"
-					class="formstyle">到<input type="text" name="end_y"
-					placeholder="2000" class="formstyle">年<input type="submit"
-					value="检索" class="formstyle"
+					class="formstyle" style="width:50px">到<input type="text"
+					name="end_y" placeholder="2000" class="formstyle"
+					style="width:50px">年<input type="submit" value="检索"
+					class="formstyle"
 					style="position:fixed;bottom:10%;right:10%;
 					font-size:20px;width:365px;height:40px;color:white;
 					background-color:#06c;border:1px solid #09F;margin:auto;">

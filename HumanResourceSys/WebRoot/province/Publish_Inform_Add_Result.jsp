@@ -1,6 +1,6 @@
 <%@page import="com.bit.common.news_table"%>
 <%@page import="java.sql.ResultSet"%>
-<%@ page import="com.bit.service.serviceOfProvince"%>>
+<%@ page import="com.bit.service.serviceOfProvince"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
