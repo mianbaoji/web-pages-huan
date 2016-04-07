@@ -64,12 +64,34 @@
 	<div id="analysis_son">
 		<form id="hhform" target="test">
 			<p>
-				调查期A:<input type="text" name="time_start" class="formcss"
-					style="width:250px">
+				调查期A:<select id="a_year" name="a_year"></select>年 <select
+				id="a_month" name="a_month" ></select>月 
+			<script type="text/javascript">
+				var selYear = window.document.getElementById("a_year");
+				var selMonth = window.document.getElementById("a_month");
+				var selDay = window.document.getElementById("a_day");
+				// 新建一个DateSelector类的实例，将三个select对象传进去
+				new DateSelector(selYear, selMonth, selDay);
+				
+				// var dt = new Date(2004, 1, 29);
+				// new DateSelector(selYear, selMonth ,selDay, dt);
+			</script>
 			</p>
 			<p>
-				调查期B:<input type="text" name="time_end" class="formcss"
-					style="width:250px">
+				调查期B:<!-- <input type="text" name="time_end" class="formcss"
+					style="width:250px"> -->
+					<select id="b_year" name="b_year"></select>年 <select
+				id="b_month" name="b_month" ></select>月 
+			<script type="text/javascript">
+				var selYear = window.document.getElementById("b_year");
+				var selMonth = window.document.getElementById("b_month");
+		 		var selDay = window.document.getElementById("b_day"); 
+				// 新建一个DateSelector类的实例，将三个select对象传进去
+				new DateSelector(selYear, selMonth, selDay);
+				
+				// var dt = new Date(2004, 1, 29);
+				// new DateSelector(selYear, selMonth ,selDay, dt);
+			</script>
 			</p>
 			<p>
 				企业名称:<input type="text" name="name" class="formcss"
@@ -88,7 +110,7 @@
 			</p>
 			<p>
 				企业所属地区: <select name="com_area" class="selectcss">
-					<option value="" selected="selected"></option>
+					<option value=" " selected="selected"></option>
 					<option value="济南">济南</option>
 					<option value="青岛">青岛</option>
 					<option value="淄博">淄博</option>
@@ -105,8 +127,7 @@
 					<option value="枣庄">枣庄</option>
 					<option value="日照">日照</option>
 					<option value="莱芜">莱芜</option>
-					<option value="聊城">聊城</option>s
-					<option value=""></option>
+					<option value="聊城">聊城</option>
 				</select>
 			</p>
 			<button id="submitcss" onclick="one_show()">显示</button>

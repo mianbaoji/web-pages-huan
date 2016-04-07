@@ -239,7 +239,7 @@ public class serviceOfProvince {
 			String e_m, String com_name) {
 		try {
 			pstmt = conn
-					.prepareStatement("select sun(people_now) from com_data ,com_info where com_name=? and com_data.com_id=com_info.com_id and time_id in(select time_id from time_table where (time_year>=? or (time_year=? and time_month>=?))and(time_year<=? or (time_year=? and time_month<=?)))");
+					.prepareStatement("select * from com_data ,com_info where com_name=? and com_data.com_id=com_info.com_id and time_id in(select time_id from time_table where (time_year>=? or (time_year=? and time_month>=?))and(time_year<=? or (time_year=? and time_month<=?)))");
 			String year = "";
 			int yearint = 0;
 			pstmt.setString(1, com_name);
@@ -256,6 +256,41 @@ public class serviceOfProvince {
 			pstmt.setString(5, year);
 			pstmt.setString(6, e_y);
 			pstmt.setString(7, e_m);
+			ResultSet rsResultSet = pstmt.executeQuery();
+			return rsResultSet;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	
+	
+
+	public ResultSet areaEnterpriseSelect(String s_y, String s_m, String e_y,
+			String e_m, String com_area,String com_property,String com_industry) {//查询一个地区的某个性质，某个行业的所有企业的数据
+		try {
+			pstmt = conn
+					.prepareStatement("select * from com_data ,com_info where com_area=? and com_property=? and com_industry=? and com_data.com_id=com_info.com_id and time_id in(select time_id from time_table where (time_year>=? or (time_year=? and time_month>=?))and(time_year<=? or (time_year=? and time_month<=?)))");
+			String year = "";
+			int yearint = 0;
+			pstmt.setString(1, com_area);
+			pstmt.setString(2, com_property);
+			pstmt.setString(3, com_industry);
+			yearint = Integer.valueOf(s_y);
+			yearint++;
+			year = String.valueOf(yearint);
+			pstmt.setString(4, year);
+			pstmt.setString(5, s_y);
+			pstmt.setString(6, s_m);
+
+			yearint = Integer.valueOf(e_y);
+			yearint--;
+			year = String.valueOf(yearint);
+			pstmt.setString(7, year);
+			pstmt.setString(8, e_y);
+			pstmt.setString(9, e_m);
 			ResultSet rsResultSet = pstmt.executeQuery();
 			return rsResultSet;
 		} catch (SQLException e) {

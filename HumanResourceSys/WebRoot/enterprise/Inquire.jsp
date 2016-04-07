@@ -46,8 +46,7 @@
 		<div id="inquire">
 			<!-- <input type="text" /> -->
 			调查期日期 &nbsp &nbsp<select id="selYear" name="selYear"></select>年 <select
-				id="selMonth" name="selMonth" ></select>月 <select id="selDay"
-				name="selDay"  style="display:none"></select>
+				id="selMonth" name="selMonth" ></select>月 
 			<script type="text/javascript">
 				var selYear = window.document.getElementById("selYear");
 				var selMonth = window.document.getElementById("selMonth");

@@ -67,9 +67,7 @@
 				document.getElementById("information").innerHTML = con;
 			}
 			
-		</script> <%
- 	
- %>
+		</script> 
 
 	<div class="box" id="home_page">
 		<h1>通知公告:</h1>

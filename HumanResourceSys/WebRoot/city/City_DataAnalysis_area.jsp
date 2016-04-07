@@ -69,19 +69,62 @@
 	<div id="analysis_son">
 		<form id="hhform" target="test">
 			<p>
-				调查期A:<input type="text" name="time_start" class="formcss">
+				调查期A:<select id="a_year" name="a_year"></select>年 <select
+				id="a_month" name="a_month" ></select>月 
+			<script type="text/javascript">
+				var selYear = window.document.getElementById("a_year");
+				var selMonth = window.document.getElementById("a_month");
+				var selDay = window.document.getElementById("a_day");
+				// 新建一个DateSelector类的实例，将三个select对象传进去
+				new DateSelector(selYear, selMonth, selDay);
+				
+				// var dt = new Date(2004, 1, 29);
+				// new DateSelector(selYear, selMonth ,selDay, dt);
+			</script>
 			</p>
 			<p>
-				调查期B:<input type="text" name="time_end" class="formcss">
+				调查期B:<!-- <input type="text" name="time_end" class="formcss"
+					style="width:250px"> -->
+					<select id="b_year" name="b_year"></select>年 <select
+				id="b_month" name="b_month" ></select>月 
+			<script type="text/javascript">
+				var selYear = window.document.getElementById("b_year");
+				var selMonth = window.document.getElementById("b_month");
+		 		var selDay = window.document.getElementById("b_day"); 
+				// 新建一个DateSelector类的实例，将三个select对象传进去
+				new DateSelector(selYear, selMonth, selDay);
+				
+				// var dt = new Date(2004, 1, 29);
+				// new DateSelector(selYear, selMonth ,selDay, dt);
+			</script>
 			</p>
 			<p>
-				地区: <input class="formcss" type="text" readonly="readonly"
-					name="com_area" value="<%=cityString%>">
+				地区: <select name="com_area" class="selectcss">
+					<option value="" selected="selected"></option>
+					<option value="济南">济南</option>
+					<option value="青岛">青岛</option>
+					<option value="淄博">淄博</option>
+					<option value="德州">德州</option>
+					<option value="烟台">烟台</option>
+					<option value="潍坊">潍坊</option>
+					<option value="济宁">济宁</option>
+					<option value="泰安">泰安</option>
+					<option value="临沂">临沂</option>
+					<option value="菏泽">菏泽</option>
+					<option value="滨州">滨州</option>
+					<option value="东营">东营</option>
+					<option value="威海">威海</option>
+					<option value="枣庄">枣庄</option>
+					<option value="日照">日照</option>
+					<option value="莱芜">莱芜</option>
+					<option value="聊城">聊城</option>s
+					<option value=""></option>
+				</select>
 			</p>
 			<p>
 				企业性质: <select name="com_property" class="selectcss"
 					style="width:200px">
-				<option value="1" selected="selected">国有企业</option>
+					<option value="1" selected="selected">国有企业</option>
 					<option value="2">集体企业</option>
 					<option value="3">联营企业</option>
 					<option value="4">私营企业</option>

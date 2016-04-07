@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>省用户首页</title>
+<title>数据分析</title>
 <link rel="stylesheet" type="text/css" href="../CSS/All_sheng.css" />
 <link rel="stylesheet" type="text/css" href="../CSS/Data_Analysis.css" />
 <script src="../JS/home_sheng.js"></script>
@@ -64,10 +64,34 @@
 	<div id="analysis_son">
 		<form id="hhform" target="test">
 			<p>
-				调查期A:<input type="text" name="time_start" class="formcss">
+				调查期A:<select id="a_year" name="a_year"></select>年 <select
+				id="a_month" name="a_month" ></select>月 
+			<script type="text/javascript">
+				var selYear = window.document.getElementById("a_year");
+				var selMonth = window.document.getElementById("a_month");
+				var selDay = window.document.getElementById("a_day");
+				// 新建一个DateSelector类的实例，将三个select对象传进去
+				new DateSelector(selYear, selMonth, selDay);
+				
+				// var dt = new Date(2004, 1, 29);
+				// new DateSelector(selYear, selMonth ,selDay, dt);
+			</script>
 			</p>
 			<p>
-				调查期B:<input type="text" name="time_end" class="formcss">
+				调查期B:<!-- <input type="text" name="time_end" class="formcss"
+					style="width:250px"> -->
+					<select id="b_year" name="b_year"></select>年 <select
+				id="b_month" name="b_month" ></select>月 
+			<script type="text/javascript">
+				var selYear = window.document.getElementById("b_year");
+				var selMonth = window.document.getElementById("b_month");
+		 		var selDay = window.document.getElementById("b_day"); 
+				// 新建一个DateSelector类的实例，将三个select对象传进去
+				new DateSelector(selYear, selMonth, selDay);
+				
+				// var dt = new Date(2004, 1, 29);
+				// new DateSelector(selYear, selMonth ,selDay, dt);
+			</script>
 			</p>
 			<p>
 				地区: <select name="com_area" class="selectcss">

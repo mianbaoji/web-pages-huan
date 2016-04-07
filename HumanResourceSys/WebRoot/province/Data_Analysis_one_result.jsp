@@ -13,36 +13,53 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>省用户首页</title>
+<title>数据分析折线图</title>
 <link rel="stylesheet" type="text/css" href="../CSS/All_sheng.css" />
 <link rel="stylesheet" type="text/css" href="../CSS/Data_Analysis.css" />
 <script src="../JS/home_sheng.js"></script>
 <script src="../JS/Data_Analysis.js"></script>
+<script src="../JS/Chart.js"></script>
 </head>
 
-<body id="back">
-<canvas id="canvas" height="900" width="1200" style="width: 600px; height: 450px;"></canvas>
+<body>
+<legend>在岗人员数</legend>
+	<canvas id="canvas" height="400" width="400"
+		style="width: 600px; height: 450px;">在岗人员数折线图</canvas>
+		<br> 
 	<div id="analysis_son">
 		<%
-			String time_start = request.getParameter("time_start");
-			if (time_start == null) {
-				time_start = "";
+			String a_year = request.getParameter("a_year");
+			if (a_year == null) {
+				a_year = "";
 			}
-			byte b[] = time_start.getBytes("utf-8");
-			time_start = new String(b);
 
-			String time_end = request.getParameter("time_end");
-			if (time_end == null) {
-				time_end = "";
+			String a_month = request.getParameter("a_month");
+			System.out.print(a_month);
+			if (a_month == null) {
+				a_month = "";
 			}
-			b = time_end.getBytes("utf-8");
-			time_end = new String(b);
+			if (Integer.valueOf(a_month) < 10) {
+				a_month = "0" + a_month;
+			}
+
+			String b_year = request.getParameter("b_year");
+			if (b_year == null) {
+				b_year = "";
+			}
+
+			String b_month = request.getParameter("b_month");
+			if (b_month == null) {
+				b_month = "";
+			}
+			if (Integer.valueOf(b_month) < 10) {
+				b_month = "0" + b_month;
+			}
 
 			String com_area = request.getParameter("com_area");
 			if (com_area == null) {
 				com_area = "";
 			}
-			b = com_area.getBytes("utf-8");
+			byte b[] = com_area.getBytes("utf-8");
 			com_area = new String(b);
 
 			String com_property = request.getParameter("com_property");
@@ -60,38 +77,80 @@
 			name = new String(b);
 
 			serviceOfProvince s = new serviceOfProvince();
+			ResultSet rs = s.onepeople_nowselect(a_year, a_month, b_year,
+					b_month, name);
+			String[] amount = new String[100];
+			String[] date = new String[100];
+			int n = 0;
+			if (rs == null) {
+		%>
+		<script type="text/javascript">
+			document.write("服务器错误！");
+		</script>
+		<%
+			} else if (!rs.next()) {
+		%>
+		<script type="text/javascript">
+			document.write("查询无结果！");
+		</script>
+		<%
+			} else {
+
+				while (true) {
+					amount[n] = rs.getString("people_now");
+					date[n] = rs.getString("time_id");
+					n++;
+					if (!rs.next()) {
+						break;
+					}
+
+				}
+			}
 		%>
 	</div>
-<script>
-
+	<script>
 		var lineChartData = {
-			labels : ["January","February","March","April","May","June","July"],
-			datasets : [
-				{
-					fillColor : "rgba(220,220,220,0.5)",
-					strokeColor : "rgba(220,220,220,1)",
-					pointColor : "rgba(220,220,220,1)",
-					pointStrokeColor : "#fff",
-					data : [65,59,90,81,56,55,40]
-				},
-				{
-					fillColor : "rgba(151,187,205,0.5)",
+			labels:[<%for (int i = 0; i < n; i++) {				
+				if (i == n - 1) {
+					out.print("\"" + date[i] + "\"");
+				} else {
+					out.print("\"" + date[i] + "\",");
+				}
+			}%>,"" ],
+			datasets : [ {
+				fillColor : "rgba(151,187,205,0.5)",
 					strokeColor : "rgba(151,187,205,1)",
 					pointColor : "rgba(151,187,205,1)",
 					pointStrokeColor : "#fff",
-					data : [28,48,40,19,96,27,100]
+				data:[<%for (int i = 0; i < n; i++) {
+				
+				
+				if (i == n - 1) {
+					out.print( amount[i] );
+					
+				} else {
+					out.print( amount[i] + ",");
 				}
-			]
-			
+			}%> ]
+			}]
+
 		}
 
-	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData,{
-	bezierCurve : false
-	}
-	
-	);
-	
+		var myLine = new Chart(document.getElementById("canvas").getContext(
+				"2d")).Line(lineChartData, {
+			bezierCurve : false,
+			 scaleShowLabels : true,
+			 	scaleOverride : true,
+				 scaleSteps : 20,        //y轴刻度的个数
+                scaleStepWidth : 20,   //y轴每个刻度的宽度
+                scaleStartValue : 0,    //y轴的起始值
+			     pointDot : true,
+		
+		}
+
+		);
 	</script>
+
 </body>
 
 </html>
