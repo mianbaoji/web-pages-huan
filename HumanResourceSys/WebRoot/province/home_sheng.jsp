@@ -45,6 +45,9 @@
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
 				href="province/System_Manage.jsp" class="indextype">系统管理</a></li>
+			<li class="liheight" onmouseover="addBorder(this)"
+				onmouseout="removeBorder(this)"><a href="enterExit.jsp"
+				class="indextype">注销</a></li>
 		</ul>
 	</div>
 
