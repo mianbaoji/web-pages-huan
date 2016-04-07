@@ -150,13 +150,16 @@
 		var lineChartData = {
 			labels : [<%n = 0;
 			while (data[0][0][n] != "-1") {
-			
+			System.out.println("data[0][0][n]");
 				if (n == 0) {
 					out.print("\""+data[0][0][n]+"\"");
 				} else {
 					out.print(",\""+data[0][0][n]+"\"");
 				}
+				
 				n++;
+				if(n==100)
+				{break;}
 			}%>
 					," " ],
 					

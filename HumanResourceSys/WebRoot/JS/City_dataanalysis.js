@@ -158,3 +158,4 @@ DateSelector.prototype.InitSelector = function (year, month, day) {
 
     // 设置天数初始值
     this.selDay.selectedIndex = day - 1;
+}

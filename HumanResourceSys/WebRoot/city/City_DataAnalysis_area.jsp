@@ -117,7 +117,7 @@
 					<option value="枣庄">枣庄</option>
 					<option value="日照">日照</option>
 					<option value="莱芜">莱芜</option>
-					<option value="聊城">聊城</option>s
+					<option value="聊城">聊城</option>
 					<option value=""></option>
 				</select>
 			</p>

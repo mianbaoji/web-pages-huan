@@ -25,32 +25,39 @@
 	<div id="first_navigation">
 		<ul id="ultype">
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="city/home_city.jsp" class="indextype">首页</a></li>
+				onmouseout="removeBorder(this)"><a href="city/home_city.jsp"
+				class="indextype">首页</a>
+			</li>
 			<li class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a
-				href="city/City_Record.jsp" class="indextype">企业备案</a></li>
+				onmouseout="removeBorder(this)"><a href="city/City_Record.jsp"
+				class="indextype">企业备案</a>
+			</li>
 			<!-- <li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
 				href="city/#" class="indextype">企业查询</a></li> -->
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="city/City_ListManage.jsp" class="indextype">报表管理</a></li>
+				href="city/City_ListManage.jsp" class="indextype">报表管理</a>
+			</li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="city/City_DataQuery.jsp" class="indextype">数据查询</a></li>
+				href="city/City_DataQuery.jsp" class="indextype">数据查询</a>
+			</li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="city/City_DataAnalysis.jsp" class="indextype">数据分析</a></li>
+				href="city/City_DataAnalysis.jsp" class="indextype">数据分析</a>
+			</li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="city/City_PublishInform.jsp" class="indextype">发布通知</a></li>
+				href="city/City_PublishInform.jsp" class="indextype">发布通知</a>
+			</li>
 			<li class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="city/City_SystemManage.jsp" class="indextype">系统管理</a></li>
+				href="city/City_SystemManage.jsp" class="indextype">系统管理</a>
+			</li>
 		</ul>
 	</div>
-<%
+	<%
 		String user_id = (String) session.getAttribute("user");
 		String cityString = new serviceOfCity().queryCityString(user_id);
 	%>
@@ -59,11 +66,13 @@
 			<li style="display:inline-block;width:320px;text-align:center"
 				class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="city/City_DataAnalysis_area.jsp" class="indextype">地区企业</a></li>
+				href="city/City_DataAnalysis_area.jsp" class="indextype">地区企业</a>
+			</li>
 			<li style="display:inline-block;width:320px;text-align:center"
 				class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="city/City_DataAnalysis_one.jsp" class="indextype">单独企业</a></li>
+				href="city/City_DataAnalysis_one.jsp" class="indextype">单独企业</a>
+			</li>
 		</ul>
 	</div>
 
@@ -71,33 +80,34 @@
 		<form id="hhform" target="test">
 			<p>
 				调查期A:<select id="a_year" name="a_year"></select>年 <select
-				id="a_month" name="a_month" ></select>月 
-			<script type="text/javascript">
-				var selYear = window.document.getElementById("a_year");
-				var selMonth = window.document.getElementById("a_month");
-				var selDay = window.document.getElementById("a_day");
-				// 新建一个DateSelector类的实例，将三个select对象传进去
-				new DateSelector(selYear, selMonth, selDay);
-				
-				// var dt = new Date(2004, 1, 29);
-				// new DateSelector(selYear, selMonth ,selDay, dt);
-			</script>
+					id="a_month" name="a_month"></select>月
+				<script type="text/javascript">
+					var selYear = window.document.getElementById("a_year");
+					var selMonth = window.document.getElementById("a_month");
+					var selDay = window.document.getElementById("a_day");
+					// 新建一个DateSelector类的实例，将三个select对象传进去
+					new DateSelector(selYear, selMonth, selDay);
+
+					// var dt = new Date(2004, 1, 29);
+					// new DateSelector(selYear, selMonth ,selDay, dt);
+				</script>
 			</p>
 			<p>
-				调查期B:<!-- <input type="text" name="time_end" class="formcss"
+				调查期B:
+				<!-- <input type="text" name="time_end" class="formcss"
 					style="width:250px"> -->
-					<select id="b_year" name="b_year"></select>年 <select
-				id="b_month" name="b_month" ></select>月 
-			<script type="text/javascript">
-				var selYear = window.document.getElementById("b_year");
-				var selMonth = window.document.getElementById("b_month");
-		 		var selDay = window.document.getElementById("b_day"); 
-				// 新建一个DateSelector类的实例，将三个select对象传进去
-				new DateSelector(selYear, selMonth, selDay);
-				
-				// var dt = new Date(2004, 1, 29);
-				// new DateSelector(selYear, selMonth ,selDay, dt);
-			</script>
+				<select id="b_year" name="b_year"></select>年 <select id="b_month"
+					name="b_month"></select>月
+				<script type="text/javascript">
+					var selYear = window.document.getElementById("b_year");
+					var selMonth = window.document.getElementById("b_month");
+					var selDay = window.document.getElementById("b_day");
+					// 新建一个DateSelector类的实例，将三个select对象传进去
+					new DateSelector(selYear, selMonth, selDay);
+
+					// var dt = new Date(2004, 1, 29);
+					// new DateSelector(selYear, selMonth ,selDay, dt);
+				</script>
 			</p>
 			<p>
 				企业名称:<input type="text" name="name" class="formcss"
@@ -111,7 +121,7 @@
 					<option value="3">联营企业</option>
 					<option value="4">私营企业</option>
 					<option value="5">个体户</option>
-			
+
 				</select>
 			</p>
 			<p>
@@ -136,7 +146,8 @@
 					<option value="聊城">聊城</option>
 				</select>
 			</p>
-			<button id="submitcss" onclick="one_show()">显示</button>		</form>
+			<button id="submitcss" onclick="one_show()">显示</button>
+		</form>
 	</div>
 
 </body>
