@@ -20,12 +20,12 @@ public class serviceOfCity {
 	public String queryCityString(String user_id) {
 		try {
 			pstmt = conn
-					.prepareStatement("select com_area from com_info where com_id = ?");
+					.prepareStatement("select user_city from user_table where user_id = ?");
 			pstmt.setString(1, user_id);
 			ResultSet rs0 = pstmt.executeQuery();
 			String cityString = "";
 			if (rs0.first()) {
-				cityString = rs0.getString(1);
+				cityString = rs0.getString("user_city");
 			}
 			return cityString;
 		} catch (Exception e) {

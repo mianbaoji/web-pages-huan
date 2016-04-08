@@ -79,11 +79,71 @@
 			</tr>
 			<tr class="table_size">
 				<th width="250">企业性质</th>
-				<td width="250"><%=ent.getCom_property()%></td>
+				<td width="250"><%
+				if(ent.getCom_property().equals("1"))
+				{
+					out.print("国有企业");	
+				}
+				if(ent.getCom_property().equals("2"))
+				{
+					out.print("集体企业");	
+				}
+				if(ent.getCom_property().equals("3"))
+				{
+					out.print("联营企业");	
+				}
+				if(ent.getCom_property().equals("4"))
+				{
+					out.print("私营企业");	
+				}
+				if(ent.getCom_property().equals("5"))
+				{
+					out.print("个体户");	
+				}
+				
+				
+				%></td>
 			</tr>
 			<tr class="table_size">
 				<th width="250">所属行业</th>
-				<td width="250"><%=ent.getCom_industry()%></td>
+				<td width="250"><%
+				if(ent.getCom_industry().equals("1"))
+				{
+					out.print("农、林、牧、渔业");
+				}
+				else if(ent.getCom_industry().equals("2"))
+				{
+					out.print("采矿业");
+				}
+				else if(ent.getCom_industry().equals("3"))
+				{
+					out.print("制造业");
+				}
+				else if(ent.getCom_industry().equals("4"))
+				{
+					out.print("电力、热力、燃气及水的生产和供应业");
+				}
+				else if(ent.getCom_industry().equals("5"))
+				{
+					out.print("环境和公共设施管理业");
+				}
+				else if(ent.getCom_industry().equals("6"))
+				{
+					out.print("建筑业");
+				}
+				else if(ent.getCom_industry().equals("7"))
+				{
+					out.print("交通运输、仓储业和邮政业");
+				}
+				else if(ent.getCom_industry().equals("8"))
+				{
+					out.print("信息传输、计算机服务和软件业");
+				}
+				else 
+				{
+					out.print("其他");	
+				}
+				%></td>
 			</tr>
 			<tr class="table_size">
 				<th width="250">主要经营业务</th>

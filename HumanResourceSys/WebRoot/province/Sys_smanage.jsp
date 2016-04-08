@@ -63,7 +63,7 @@
 	</div>
 
 	<div id="info">
-		<table border="1" id="tablecss">
+		<table border="1" id="tablecss" style="border-collapse:collapse">
 			<tr>
 				<th class="twh">名称</th>
 				<th class="twh">CPU</th>

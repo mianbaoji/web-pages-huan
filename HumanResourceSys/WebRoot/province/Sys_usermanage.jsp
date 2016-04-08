@@ -84,9 +84,9 @@
 
 	<div id="info3">
 		<form action="province/Sys_usermanage_adduser.jsp">
-			<input type="submit" name="addNewCity" value="新建"> <br></br>
+			<input type="submit" name="addNewCity" value="新建" style="width:150px"> <br></br>
 		</form>
-		<table border>
+		<table border style="border-collapse:collapse">
 			<tr>
 				<th width="250">市用户名</th>
 				<th width="250">操作</th>

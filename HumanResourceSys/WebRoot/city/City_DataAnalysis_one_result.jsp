@@ -60,7 +60,7 @@
 				com_area = "";
 			}
 			byte b[] = com_area.getBytes("utf-8");
-			com_area = new String(b);
+			com_area = new String(com_area.getBytes("ISO8859-1"), "utf-8");
 
 			String com_property = request.getParameter("com_property");
 			if (com_property == null) {
@@ -74,7 +74,7 @@
 				name = "";
 			}
 			b = name.getBytes("utf-8");
-			name = new String(b);
+			name =  new String(name.getBytes("ISO8859-1"), "utf-8");
 
 			serviceOfProvince s = new serviceOfProvince();
 			ResultSet rs = s.onepeople_nowselect(a_year, a_month, b_year,

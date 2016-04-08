@@ -131,7 +131,7 @@
 				<option value="11">11</option>
 				<option value="12">12</option>
 			</select>月 <input type="submit" name="search" value="检索"> <br></br>
-			<table border>
+			<table border style="border-collapse:collapse">
 				<tr class="table_size">
 					<th width="200">企业名</th>
 					<th width="200">地区</th>

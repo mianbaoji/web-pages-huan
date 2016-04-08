@@ -27,7 +27,7 @@
 		if (news_head == null) {
 			news_head = "";
 		}
-		news_head =  new String(news_head.getBytes("ISO8859-1"), "utf-8");;
+		news_head =  new String(news_head.getBytes("ISO8859-1"), "utf-8");
 
 		String news_time = request.getParameter("news_time");
 		if (news_time == null) {

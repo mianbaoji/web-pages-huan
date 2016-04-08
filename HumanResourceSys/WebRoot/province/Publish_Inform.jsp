@@ -62,7 +62,7 @@
 			serviceOfProvince s = new serviceOfProvince();
 			ResultSet rs = s.selectnewspub(com_id);
 			int i = 0;
-			out.print("<Table Border style='font-size:20px;color:#455155'>");
+			out.print("<Table Border style='font-size:20px;color:#455155;border-collapse:collapse'>");
 			out.print("<TR>");
 			out.print("<TH width=220 height=30>" + "标题");
 			out.print("<TH width=220>" + "发布时间");

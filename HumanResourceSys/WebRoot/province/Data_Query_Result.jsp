@@ -62,14 +62,14 @@
 				com_name = "";
 			}
 			byte b[] = com_name.getBytes("utf-8");
-			com_name = new String(b);
+			com_name = new String(com_name.getBytes("ISO8859-1"), "utf-8");
 
 			String area = request.getParameter("area");
 			if (area == null) {
 				area = "";
 			}
 			b = area.getBytes("utf-8");
-			area = new String(b);
+			area = new String(area.getBytes("ISO8859-1"), "utf-8");
 
 			String com_property = request.getParameter("com_property");
 			if (com_property == null) {
@@ -91,6 +91,9 @@
 			}
 			b = start_m.getBytes("utf-8");
 			start_m = new String(b);
+			if (Integer.valueOf(start_m) < 10) {
+				start_m = "0" + start_m;
+			}
 
 			String end_m = request.getParameter("end_m");
 			if (end_m == null) {
@@ -98,7 +101,9 @@
 			}
 			b = end_m.getBytes("utf-8");
 			end_m = new String(b);
-
+			if (Integer.valueOf(end_m) < 10) {
+				end_m = "0" + end_m;
+			}
 			String start_y = request.getParameter("start_y");
 			if (start_y == null) {
 				start_y = "";
@@ -127,8 +132,22 @@
 			p.setUser_type("");
 			p.setID("");
 			ResultSet rs = s.selectentrprisedata(p);
+			if (rs == null) {
+		%>
+		<script type="text/javascript">
+			alert("服务器错误");
+		</script>
 
-			while (rs.next()) {
+		<%
+			} else {
+				if (!rs.next()) {
+		%>
+		<script type="text/javascript">
+			alert("查询无结果！");
+		</script>
+		<%
+			} else {
+					while (true) {
 		%>
 
 		<div>
@@ -145,6 +164,11 @@
 		</div>
 
 		<%
+			if (!rs.next()) {
+							break;
+						}
+					}
+				}
 			}
 		%>
 	</div>

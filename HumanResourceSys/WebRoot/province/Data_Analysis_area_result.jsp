@@ -12,13 +12,14 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
+<base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>数据分析折线图</title>
-<link rel="stylesheet" type="text/css" href="../CSS/All_sheng.css" />
-<link rel="stylesheet" type="text/css" href="../CSS/Data_Analysis.css" />
-<script src="../JS/home_sheng.js"></script>
-<script src="../JS/Data_Analysis.js"></script>
-<script src="../JS/Chart.js"></script>
+<link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
+<link rel="stylesheet" type="text/css" href="CSS/Data_Analysis.css" />
+<script src="JS/home_sheng.js"></script>
+<script src="JS/Data_Analysis.js"></script>
+<script src="JS/Chart.js"></script>
 </head>
 
 <body>

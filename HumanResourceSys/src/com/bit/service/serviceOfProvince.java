@@ -131,23 +131,23 @@ public class serviceOfProvince {
 		yearint2 -= 1;
 		yearString2 = String.valueOf(yearint2);
 		if (!pdq.getCom_name().equals("")) {
-			sql += "and com_name=" + pdq.getCom_name();
+			sql += " and com_name='" + pdq.getCom_name()+"'";
 		}
 		if (!pdq.getCom_property().equals("")) {
-			sql += "and com_property like '%" + pdq.getCom_property() + "%'";
+			sql += " and com_property ='" + pdq.getCom_property() + "'";
 		}
 		if (!pdq.getCom_industry().equals("")) {
-			sql += "and com_industry like '%" + pdq.getCom_industry() + "%'";
+			sql += " and com_industry = '" + pdq.getCom_industry() + "'";
 		}
 		if (!pdq.getArea().equals("")) {
-			sql += "and com_area=" + pdq.getArea();
+			sql += " and com_area= '" + pdq.getArea()+"'";
 		}
 		if (!pdq.getID().equals("")) {
-			sql += "and com_info.com_id=" + pdq.getID();
+			sql += " and com_info.com_id= '" + pdq.getID()+"'";
 		}
 		if (!pdq.getUser_type().equals("")) {
-			sql += "and com_info.com_id in(select user_id from user_table where user_type="
-					+ pdq.getUser_type() + ")";
+			sql += " and com_info.com_id in(select user_id from user_table where user_type= '"
+					+ pdq.getUser_type() + "')";
 		}
 		try {
 			System.out.println(sql);
