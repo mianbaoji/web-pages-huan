@@ -78,17 +78,22 @@ public class cityQueryReportServlet extends HttpServlet {
 		String com_name = request.getParameter("com_name");// 企业名称
 		String com_year = request.getParameter("com_year");// 年
 		String com_month = request.getParameter("com_month");// 月
-
+		if(Integer.valueOf(com_month)<10)
+		{
+			com_month="0"+com_month;
+			
+		}
 		// service
 		// Javabean: EnterpriseDataTable
 		// 从前端接收：企业名称、企业ID、申报时间（年、月）
 		// 传给Service: 企业名称、企业ID、申报时间（年、月）
 		// Service返回：EnterpriseDataTable
 		// 返回给前端：EnterpriseDataTable
-
+		System.out.println(com_id);
 		List<listManageTable> listManageInfoList = new serviceOfCity()
 				.queryFormForCity(com_name, com_id, com_year, user_id,
 						com_month);
+		System.out.print( listManageInfoList);
 		// 上面的注释打开
 		HttpSession session = request.getSession();
 		session.setAttribute("listManageInfoList", listManageInfoList);

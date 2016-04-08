@@ -66,7 +66,7 @@ public class newUserServlet extends HttpServlet {
 		String user_row = "1";
 		String user_city = request.getParameter("user_city");
 		String administor = request.getParameter("administor");
-		
+		user_city= new String(user_city .getBytes("ISO8859-1"), "utf-8");
 		userInfoTable userInfo = new userInfoTable();
 		userInfo.setUser_id(user_id);
 		userInfo.setPassword(password);

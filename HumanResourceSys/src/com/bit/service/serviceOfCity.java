@@ -76,12 +76,12 @@ public class serviceOfCity {
 		List list = new ArrayList();
 		try {
 			pstmt = conn
-					.prepareStatement("select com_area from com_info where com_id = ?");
+					.prepareStatement("select user_city from user_table where user_id = ?");
 			pstmt.setString(1, user_id);
 			ResultSet rs0 = pstmt.executeQuery();
 			String cityString = "";
 			if (rs0.first()) {
-				cityString = rs0.getString(1);
+				cityString = rs0.getString("user_city");
 			}
 			String sensString = "select c.com_name,c.com_area,a.*,b.* from com_data a,time_table b,com_info c where a.status = 'checking' and a.time_id = b.time_id and a.com_id = c.com_id and c.com_area = '"
 					+ cityString + "'";
@@ -143,14 +143,15 @@ public class serviceOfCity {
 		// + time_year + "####" + time_month);
 		try {
 			pstmt = conn
-					.prepareStatement("select com_area from com_info where com_id = ?");
+					.prepareStatement("select user_city from user_table where user_id = ?");
 			pstmt.setString(1, user_id);
 			ResultSet rs0 = pstmt.executeQuery();
 			String cityString = "";
-			if (rs0.first()) {
-				cityString = rs0.getString(1);
+			if (rs0.next()) {
+				cityString = rs0.getString("user_city");
 			}
-
+		
+			
 			String sens = "select a.com_name,a.com_area,b.*,c.time_year,c.time_month from com_info a,com_data b,time_table c where b.status = 'checking' and a.com_id = b.com_id and c.time_year=? and c.time_month=? and c.time_id = b.time_id and a.com_area='"
 					+ cityString + "'";
 
@@ -164,9 +165,11 @@ public class serviceOfCity {
 				cc2 = 1;
 			}
 			// System.out.println(sens);
+			System.out.print(cityString+time_month);
 			pstmt = conn.prepareStatement(sens);
 			pstmt.setString(1, time_year);
 			pstmt.setString(2, time_month);
+			
 			if (cc1 == 1) {
 				if (cc2 == 1) {
 					pstmt.setString(3, com_name);
@@ -255,12 +258,12 @@ public class serviceOfCity {
 			String user_id) {
 		try {
 			pstmt = conn
-					.prepareStatement("select com_area from com_info where com_id = ?");
+					.prepareStatement("select user_city from user_table where user_id = ?");
 			pstmt.setString(1, user_id);
 			ResultSet rs0 = pstmt.executeQuery();
 			String cityString = "";
 			if (rs0.first()) {
-				cityString = rs0.getString(1);
+				cityString = rs0.getString("user_city");
 			}
 			String sens = "select a.*,b.*,c.* from com_data a,time_table b,com_info c where a.table_id = ? and a.time_id = b.time_id and a.com_id = c.com_id and c.com_area = '"
 					+ cityString + "'";

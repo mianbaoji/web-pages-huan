@@ -75,18 +75,19 @@ public class reportServlet extends HttpServlet {
 		other_reason= new String(other_reason.getBytes("ISO8859-1"), "utf-8");
 		String type = request.getParameter("type");
 		type= new String(type.getBytes("ISO8859-1"), "utf-8");
+		
 		String reason_1 = request.getParameter("reason_1");
 		reason_1= new String(reason_1.getBytes("ISO8859-1"), "utf-8");
 		String reason_2 = request.getParameter("reason_2");
-		reason_1= new String(reason_1.getBytes("ISO8859-1"), "utf-8");
+		reason_2= new String(reason_2.getBytes("ISO8859-1"), "utf-8");
 		String reason_3 = request.getParameter("reason_3");
-		reason_1= new String(reason_1.getBytes("ISO8859-1"), "utf-8");
+		reason_3= new String(reason_3.getBytes("ISO8859-1"), "utf-8");
 		String explain_1 = request.getParameter("explain_1");
 		explain_1= new String(explain_1.getBytes("ISO8859-1"), "utf-8");
 		String explain_2 = request.getParameter("explain_2");
 		explain_2= new String(explain_2.getBytes("ISO8859-1"), "utf-8");
 		String explain_3 = request.getParameter("explain_3");
-		explain_2= new String(explain_2.getBytes("ISO8859-1"), "utf-8");
+		explain_3= new String(explain_3.getBytes("ISO8859-1"), "utf-8");
 		String status ="checking";
 		
 		EnterpriseDataTable enterpriseDataTable = new EnterpriseDataTable();

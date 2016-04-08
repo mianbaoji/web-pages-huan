@@ -31,6 +31,7 @@
 	<%
 		listManageTable list_ent = (listManageTable) session
 				.getAttribute("cityInfoList");
+				System.out.print(list_ent);
 	%>
 	<div id="first_navigation">
 		<ul id="ultype">
@@ -65,7 +66,7 @@
 		<table border>
 			<tr class="table_size">
 				<th width="250">企业ID</th>
-				<td width="250"><%=list_ent.getCom_id()%></td>
+				<td width="250"><%out.print(list_ent.getCom_id());%></td>
 			</tr>
 			<tr class="table_size">
 				<th width="250">企业名</th>
@@ -119,7 +120,7 @@
 		</table>
 	</div>
 	<%
-		session.removeAttribute("cityInfoList");
-	%>
+		/* session.removeAttribute("cityInfoList");
+ */	%>
 </body>
 </html>
