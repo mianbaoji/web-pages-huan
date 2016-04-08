@@ -22,19 +22,18 @@
 <body id="back">
 
 	<%
-		String news_head = request.getParameter("news_head");
+	String news_head = request.getParameter("news_head");
 		if (news_head == null) {
 			news_head = "";
 		}
-		byte b[] = news_head.getBytes("utf-8");
-		news_head = new String(b);
+		news_head =  new String(news_head.getBytes("ISO8859-1"), "utf-8");;
 
 		String news_time = request.getParameter("news_time");
 		if (news_time == null) {
 			news_time = "";
 		}
-		b = news_time.getBytes("utf-8");
-		news_time = new String(b);
+	
+		news_time =  new String(news_time.getBytes("ISO8859-1"), "utf-8");
 
 		serviceOfProvince s = new serviceOfProvince();
 		s.deletnews(news_head, news_time);

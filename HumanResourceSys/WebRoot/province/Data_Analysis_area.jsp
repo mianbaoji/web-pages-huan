@@ -9,12 +9,13 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
+<base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>数据分析</title>
-<link rel="stylesheet" type="text/css" href="../CSS/All_sheng.css" />
-<link rel="stylesheet" type="text/css" href="../CSS/Data_Analysis.css" />
-<script src="../JS/home_sheng.js"></script>
-<script src="../JS/Data_Analysis.js"></script>
+<link rel="stylesheet" type="text/css" href="CSS/All_sheng.css" />
+<link rel="stylesheet" type="text/css" href="CSS/Data_Analysis.css" />
+<script src="JS/home_sheng.js"></script>
+<script src="JS/Data_Analysis.js"></script>
 </head>
 
 <body id="back">
@@ -53,10 +54,10 @@
 			<li style="display:inline-block;width:320px;text-align:center"
 				class="liheight" onmouseover="addBorder(this)"
 				onmouseout="removeBorder(this)"><a
-				href="Data_Analysis_area.jsp" class="indextype">地区企业</a></li>
+				href="province/Data_Analysis_area.jsp" class="indextype">地区企业</a></li>
 			<li style="display:inline-block;width:320px;text-align:center"
 				class="liheight" onmouseover="addBorder(this)"
-				onmouseout="removeBorder(this)"><a href="Data_Analysis_one.jsp"
+				onmouseout="removeBorder(this)"><a href="province/Data_Analysis_one.jsp"
 				class="indextype">单独企业</a></li>
 		</ul>
 	</div>

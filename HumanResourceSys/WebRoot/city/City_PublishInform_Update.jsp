@@ -1,5 +1,5 @@
 <%@page import="java.sql.ResultSet"%>
-<%@ page import="com.bit.service.serviceOfProvince"%>>
+<%@ page import="com.bit.service.serviceOfProvince"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -23,47 +23,53 @@
 <body id="back">
 
 	<%
-		String old_news_head = request.getParameter("news_head");
+		String old_news_head = request.getParameter("old_news_head");
 		if (old_news_head == null) {
 			old_news_head = "";
 		}
-		byte b[] = old_news_head.getBytes("utf-8");
-		old_news_head = new String(b);
+		old_news_head = new String(old_news_head.getBytes("ISO8859-1"),
+				"utf-8");
+		;
+
+		String news_head = request.getParameter("news_head");
+		if (news_head == null) {
+			news_head = "";
+		}
+		news_head = new String(news_head.getBytes("ISO8859-1"), "utf-8");
+		;
 
 		String news_time = request.getParameter("news_time");
 		if (news_time == null) {
 			news_time = "";
 		}
-		b = news_time.getBytes("utf-8");
-		news_time = new String(b);
+
+		news_time = new String(news_time.getBytes("ISO8859-1"), "utf-8");
 
 		String news_content = request.getParameter("news_content");
 		if (news_content == null) {
 			news_content = "";
 		}
-		b = news_content.getBytes("utf-8");
-		news_content = new String(b);
+
+		news_content = new String(news_content.getBytes("ISO8859-1"),
+				"utf-8");
 
 		String news_pub = request.getParameter("news_pub");
 		if (news_pub == null) {
 			news_pub = "";
 		}
-		b = news_pub.getBytes("utf-8");
-		news_pub = new String(b);
+		news_pub = new String(news_pub.getBytes("ISO8859-1"), "utf-8");
 
 		String news_sub = request.getParameter("news_sub");
 		if (news_sub == null) {
 			news_sub = "";
 		}
-		b = news_sub.getBytes("utf-8");
-		news_sub = new String(b);
+		news_sub = new String(news_sub.getBytes("ISO8859-1"), "utf-8");
 	%>
 
 	<div class="add">
 		<form action="city/City_PublishInform_Update_Result.jsp">
 			<p>
-				通知标题:<input type="text" placeholder=<%=old_news_head%>
-					class="input_css" input_css name="news_head">
+				通知标题:<input type="text" placeholder=<%=old_news_head%> class="input_css" name="news_head">
 			</p>
 			<p>
 				发布时间:<input type="text" placeholder=<%=news_time%> class="input_css"

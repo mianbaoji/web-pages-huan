@@ -38,12 +38,12 @@ public class serviceOfCity {
 		List list = new ArrayList();
 		try {
 			pstmt = conn
-					.prepareStatement("select com_area from com_info where com_id = ?");
+					.prepareStatement("select user_city from user_table where user_id = ?");
 			pstmt.setString(1, user_id);
 			ResultSet rs0 = pstmt.executeQuery();
 			String cityString = "";
 			if (rs0.first()) {
-				cityString = rs0.getString(1);
+				cityString = rs0.getString("user_city");
 			}
 			String sensString = "select * from com_info where com_area = '"
 					+ cityString + "'";
@@ -297,12 +297,12 @@ public class serviceOfCity {
 		List list_entList = new ArrayList();
 		try {
 			pstmt = conn
-					.prepareStatement("select com_area from com_info where com_id = ?");
+					.prepareStatement("select user_city from user_table where user_id = ?");
 			pstmt.setString(1, user_id);
 			ResultSet rs0 = pstmt.executeQuery();
 			String cityString = "";
 			if (rs0.first()) {
-				cityString = rs0.getString(1);
+				cityString = rs0.getString("user_city");
 			}
 			String sensString = "select * from user_table a,com_info b where a.user_type = 'enterprise' and a.user_id = b.com_id and b.com_area = '"
 					+ cityString + "'";
